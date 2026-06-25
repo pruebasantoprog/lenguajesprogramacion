@@ -1,0 +1,196 @@
+:root{
+    --white-text:#fff;
+    --background: #c8e8f1;
+    --black-text: rgb(68,68,59);    
+}
+
+.background-javascript{
+    background: linear-gradient(180deg,#21c8f6,#637bff);
+}
+
+.background-java{
+    background: linear-gradient(180deg,#f77f7b,#fd3c2b);
+}
+.background-php{
+    background: linear-gradient(180deg, #4F5B93, #8892BF);
+    background: linear-gradient(180deg, #5A69A6, #8892BF);
+    background: linear-gradient(180deg, #3E4A7F, #9FA8D8);
+    background: linear-gradient(180deg, #2E3350, #4F5B93);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    /*Con border-box todos los componentes van a tener un contenido de por ejemplo 300px-el padding menos el borde*/ 
+    box-sizing: border-box;
+    border: none;
+}
+
+body{
+    background-color: var(--background);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulo h1{
+    text-align: center;
+    padding: .5rem;
+    font-size: 4rem;    
+    color: var(--white-text);
+    font-weight: 900;
+    /*text-shadow: 3rem 40rem 40rem rgba(0,0,0,0.2), 3rem 40rem 40rem #ff2044b5;*/
+    text-shadow: 7px 7px #558abb,1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+    /*text-shadow: .5rem .5rem #558abb;*/
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    height: 60vh;
+    align-items: center;
+}
+
+.tarjeta{
+    background-color: var(--white-text);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    display: flex;
+    margin: 1.5rem;
+    overflow: hidden;
+    width: 30rem;
+    height: 22rem;
+}
+
+.tarjeta h6{
+    opacity: 0.6;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}
+
+.tarjeta h2{
+    letter-spacing: .1rem;
+    margin: 1rem 0;
+    color: var(--black-text);
+}
+
+.columna-iquierda{
+    color: var(--white-text);
+    padding: 2rem;
+    max-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*Repartimos el espacio entre cada elemento con space-between*/
+    justify-content: space-between;
+}
+
+.columna-iquierda h2{
+    /*Tenemos que poner h2 en blanco porque le dijimos negro para toda la tarjeta*/
+    color: var(--white-text);
+}
+
+.columna-iquierda i{
+    font-size: 5rem;
+}
+
+.columna-derecha{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*Repartimos el espacio entre cada elemento con space-between*/
+    justify-content: space-between; 
+}
+
+.columna-derecha p{
+    font-size: .9rem;
+    color: var(--black-text);
+}
+
+.button{
+    border-radius: 3rem;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    color: var(--white-text);
+    font-size: 1.2rem;
+    padding: .8rem 1.5rem;
+    letter-spacing: .1rem;
+    /*Pasamos el botón de la izquierda a la derecha con align-self*/
+    align-self: self-end;
+}
+
+.columna-derecha .button:hover {
+    /*background: #b5b6b4;
+    color: #333;*/
+    transition: all .8s;
+    transform: scale(0.9);
+    /*Invertimos los colores*/
+    filter: invert(1);
+}
+
+/*media query*/
+@media(max-width: 768px){
+    .titulo h1{
+        font-size: 2rem;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    
+    .tarjeta{
+        width: 95%;
+        height: auto;
+    }
+
+    .columna-derecha{
+        padding: 1rem;
+    }
+    .columna-derecha h2{
+        font-size: 1rem;
+    }
+    .columna-derecha p{
+        padding: .8rem;
+    }
+    
+    .button{
+        font-size: 1rem;
+    }
+
+}
+
+/*Carrusel de imagenes*/
+.carrusel {
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 1rem;
+}
+
+.carrusel-imagenes {
+    display: flex;
+    width: 400%;
+    animation: animacion 16s infinite;
+}
+
+.carrusel-imagenes img {
+    width: 100%;
+    height: 50vh;
+}
+
+@keyframes animacion {
+    0% { margin-left: 0; }
+    20% { margin-left: 0; }
+
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
