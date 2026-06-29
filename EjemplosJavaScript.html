@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Cards para JavaScript</title>
+    <link rel="stylesheet" href="css/estiloJavaScript.css">
+    <!-- Usando los iconos de font oson 6-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!--Icono página-->
+    <link rel="icon" href="images/icono.png">
+</head>
+<body>
+    <main>
+        
+    <div class="titulo"><h1>Ejemplos JavaScript</h1></div>
+    <div class="container">
+        
+        <div class="card">
+
+            <div class="top-row background-top-row">
+                <h4>jQuery</h4>
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <i class="fab fa-js" aria-hidden="true"></i>
+            </div>
+
+            <!--Contenidos de la tarjeta-->
+            <div class="content">
+                <h2>jQuery</h2>
+                <p>jQuery es una librería o biblioteca multiplataforma de JavaScript de código abierto y tiene como finalidad principal interactuar con documentos HTML,
+                     manipular el DOM(Modelo de Ojetos del Documento), controlar eventos, implementar animaciones e interacción AJAX (JavaScript asíncrono y XML)</p>
+                <button class="button background-top-row" type="submit" onclick="location.href='ColoresXMLAjax.html'">Empezar</button>                
+            </div>
+
+        </div>
+        <!--<div class="card">
+
+            <div class="top-row background-top-row">
+                <h4>Axios</h4>
+                <i class="fas fa-network-wired" aria-hidden="true"></i>
+                <i class="fas fas fa-server" aria-hidden="true"></i>
+            </div>-->
+
+            <!--Contenidos de la tarjeta-->
+            <!--<div class="content">
+                <h2>Axios</h2>
+                <p>Axios es una biblioteca JavaScript popular que se utiliza para realizar solicitudes HTTP desde un navegador web o Node.js basado en promesas.
+                     Simplifica el proceso de envío de solicitudes HTTP asincrónicas a un servidor y también gestiona la respuesta que se cumple o se rechaza.</p>
+                <button class="button background-top-row">Empezar</button>
+            </div>
+
+        </div>-->
+        <!--<div class="card">
+
+            <div class="top-row background-top-row">
+                <h4>Promesas</h4>
+                <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                <i class="fas fa-check" aria-hidden="true"></i>-->
+                <!--<i class="fas fa-times" aria-hidden="true"></i>-->
+            <!--</div>-->
+
+            <!--Contenidos de la tarjeta-->
+            <!--<div class="content">
+                <h2>Promesas</h2>
+                <p>Las Promesas en JavaScript son objetos que representan la eventual finalización (o falla) de una operación asíncrona y su valor resultante. 
+                    Una promesa es un objeto que representa un valor que puede que esté disponible ahora, en un futuro o que nunca lo esté. Son una alternativa moderna
+                     a los callbacks, y facilitan la gestión del código asíncrono.</p>
+                <button class="button background-top-row">Empezar</button>
+            </div>
+
+        </div>-->
+        <div class="card">
+
+            <div class="top-row background-top-row">
+                <h4>Async/Await</h4>
+                <i class="fa fas fa-sync" aria-hidden="true"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
+            </div>
+
+            <!--Contenidos de la tarjeta-->
+            <div class="content">
+                <h2>Async/Await</h2>
+                <p>Las funciones Async/Await facilitan la gestión de tareas que requieren tiempo, como esperar una respuesta de una API. Async y await son la 
+                    alternativa a las promesas y los callbacks. Como muestra se usa en este ejemplo la API RESTful de Pokémon PokeApi.</p>
+                    <img src="" alt="Pikachu" id="pika" style="display:none;">
+                <button class="button background-top-row" type="submit" onclick="location.href='PokeapiAsyncAwait.html'">Empezar</button>
+            </div>
+
+        </div>
+        <div class="card">
+
+            <div class="top-row background-top-row">
+                <h4>Fetch API</h4>
+                <i class="fas fa-cloud-download-alt" aria-hidden="true"></i>
+                <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+            </div>
+
+            <!--Contenidos de la tarjeta-->
+            <div class="content">
+                <h2>Fetch API</h2>
+                <p>Fetch es una API de JavaScript que permite hacer peticiones HTTP para obtener recursos de forma asíncrona desde un servidor. Ofrece una forma 
+                    moderna, potente y flexible de realizar solicitudes HTTP desde navegadores web</p>
+                <button class="button background-top-row" type="submit" onclick="location.href='FetchRickyMortyAPI.html'">Empezar</button>
+            </div>
+
+        </div>
+        
+    </div>
+    </main>
+     <script>
+        window.addEventListener("load",cargarPikachu(),false);
+
+        
+
+        function cargarPikachu(){
+            fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
+            .then(response=>{
+                if(!response.ok){
+                    throw new Error("No se encuentra el recurso pikachu");
+                }
+                return response.json();
+            })
+            .then(data=>{
+                const nombrePokemon=document.getElementById("pika");
+                nombrePokemon.src=data.sprites.other.showdown.front_shiny_female;
+                nombrePokemon.style.display="flex";
+                nombrePokemon.style.justifyContent = "center";
+                nombrePokemon.style.alignItems = "center";
+                nombrePokemon.style.margin="30px";               
+            });            
+        }
+    </script>
+</body>
+</html>
