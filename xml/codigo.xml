@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<FT004 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<codigos>
+<nombre>Lambda</nombre>
+<codigo><![CDATA[package es.lambda;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+
+public class AppLambda {
+
+	private List<String> estadosDeuda=new ArrayList<>();
+	
+	public AppLambda() {
+		this.rellenarestadosDeuda();
+	}
+	
+	private void rellenarestadosDeuda() {
+		estadosDeuda.add("Pagada");
+		estadosDeuda.add("Vencida");
+		estadosDeuda.add("En gestión de cobro");
+		estadosDeuda.add("Aplazada");
+		estadosDeuda.add("En Contencioso");
+		estadosDeuda.add("Incobrable");
+	}
+	
+	public void ordenarEstadosJava7() {
+		
+		System.out.println("Java 7 usando Collections.sort con una clase anonima con Comparator que implementa el método compare el cual llamará a compareTo");
+		
+		Collections.sort(estadosDeuda, new Comparator<String>() {
+			
+			@Override
+			public int compare(String estado1, String estado2) {
+				
+				return estado1.compareTo(estado2);
+			}
+		});
+	}
+	
+	public void ordenarListaConJava8() {
+		System.out.println("Java 8 usando Collections.sort pasamos directamante los estados y con operador -> y llamamos directamante a compareTo entre los estados");
+		
+		Collections.sort(estadosDeuda,(String estado1,String estado2)->estado1.compareTo(estado2));
+	}
+	
+	public static void main(String[] args) {
+		
+		AppLambda app=new AppLambda();		
+		
+		Scanner sc = new Scanner(System.in);
+				
+		String version="";
+		
+		do {
+			 System.out.print("Teclee 7 u 8 para versión de Java: ");
+			 version = sc.nextLine();			
+		}while( ! version.equals("7") && ! version.equals("8"));
+		
+		if(version.equals("7")) {
+			app.ordenarEstadosJava7();
+			
+			System.out.println("Lista estados ordenada con Java 7");
+			for(String estado:app.estadosDeuda) {
+				System.out.println(estado);
+			}
+		}else {
+			app.ordenarListaConJava8();
+			
+			System.out.println("Lista de estados ordenada con Java 8");
+			
+			app.estadosDeuda.forEach(System.out::println);
+		}	
+		
+	}
+	
+} 
+    ]]>
+</codigo>
+</codigos>
+<codigos>
+<nombre>defaultFuncional</nombre>
+<codigo><![CDATA[package es.defaultyfunctional;
+
+@FunctionalInterface
+public interface Recargo {
+	
+	enum tipoRecargo{
+		
+		Ejecutivo,Reducido,Ordinario		
+		
+	}
+	
+	public double aplicaImporteInicial(double importe1, double importe2);
+	
+	default double calcularRecargo(tipoRecargo tipo, double cantidad) {
+		
+		System.out.println("Metodo default calcularRecargo perteneciente a la interfaz funcional Recargo se le pasa tipo de recargo "+tipo);
+		
+		double tipoRecargo=0;
+		double recargo=0;
+		
+		switch(tipo) {
+			case Ejecutivo:
+				tipoRecargo=5;
+				System.out.println("Tipo de recargo Ejecutivo=5");
+				break;
+			case Reducido:
+				tipoRecargo=10;
+				System.out.println("Tipo de recargo Reducido=10");
+				break;
+			case Ordinario:
+				System.out.println("Tipo de recargo Ordinario=20");
+				tipoRecargo=20;
+				break;
+				
+		}
+		
+		recargo=new java.math.BigDecimal(cantidad*(tipoRecargo/100)).setScale(2, java.math.RoundingMode.HALF_UP).doubleValue();
+		
+		System.out.println("Recargo calculado cantidad*(tipoRecargo/100)="+recargo);
+		
+		return recargo;
+	}
+
+}
+package es.defaultyfunctional;
+
+public class UsoRecargo implements Recargo {
+
+	private double inicial=31457.89;
+	
+	@Override
+	public double aplicaImporteInicial(double importe1, double importe2) {
+		
+		System.out.println("Clase UsoRecargo metodo sobrescrito aplicaImporteInicial: Queremos por ejemplo que se sumen los 2 importes y se dividan entre el importe inicial");
+		
+		return new java.math.BigDecimal(importe1+importe2/inicial).setScale(2, java.math.RoundingMode.HALF_UP).doubleValue();
+	}
+
+	public static void main(String[] args) {
+		
+		System.out.println("Ejemplo clase que implementa interfaz funcional, llamada a interfaz funcional con lambda y llamada con interfaz con clase interna");
+		System.out.println("=================================================================================================================================");
+		
+		Recargo recObj=new UsoRecargo();
+		
+		double importe=recObj.aplicaImporteInicial(35.8, 47.98);		
+		
+		double recargo=recObj.calcularRecargo(tipoRecargo.Ordinario, 31457.89);
+		
+		System.out.println("Importe total con clase que usa interfaz importe("+importe+")+recargo("+recargo+")="+(importe+recargo));
+		
+		System.out.println("===============================================================================");
+		
+		//Usando lambda
+		Recargo recLambda=(a,b)->a+b;
+		
+		System.out.println("Con lambda hemos indicado que para obtener el importe inicial solamente se sumen los 2 importes (a,b)->a+b");
+		
+		double importeLambda=recLambda.aplicaImporteInicial(35.8, 47.98);
+		
+		double recargoLambda=recObj.calcularRecargo(tipoRecargo.Reducido, 31457.89);
+		
+		System.out.println("Importe total usando lambda importe("+importeLambda+")+recargo("+recargoLambda+")="+(importeLambda+recargoLambda));
+		
+		System.out.println("===============================================================================");
+		
+		//Usando clase interna
+		Recargo recClaseInterna=new Recargo() {
+			
+			@Override
+			public double aplicaImporteInicial(double importe1, double importe2) {
+				System.out.println("Importe Inicial usando interfaz con clase interna para que por ejemplo sume ambos valores y los divida entre 2"
+						+ " (importe1("+importe1+")+importe2("+importe2+"))/2="+(importe1+importe2)/2);	
+				return (importe1+importe2)/2;
+			}
+		};
+		
+		double importeClaseInterna=recClaseInterna.aplicaImporteInicial(35.8, 47.98);
+		
+		double recargoClaseInterna=recClaseInterna.calcularRecargo(tipoRecargo.Ejecutivo, recargoLambda);
+		
+		System.out.println("Importe total usando clase interna importe("+importeClaseInterna+")+recargo("+recargoClaseInterna+")="+(importeClaseInterna+recargoClaseInterna));
+		
+	}
+}
+
+    ]]>
+</codigo>
+</codigos>
+<codigos>
+<nombre>MethodReference</nombre>
+<codigo><![CDATA[package es.pruebas;
+
+
+import java.util.Arrays;
+import java.util.List;
+
+public class PruebaOperadorDosPuntos {
+    public static void imprimirEnMayusculas(String s) {
+        System.out.println(s.toUpperCase());
+    }
+    
+    public static void imprimirEnMinusculas(String s) {
+        System.out.println(s.toLowerCase());
+    }
+
+    public static void main(String[] args) {
+        List<String> nombres = Arrays.asList("Ana", "Juan", "Pedro");
+        	        
+        System.out.println("Tenemos lista \"Ana\", \"Juan\", \"Pedro\" la convertimios a mayusculas con lambda y a minusculas con ::");
+        System.out.println("Conversión a mayúsculas con lambda");
+        System.out.println("=======================================");
+        // Usando una expresión lambda
+        nombres.forEach(nombre -> imprimirEnMayusculas(nombre));
+	       	       
+        System.out.println("Conversión a minúsculas con operador ::");
+        System.out.println("=======================================");
+        // Usando el operador ::
+        nombres.forEach(PruebaOperadorDosPuntos::imprimirEnMinusculas);
+       
+    }
+}
+	 ]]>
+</codigo>
+</codigos>
+<codigos>
+	<nombre>EachRemoveSort</nombre>
+	<codigo><![CDATA[package es.foreachremoveifsort;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class CollectionProcessor {
+
+	public static void main(String[] args) {
+		List<Socio> socios=new ArrayList<Socio>(8);
+		
+		socios.add(new Socio("Marcos",true,20));
+		socios.add(new Socio("Ana",false,31));
+		socios.add(new Socio("Lucia",true,23));
+		socios.add(new Socio("Sergio",true,71));
+		socios.add(new Socio("Laura",false,57));
+		socios.add(new Socio("David",true,37));
+		socios.add(new Socio("Felipe",true,68));
+		socios.add(new Socio("Diana",false,39));
+		
+		System.out.println("Socios del Gimnasio");
+		socios.forEach(System.out::println);
+		System.out.println("======================================================================================================");
+		
+		System.out.println("Ordenar socios por edad");
+		socios.sort(Comparator.comparingInt(Socio::getEdad));
+		socios.forEach(x->System.out.println("Nombre:"+x.getNombre()+" Edad:"+x.getEdad()));
+		System.out.println("======================================================================================================");
+		
+		//Eliminar socios que no estén activos
+		socios.removeIf(x-> ! x.isActivo());
+		System.out.println("Socios activos");
+		socios.forEach(x->System.out.println(x.getNombre()));	
+	}
+}
+
+class Socio{
+	private String nombre;
+	private boolean activo;
+	private int edad;
+	
+	public Socio(String nombre, boolean activo, int edad) {
+		this.nombre=nombre;
+		this.activo=activo;
+		this.edad=edad;		
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	@Override
+	public String toString() {
+		return "Datos socio: [nombre=" + nombre + ", activo=" + activo + ", edad=" + edad + "]";
+	}	
+}
+
+	 ]]>
+	</codigo>
+</codigos>
+
+</FT004>

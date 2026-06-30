@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Icono página-->
+    <link rel="icon" href="images/icono.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 90%;
+            align-items: center;
+            margin: 0 auto;
+            background-color: bisque;
+        }
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            width: 70%;
+            margin: 20px auto;
+            font-size: 1.2rem;
+        }
+        main{
+            display: grid;
+            /* 3columnas*/
+            grid-template-columns: 1fr 1fr 1fr;
+            /* Aplicar un espacio en píxeles entre filas y columnas */
+            gap: 24px;
+            justify-content: center;             
+        }
+
+        .contenedor-imagen{
+            display: flex;
+        }
+
+        .contenedor-imagen img{
+            width: 100%;
+            box-shadow: 4px 4px 10px rgba(139, 69, 19, 0.3); /* SaddleBrown con opacidad */
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+
+        article{
+            padding: 40px;
+            box-shadow: 0 0rem 1rem rgba(0,0,0);
+            /*display: flex;
+            flex-direction: row;*/
+        }
+
+        fieldset{
+            width: 40%;
+            margin: 0 auto;
+            justify-content: center;
+            text-align: center;
+        }  
+        
+        button{
+            margin-top: 15px;
+        }
+       
+    </style>
+</head>
+<body>  
+
+    <h1>Personajes The Rick and Morty API</h1>
+    <div>
+        <p>Esta página consume la API Rest The Rick and Morty API mediante <strong>FETCH</strong>, para obtener del <strong>JSON</strong> 
+            que devuelve la API inicialmente los 5 primeros personajes de "The Rick and Morty". También permite añadir más personajes 
+            seleccionando el genero (femenino, masculino, desconocido y todos).</p>
+    </div>
+     
+    <fieldset>
+            <br/>
+            <legend>Genero de Personaje:</legend>
+            <input type="radio" id="todos" name="genero" value="todos" checked />
+            <label for="todos">Todos</label>
+            <input type="radio" id="Male" name="genero" value="Masculino"/>
+            <label for="rojo">Masculino</label>
+            <input type="radio" id="Female" name="genero" value="Femenino"/>
+            <label for="rosa">Femenino</label>
+            <input type="radio" id="unknown" name="genero" value="Desconocido"/>
+            <label for="blanco">Desconocido</label>
+            <br/>
+            <button id="cargarDatos" onclick="cargarGenero()">Añadir Personajes</button>
+            <br/><br/>
+    </fieldset>
+    <fieldset>
+        <label>Episodio:        
+            <select id="episodio">
+                
+               </select>     
+        </label>
+    </fieldset>
+    <br/>
+    <main>
+   
+    </main>
+    <footer>
+        <h5>Pruebas personajes The Rick and Morty API &copy;</h5>
+    </footer>
+</body>
+<script>
+    
+    window.addEventListener("load",empezar(),false);
+
+    function empezar(){
+        obtenerPersonajes();
+        rellenarSelctEpisodios();
+    }
+
+    function obtenerPersonajes(gender,species){
+        let direccion="https://rickandmortyapi.com/api/character";
+        if(gender!=null){
+            
+            if(gender!='todos'){
+                direccion=direccion+"?gender="+gender;    
+            }            
+            if(species!=null){
+                  if(gender!='todos'){
+                    direccion=direccion+"&species="+species;
+                  }else{
+                    direccion=direccion+"?species="+species;
+                  }
+            }
+        }else{
+            if(species!=null){
+                direccion=direccion+"?species="+species;
+            }else{
+                //La primera vez rellenamos la página con los primeros 5 personajes
+                direccion="https://rickandmortyapi.com/api/character/1,2,3,4,5";
+            }
+        }
+
+        console.log("direccion",direccion);
+        
+        //"https://rickandmortyapi.com/api/character?gender=unknown&status=Alive"
+         //fetch("https://rickandmortyapi.com/api/character?species=robot")
+         //"https://rickandmortyapi.com/api/character?name=frankenstein"
+        //fetch("https://rickandmortyapi.com/api/character?name=frankenstein")
+        //fetch("https://rickandmortyapi.com/api/character?gender=unknown&status=Alive")
+        //fetch("https://rickandmortyapi.com/api/character")
+        //fetch("https://rickandmortyapi.com/api/character?gender=Female")
+
+        if(direccion.includes("1,2,3,4,5")){
+             //La primera vez rellenamos la página con los primeros 5 personajes
+            fetch(direccion)
+            .then(response=>response.json())/*Obtenemos la respuesta en formato json*/
+            .then(data=>{
+                data.forEach(personaje=>{
+                    let especie="";
+                    let estado="";  
+                    let genero="";
+                    especie=retornarEspecie(personaje.species);
+                    console.log("Especie",especie);
+                    estado=retornarEstado(personaje.status,personaje.gender);
+                    genero=retornarGenero(personaje.gender);                    
+
+                    const article=document.createRange().createContextualFragment(/*html*/
+                        `<article class="personaje" id="${personaje.id}">
+                        <div class="contenedor-imagen">
+                            <img src="${personaje.image}" alt="Personaje">
+                        </div>
+                        <h2>${personaje.name}</h2>
+                        <span>Estado: ${estado}</span>
+                        <br/>
+                        <span>Especie: ${especie}</span>
+                        <br/>
+                        <span>Localización: ${personaje.location.name}</span>
+                        <br/>
+                        <span>Genero: ${genero}</span>
+                        </article>`
+                    );
+                    const main=document.querySelector("main");
+                    main.append(article);
+                }
+
+                );
+            })
+        }else{
+
+            let arrayPersonajes=document.getElementsByClassName("personaje");
+            console.log("arrayPersonajes",arrayPersonajes);
+
+            fetch(direccion)
+            .then(response=>response.json())/*Obtenemos la respuesta en formato json*/
+            .then(data=>{
+                console.log("data",data);
+                const personajes=data.results;
+                let especie="";
+                let estado="";
+                let genero="";
+
+                personajes.forEach(personaje => {
+                    //Creamos un article por cada personaje
+                    especie=retornarEspecie(personaje.species);
+                    console.log("Especie",especie);
+                    estado=retornarEstado(personaje.status,personaje.gender);
+                    genero=retornarGenero(personaje.gender);
+                    
+                    console.log("Buscando:", "principio"+personaje.id+"fin", personaje.name);
+
+                    Array.from(arrayPersonajes).forEach(e => {
+                        console.log("ID DOM:", "principio"+e.id+"fin");
+                    });
+                    //Comprobamos si ya existe el personaje para no añadirlo otra vez pasamos elemento.id a Number
+                    const existe = document.getElementById(String(personaje.id)) !== null;
+                    /*const existe = Array.from(arrayPersonajes)
+                          .some(elemento => Number(elemento.id) === personaje.id);*/                    
+
+                    if(!existe){
+                        const article=document.createRange().createContextualFragment(/*html*/
+                            `<article class="personaje" id="${personaje.id}">
+                            <div class="contenedor-imagen">
+                                <img src="${personaje.image}" alt="Personaje">
+                            </div>
+                            <h2>${personaje.name}</h2>
+                            <span>Estado: ${estado}</span>
+                            <br/>
+                            <span>Especie: ${especie}</span>
+                            <br/>
+                            <span>Localización: ${personaje.location.name}</span>
+                            <br/>
+                            <span>Genero: ${genero}</span>
+                            </article>`
+                        );
+                        const main=document.querySelector("main");
+                        main.append(article);
+                    }
+                    
+                });
+            });
+        }
+        
+    }
+
+    function rellenarSelctEpisodios(){
+      
+        const nombresEpisodios=["",
+        /*Temporada 1*/"Episodio Piloto","Perro cortacésped","Parque de Anatomía","M. Night Shaym-Aliens!",
+        "Meeseeks and Destroy","Rick Potion #9","Raising Gazorpazorp","Rixty Minutes","Something Ricked This Way Comes",
+        "lose Rick-counters of the Rick Kind","Ricksy Business",
+        /*Temporada 2*/"A Rickle in Time","Mortynight Run","Auto Erotic Assimilation","Total Rickall","Get Schwifty",
+        "The Ricks Must Be Crazy","Big Trouble in Little Sanchez","Interdimensional Cable 2: Tempting Fate","Look Who's Purging Now",
+        "The Wedding Squanchers",
+        /*Temporada 3*/"The Rickshank Rickdemption","Rickmancing the Stone","Pickle Rick","Vindicators 3: The Return of Worldender",
+        "The Whirly Dirly Conspiracy","Rest and Ricklaxation","The Ricklantis Mixup","Morty's Mind Blowers","The ABC's of Beth",
+        "The Rickchurian Mortydate",
+        /*Temporada 4*/"Edge of Tomorty: Rick Die Rickpeat","The Old Man and the Seat","One Crew over the Crewcoo's Morty",
+        "Claw and Hoarder: Special Ricktim's Morty","Rattlestar Ricklactica","Never Ricking Morty","Promortyus","The Vat of Acid Episode",
+        "Childrick of Mort","Star Mort Rickturn of the Jerri",
+        /*Temporada 5*/"Mort Dinner Rick Andre","Mortyplicity","A Rickconvenient Mort","Rickdependence Spray","Amortycan Grickfitti",
+        "Rick and Morty’s Thanksploitation Spectacular","Gotron Jerrysis Rickvangelion","Rickternal Friendshine of the Spotless Mort",
+        "Forgetting Sarick Mortshall","Rickmurai Jack",
+        /*Temporada 6*/"Solaricks","Rick: A Mort Well Lived","Bethic Twinstic","Night Family","Final DeSmithation","Jurisick Mort",
+        "Full Meta Jackrick","Analyze Piss","A Rick in King Mortur's Mort","Ricktional Mortpoon's Rickmas Mortcation",
+        /*Temporada 7*/"How Poopy Got His Poop Back","The Jerrick Trap","Air Force Wong","That's Amorte","Unmortricken",
+        "Rickfending Your Mort","Wet Kuat Amortican Summer","Rise of the Numbericons: The Movie","Mort: Ragnarick","Fear No Mort",
+        /*Temporada 8*/"Summer of All Fears","Valkyrick","The Rick, The Mort & The Ugly","The Last Temptation of Jerry",
+        "Cryo Mort a Rickver","The Curicksous Case of Bethjamin Button","Ricker than Fiction","Nomortland","Morty Daddy","Hot Rick"];
+
+        const episodio=document.getElementById("episodio");
+    
+        nombresEpisodios.forEach((nombreEpisodio,indice)=>{
+            const optionEpi=document.createElement("option");
+            optionEpi.value=indice;
+            optionEpi.textContent=nombreEpisodio;
+            episodio.appendChild(optionEpi);
+        });
+    }
+
+    function cargarGenero(){
+        let gender=document.querySelector('input[name="genero"]:checked').id;
+        console.log("valor genero=",gender);
+        obtenerPersonajes(gender,null);
+    }
+
+    function retornarEspecie(especie){
+        switch(especie){
+            case "Human":
+                return "Humana";
+            case "Humanoid":
+                return "Humanoide";
+            case "Mythological Creature":
+                return "Criatura Mitologica";
+            case "unknown":
+                return "Desconocido/a";
+            default:
+                return especie;
+        }
+    }
+
+    function retornarEstado(estado,genero){
+        switch(estado){
+            case "Alive":
+                switch(genero){
+                    case 'Male':
+                        return "Vivo";
+                    case 'Female':
+                        return "Viva";
+                    default:
+                        return "Vivo";
+                };
+            case "Dead":
+                switch(genero){
+                    case 'Male':
+                        return "Muerto";
+                    case 'Female':
+                        return "Muerta";
+                    default:
+                        return "Muerto";
+                };
+            case "unknown":
+                return "Desconocido";
+        }
+    }
+
+    function retornarGenero(genero){
+        switch(genero){
+           case 'Male':
+                 return "Masculino";
+           case 'Female':
+                 return "Femenino";
+           case "unknown":
+                return "Desconocido";
+           default:
+                 return genero;
+        }
+    }
+
+    //TODO parece que hay 81 episodios
+    
+</script>
+         
+</html>
