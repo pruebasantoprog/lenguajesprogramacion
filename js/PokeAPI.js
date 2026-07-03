@@ -25,6 +25,15 @@ window.addEventListener("load",cargarPikachu(),false);
 
                 const response=await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
                 if(!response.ok){
+                    if (response.status === 404) {
+                        console.log("Pokémon no encontrado");
+                        const panelError=document.getElementById("panelError");
+                        panelError.style.display="flex";
+                        panelError.style.flexDirection="column";
+                        panelError.innerHTML=`<p>No se ha encontrado el Pokemon con nombre: <strong>${nombrePokemon}</strong></p>
+                        <p>Ejemplos de nombres de pokemon conocidos: Pikachu, Charizard, Mewtwo, Eevee, Gengar, Mew, Snorlax, 
+                        Bulbasaur, etc.</p>`;
+                     }
                     throw new Error("No se encuentra el recurso")
                 }
 
