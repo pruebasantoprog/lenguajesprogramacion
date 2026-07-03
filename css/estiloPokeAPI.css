@@ -79,7 +79,7 @@ h1{
     float: left;            
 }
 
-#caracteristicas{
+#caracteristicas, #panelError{
     /*Al principio no se muestra caracteristicas del pokemon*/
     display: none;
 }

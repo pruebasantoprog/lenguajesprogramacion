@@ -22,7 +22,7 @@
                     <p>Para obtener la imagen de Pikachu en movimiento se usa un fetch para obtener la imagen del archivo JSON que proporciona la API.
                     Cuando buscamos un Pokemon se llama a una función usando Async/await que obtiene la imagen y las caracteristicas del archivo JSON y 
                     se los pasa a otra función que crea el efecto de barra de progreso. <strong>Nombres de pokemon conocidos:</strong> Pikachu, Charizard, Mewtwo, Eevee,
-                    Gengar, Mew, Snorlax, Bulbasaur, etc.</p>
+                    Gengar, Mew, Snorlax, Bulbasaur, Cetoddle, Drampa, etc.</p>
                 </div>
                 <div class="buscador">
                     <img src="" alt="Pikachu" id="pika" style="display:none;">
@@ -30,6 +30,7 @@
                     &nbsp;<button onclick="fetchData()"><span>Buscar Pokemon</span></button> 
                 </div>
                 <br/>
+                 <div id="panelError"></div>
                 <div class="tarjeta" id="caracteristicas">
                     <!--<img src="" alt="Pokemon Sprite(imagen 2D)" id="pokemonSprite" style="display:none">-->
                     <img src="" alt="Pokemon Sprite(imagen dream_world)" id="pokemondream_world" style="display:none">
