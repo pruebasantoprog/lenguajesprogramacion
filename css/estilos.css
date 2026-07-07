@@ -1,7 +1,8 @@
 :root{
     --white-text:#fff;
     --background: #c8e8f1;
-    --black-text: rgb(68,68,59);    
+    --black-text: rgb(68,68,59);
+    --azul-marino: #1F3A5F;    
 }
 
 .background-javascript{
@@ -21,7 +22,8 @@
 *{
     padding: 0;
     margin: 0;
-    text-decoration: none;
+    text-decoration: none;    
+    list-style: none;
     /*Con border-box todos los componentes van a tener un contenido de por ejemplo 300px-el padding menos el borde*/ 
     box-sizing: border-box;
     border: none;
@@ -44,6 +46,36 @@ body{
      1px  1px 0 #000;
     /*text-shadow: .5rem .5rem #558abb;*/
 }
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    min-height: 4rem;
+}
+nav h2{
+    color: white;
+    padding-left: 1rem;
+}
+nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+nav a:hover {
+    color: #c8e8f1;
+    color: #558abb;
+}
+nav ul{
+    display: flex;
+}
+.icon{
+    /*Desaparece en resoluciones grandes*/
+    display: none;
+    font-size: 2rem;
+}
+
 
 .container{
     display: flex;
@@ -131,6 +163,46 @@ body{
 
 /*media query*/
 @media(max-width: 768px){
+    .navi-ul{
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: left;
+        transition: 0.5s;
+    }
+
+    .navi-ul.active{
+        left: 0;
+        top: 4rem;
+    }
+    .icon{
+        display: block;
+        cursor: pointer;
+        padding: .2rem;
+        margin-right: 1rem;
+        color: var(--white-text);
+    }
+    nav ul{
+        flex-direction: column;
+        background-color: #568eec;
+    }
+    nav ul a {
+        color: var(--azul-marino);
+        font-size: 1.5rem;
+        padding: 1rem;
+        transition: .3s;
+    }
+    nav a:hover{
+        background-color: var(--azul-marino);
+        color: var(--white-text);
+    }
+    .tarjeta h6{
+        opacity: 1;
+    }
+
     .titulo h1{
         font-size: 2rem;
     }
