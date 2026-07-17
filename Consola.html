@@ -29,6 +29,7 @@
         <i class="bi bi-filetype-java"></i>
         <div class="badges-contenedor">
         <a href="#ejemlambda"><span class="badge text-bg-primary">Lambda</span></a>
+        <a href="#optional"><span class="badge text-bg-primary">Optional</span></a>
         <a href="#funcdefault"><span class="badge text-bg-primary">Interfaz funcional/default</span></a>
         <a href="#metref"><span class="badge text-bg-primary">Method References</span></a>
         <a href="#foreachRemoveIfSort"><span class="badge text-bg-primary">ForEach/RemoveIf/Sort</span></a>
@@ -44,7 +45,7 @@
      </div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
-            Aspecto IDE
+            Aspecto IDE Eclipse
         </div>
         <div class="card-body console-window">
             <pre class="m-0">
@@ -65,13 +66,87 @@
             </pre>
         </div>
     </div>
+    <div class="codigo" id="optional"><span class="tituloCod">Optional:</span> Optional es una clase que viene en el JDK 1.8 que nos 
+        permite gestionar los errores NullPointerException para reducirlos. Esta clase debe ser usada con cuidado en aplicaciones críticas 
+        por rendimiento ya que consume recursos. Optional puede contener un valor nulo, podemos saber si el objeto de la clase tiene valor
+        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:
+        <ul>
+            <li><span>isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
+            <li><span>orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
+                siempre y solo establece el valor si recibe un nulo</li>
+            <li><span>orElseGet():</span>Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
+            <li><span>orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
+            NumberFormatException si el valor que debe tener es numérico.</li>           
+        </ul>       
+    </div>
+    <div class="codigo" id="optional"><span class="tituloCod">Ejemplo orElseGet:</span>
+        <p>Supongamos que queremos obtener los elementos de cada categoría con una aplicación llamando a un API Rest de Spring Boot.</p>
+        <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la aplicación deje de 
+            funcionar.</p>
+            
+            <div class="contendorElementos">
+                <div class="elemento" id="H">H</div><div class="elemento" id="Li">Li</div><div class="elemento" id="Na">Na</div><div class="elemento" id="K">K</div><div class="elemento" id="Rb">Rb</div><div class="elemento" id="Cs">Cs</div><div class="elemento" id="Fr">Fr</div>
+                <div class="elemento" id="Be">Be</div><div class="elemento" id="Mg">Mg</div><div class="elemento" id="Ca">Ca</div><div class="elemento" id="Sr">Sr</div><div class="elemento" id="Ba">Ba</div><div class="elemento" id="Ra">Ra</div>
+                <div class="elemento" id="Sc">Sc</div><div class="elemento" id="Y">Y</div><div class="elemento" id="La">La</div><div class="elemento" id="Ac">Ac</div>
+                <div class="elemento" id="Ti">Ti</div><div class="elemento" id="Zr">Zr</div><div class="elemento" id="Hf">Hf</div><div class="elemento" id="Rf">Rf</div><div class="elemento" id="Ce">Ce</div><div class="elemento" id="Th">Th</div>
+                <div class="elemento" id="V">V</div><div class="elemento" id="Nb">Nb</div><div class="elemento" id="Ta">Ta</div><div class="elemento" id="Db">Db</div><div class="elemento" id="Pr">Pr</div><div class="elemento" id="Pa">Pa</div>
+                <div class="elemento" id="Cr">Cr</div><div class="elemento" id="Mo">Mo</div><div class="elemento" id="W">W</div><div class="elemento" id="Sg">Sg</div><div class="elemento" id="Nd">Nd</div><div class="elemento" id="U">U</div>
+                <div class="elemento" id="Mn">Mn</div><div class="elemento" id="Tc">Tc</div><div class="elemento" id="Re">Re</div><div class="elemento" id="Bh">Bh</div><div class="elemento" id="Pm">Pm</div><div class="elemento" id="Np">Np</div>
+                <div class="elemento" id="Fe">Fe</div><div class="elemento" id="Ru">Ru</div><div class="elemento" id="Os">Os</div><div class="elemento" id="Hs">Hs</div><div class="elemento" id="Sm">Sm</div><div class="elemento" id="Pu">Pu</div>
+                <div class="elemento" id="Co">Co</div><div class="elemento" id="Rh">Rh</div><div class="elemento" id="Ir">Ir</div><div class="elemento" id="Mt">Mt</div><div class="elemento" id="Eu">Eu</div><div class="elemento" id="Am">Am</div>
+                <div class="elemento" id="Ni">Ni</div><div class="elemento" id="Pd">Pd</div><div class="elemento" id="Pt">Pt</div><div class="elemento" id="Ds">Ds</div><div class="elemento" id="Gd">Gd</div><div class="elemento" id="Cm">Cm</div>
+                <div class="elemento" id="Cu">Cu</div><div class="elemento" id="Ag">Ag</div><div class="elemento" id="Au">Au</div><div class="elemento" id="Rg">Rg</div><div class="elemento" id="Tb">Tb</div><div class="elemento" id="Bk">Bk</div>
+                <div class="elemento" id="Zn">Zn</div><div class="elemento" id="Cd">Cd</div><div class="elemento" id="Hg">Hg</div><div class="elemento" id="Cn">Cn</div><div class="elemento" id="Dy">Dy</div><div class="elemento" id="Cf">Cf</div>
+                <div class="elemento" id="B">B</div><div class="elemento" id="Al">Al</div><div class="elemento" id="Ga">Ga</div><div class="elemento" id="In">In</div><div class="elemento" id="Tl">Tl</div><div class="elemento" id="Nh">Nh</div><div class="elemento" id="Ho">Ho</div><div class="elemento" id="Es">Es</div>
+                <div class="elemento" id="C">C</div><div class="elemento" id="Si">Si</div><div class="elemento" id="Ge">Ge</div><div class="elemento" id="Sn">Sn</div><div class="elemento" id="Pb">Pb</div><div class="elemento" id="Fl">Fl</div><div class="elemento" id="Er">Er</div><div class="elemento" id="Fm">Fm</div>
+                <div class="elemento" id="N">N</div><div class="elemento" id="P">P</div><div class="elemento" id="As">As</div><div class="elemento" id="Sb">Sb</div><div class="elemento" id="Bi">Bi</div><div class="elemento" id="Mc">Mc</div><div class="elemento" id="Tm">Tm</div><div class="elemento" id="Md">Md</div>
+                <div class="elemento" id="O">O</div><div class="elemento" id="S">S</div><div class="elemento" id="Se">Se</div><div class="elemento" id="Te">Te</div><div class="elemento" id="Po">Po</div><div class="elemento" id="Lv">Lv</div><div class="elemento" id="Yb">Yb</div><div class="elemento" id="No">No</div>
+                <div class="elemento" id="F">F</div><div class="elemento" id="Cl">Cl</div><div class="elemento" id="Br">Br</div><div class="elemento" id="I">I</div><div class="elemento" id="At">At</div><div class="elemento" id="Ts">Ts</div><div class="elemento" id="Lu">Lu</div><div class="elemento" id="Lr">Lr</div>
+                <div class="elemento" id="He">He</div><div class="elemento" id="Ne">Ne</div><div class="elemento" id="Ar">Ar</div><div class="elemento" id="Kr">Kr</div><div class="elemento" id="Xe">Xe</div><div class="elemento" id="Rn">Rn</div><div class="elemento" id="Og">Og</div>
+            </div>
+            <fieldset>
+                <legend>Seleccione una categoría:</legend>                
+                <label for="alcalinos" class="sombraAlcalina"><input type="radio" id="alcalinos" name="categorias" value="alcalinos" checked /> Metales alcalinos</label>
+                <label for="alcalinoterreos" class="sombraAlcalinoterreos"><input type="radio" id="alcalinoterreos" name="categorias" value="alcalinoterreos"/> Metales alcalinoterreos</label>
+                <label for="transicionales" class="sombraTransicionales"><input type="radio" id="transicionales" name="categorias" value="transicionales"/> Metales transicionales</label>
+                <label for="metaloides" class="sombraMetaloides"><input type="radio" id="metaloides" name="categorias" value="metaloides"/> Metaloides</label>
+                <label for="nometal" class="sombraNoMetales"><input type="radio" id="nometal" name="categorias" value="nometal"/> No metales reactivos</label>
+                <label for="gasnoble" class="sombraGasesNobles"><input type="radio" id="gasnoble" name="categorias" value="gasnoble"/> Gases nobles</label>
+                <label for="lantanidos" class="sombraLantanidos"><input type="radio" id="lantanidos" name="categorias" value="lantanidos"/> Lantánidos</label>
+                <label for="actinoides" class="sombraActinoides"><input type="radio" id="actinoides" name="categorias" value="actinoides"/> Actinoides</label>
+                <label for="desconocidas" class="sombraDesconocidos"><input type="radio" id="desconocidas" name="categorias" value="desconocidas"/> Propiedades desconocidas</label>
+                <label for="postransicionales" class="sombraPostransicionales"><input type="radio" id="postransicionales" name="categorias" value="postransicionales"/> Metales postransicionales</label>
+                <label for="inexistentes" class="sombraInexistente"><input type="radio" id="inexistentes" name="categorias" value="inexistentes"/> Elementos Inexistentes</label>
+                <button id="cargarDatos">Cargar Categoría</button>
+                <div id="panelError"></div>
+                
+            </fieldset>
+            <div class="card bg-dark text-light mt-1">
+            <div class="card-header bg-secondary text-white">
+                JSON generado por Spring Boot
+                </div>
+                <div class="card-body console-window">            
+                    <pre class="m-0" id="preCategoria">
 
+                    </pre>
+                </div>
+            </div>
+            <div class="imagenesCodigo">
+                <span id="esplicacionControlador"> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
+                (Ejemplo: http://localhost:8080/api/elementos/4) entra en el Controlador, el cual llama al Servicio que le devuelve un objeto 
+                de la clase Optional. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
+                base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
+                un error conocido 404 HttpStatus.NOT_FOUND </span>
+                <p><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
+                <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
+            </div>
+    </div>
     <div class="codigo" id="funcdefault"><span class="tituloCod">Ejemplo interfal funcional y metodo default:</span> Una interfaz funcional es aquella interfaz que 
     solamente puede tener un método abstracto y que permite usar expresiones lambda para invocar a dicho método. También permite definir 
     otros métodos "default" y estáticos, que pueden ser llamados y no tiene porque ser sobrescritos en las clases que implemente el interfaz.</div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
-            Aspecto IDE
+            Aspecto IDE Eclipse
         </div>
         <div class="card-body console-window">
             <pre class="m-0">
@@ -96,7 +171,7 @@
         como si fueran expresiones lambda pero sin expresar todo el camino</div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
-            Aspecto IDE
+            Aspecto IDE Eclipse
         </div>
         <div class="card-body console-window">
             <pre class="m-0">
@@ -133,7 +208,7 @@
     </div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
-            Aspecto IDE
+            Aspecto IDE Eclipse
         </div>
         <div class="card-body console-window">
             <pre class="m-0">
