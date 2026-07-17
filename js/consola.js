@@ -206,7 +206,9 @@ window.addEventListener("load",empezar,false);
                             //Obtenemos el elemento
                             //const elemento=document.querySelector(`#${element.simbolo}`);
                             const elemento = document.getElementById(element.simbolo);
-                            //elemento.classList.add("alcalinos");//Clase familia
+                            if ( ! elemento.innerHTML.includes("<span")) {
+                                elemento.innerHTML+=`<span style="font-size:.7rem">${element.nombre}</span>`;
+                            }                            
                             elemento.classList.add(determinarClase(familiaEntero));//Clase familia
                         });
                     }

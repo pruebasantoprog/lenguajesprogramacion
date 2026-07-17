@@ -1,3 +1,18 @@
+:root{
+    --alcalinos: crimson;
+    --alcalinoterreos: darkorange;
+    --transicionales: gold;
+    --postransicionales: steelblue;
+    --metaloides: mediumseagreen;
+    --noMetales: limegreen;
+    --gasesNobles: deepskyblue;
+    --lantanidos: mediumorchid;
+    --actinoides: hotpink;
+    --desconocidos: dimgray;
+    --azul-marino: #1F3A5F;
+    --white-text:#fff;
+}
+
 body{
     background-color: bisque;
     font-family: Arial, Helvetica, sans-serif;
@@ -13,6 +28,36 @@ h1 {
     text-shadow: .2rem .2rem .2rem #0d0d0e;
     text-shadow: .2rem .2rem .2rem #02023f;
     padding: 10px 0;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    min-height: 4rem;
+}
+nav h2{
+    color: white;
+    padding-left: 1rem;
+}
+nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+nav a:hover {
+    color: #c8e8f1;
+    color: #558abb;
+}
+nav ul{
+    display: flex;
+}
+.icon{
+    /*Desaparece en resoluciones grandes*/
+    display: none;
+    font-size: 2rem;
 }
 
 .console-window {
@@ -59,6 +104,7 @@ h1 {
     padding: 8px 14px;
     border-radius: 50%;
     border: 3px solid black;
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.5));
 }
 .contendorElementos{
     display: grid;
@@ -231,18 +277,7 @@ h1 {
     background-color: #667;
     border: medium solid #222;
 }
-:root{
-    --alcalinos: crimson;
-    --alcalinoterreos: darkorange;
-    --transicionales: gold;
-    --postransicionales: steelblue;
-    --metaloides: mediumseagreen;
-    --noMetales: limegreen;
-    --gasesNobles: deepskyblue;
-    --lantanidos: mediumorchid;
-    --actinoides: hotpink;
-    --desconocidos: dimgray;
-}
+
 .alcalinos {
     background-color: var(--alcalinos);
     color: white;
@@ -349,4 +384,50 @@ legend{
     display: none;
     margin: 10px auto;
     margin-bottom: 1px;
+}
+
+/*media queries*/
+@media(max-width: 768px){
+    .navi-ul{
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: left;
+        transition: 0.5s;
+    }
+
+    .navi-ul.active{
+        left: 0;
+        top: 4rem;
+    }
+    .icon{
+        display: block;
+        cursor: pointer;
+        padding: .2rem;
+        margin-right: 1rem;
+        color: var(--white-text);
+    }
+    nav ul{
+        flex-direction: column;
+        background-color: #568eec;
+    }
+    nav ul a {
+        color: var(--azul-marino);
+        font-size: 1.5rem;
+        padding: 1rem;
+        transition: .3s;
+    }
+    nav a:hover{
+        background-color: var(--azul-marino);
+        color: var(--white-text);
+    }
+    .tarjeta h6{
+        opacity: 1;
+    }
+    .temas i{
+        opacity: .5;
+    }
 }
