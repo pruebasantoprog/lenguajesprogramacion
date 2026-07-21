@@ -1,5 +1,6 @@
 :root{
     --white-text:#fff; 
+    --azul-marino: #1F3A5F;
 }
 
 .background-top-row{
@@ -24,6 +25,36 @@
     /*text-shadow: 3rem 40rem 40rem rgba(0,0,0,0.2), 3rem 40rem 40rem #ff2044b5;*/
     text-shadow: 5px 5px #558abb;
     /*text-shadow: .5rem .5rem #558abb;*/
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    min-height: 4rem;
+}
+nav h2{
+    color: white;
+    padding-left: 1rem;
+}
+nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+}
+
+nav a:hover {
+    color: #c8e8f1;
+    color: #558abb;
+}
+nav ul{
+    display: flex;
+}
+.icon{
+    /*Desaparece en resoluciones grandes*/
+    display: none;
+    font-size: 2rem;
 }
 
 body{
@@ -106,6 +137,48 @@ button:hover{
 }
 
 /*media queries*/
+@media(max-width: 768px){
+    .navi-ul{
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: left;
+        transition: 0.5s;
+    }
+
+    .navi-ul.active{
+        left: 0;
+        top: 4rem;
+    }
+    .icon{
+        display: block;
+        cursor: pointer;
+        padding: .2rem;
+        margin-right: 1rem;
+        color: var(--white-text);
+    }
+    nav ul{
+        flex-direction: column;
+        background-color: #568eec;
+    }
+    nav ul a {
+        color: var(--azul-marino);
+        font-size: 1.5rem;
+        padding: 1rem;
+        transition: .3s;
+    }
+    nav a:hover{
+        background-color: var(--azul-marino);
+        color: var(--white-text);
+    }
+    .tarjeta h6{
+        opacity: 1;
+    }
+}
+
 @media (max-width:1030px){
     .container{
         flex-direction: column;

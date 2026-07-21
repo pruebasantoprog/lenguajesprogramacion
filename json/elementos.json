@@ -1,0 +1,770 @@
+[
+   {
+    "id_familia": 1,
+    "descripcion": "Metales alcalinos",
+    "elementos": [
+      {
+        "id_elemento": 2,
+        "nombre": "Litio",
+        "simbolo": "Li",
+        "id_tabla_periodica": 3
+      },
+      {
+        "id_elemento": 3,
+        "nombre": "Sodio",
+        "simbolo": "Na",
+        "id_tabla_periodica": 11
+      },
+      {
+        "id_elemento": 4,
+        "nombre": "Potasio",
+        "simbolo": "K",
+        "id_tabla_periodica": 19
+      },
+      {
+        "id_elemento": 5,
+        "nombre": "Rubidio",
+        "simbolo": "Rb",
+        "id_tabla_periodica": 37
+      },
+      {
+        "id_elemento": 6,
+        "nombre": "Cesio",
+        "simbolo": "Cs",
+        "id_tabla_periodica": 55
+      },
+      {
+        "id_elemento": 7,
+        "nombre": "Francio",
+        "simbolo": "Fr",
+        "id_tabla_periodica": 87
+      }
+    ]
+  },
+  {
+    "id_familia": 2,
+    "descripcion": "Metales alcalinotérreos",
+    "elementos": [
+      {
+        "id_elemento": 8,
+        "nombre": "Berilio",
+        "simbolo": "Be",
+        "id_tabla_periodica": 4
+      },
+      {
+        "id_elemento": 9,
+        "nombre": "Magnesio",
+        "simbolo": "Mg",
+        "id_tabla_periodica": 12
+      },
+      {
+        "id_elemento": 10,
+        "nombre": "Calcio",
+        "simbolo": "Ca",
+        "id_tabla_periodica": 20
+      },
+      {
+        "id_elemento": 11,
+        "nombre": "Estroncio",
+        "simbolo": "Sr",
+        "id_tabla_periodica": 38
+      },
+      {
+        "id_elemento": 12,
+        "nombre": "Bario",
+        "simbolo": "Ba",
+        "id_tabla_periodica": 56
+      },
+      {
+        "id_elemento": 13,
+        "nombre": "Radio",
+        "simbolo": "Ra",
+        "id_tabla_periodica": 88
+      }
+    ]
+  },
+  {
+    "id_familia": 3,
+    "descripcion": "Metales transicionales",
+    "elementos": [
+      {
+        "id_elemento": 14,
+        "nombre": "Escandio",
+        "simbolo": "Sc",
+        "id_tabla_periodica": 21
+      },
+      {
+        "id_elemento": 15,
+        "nombre": "Itrio",
+        "simbolo": "Y",
+        "id_tabla_periodica": 39
+      },
+      {
+        "id_elemento": 18,
+        "nombre": "Titanio",
+        "simbolo": "Ti",
+        "id_tabla_periodica": 22
+      },
+      {
+        "id_elemento": 19,
+        "nombre": "Circonio",
+        "simbolo": "Zr",
+        "id_tabla_periodica": 40
+      },
+      {
+        "id_elemento": 20,
+        "nombre": "Hafnio",
+        "simbolo": "Hf",
+        "id_tabla_periodica": 72
+      },
+      {
+        "id_elemento": 21,
+        "nombre": "Rutherfordio",
+        "simbolo": "Rf",
+        "id_tabla_periodica": 104
+      },
+      {
+        "id_elemento": 24,
+        "nombre": "Vanadio",
+        "simbolo": "V",
+        "id_tabla_periodica": 23
+      },
+      {
+        "id_elemento": 25,
+        "nombre": "Niobio",
+        "simbolo": "Nb",
+        "id_tabla_periodica": 41
+      },
+      {
+        "id_elemento": 26,
+        "nombre": "Tántalo",
+        "simbolo": "Ta",
+        "id_tabla_periodica": 73
+      },
+      {
+        "id_elemento": 27,
+        "nombre": "Dubnio",
+        "simbolo": "Db",
+        "id_tabla_periodica": 105
+      },
+      {
+        "id_elemento": 30,
+        "nombre": "Cromo",
+        "simbolo": "Cr",
+        "id_tabla_periodica": 24
+      },
+      {
+        "id_elemento": 31,
+        "nombre": "Molibdeno",
+        "simbolo": "Mo",
+        "id_tabla_periodica": 42
+      },
+      {
+        "id_elemento": 32,
+        "nombre": "Wolframio",
+        "simbolo": "W",
+        "id_tabla_periodica": 74
+      },
+      {
+        "id_elemento": 33,
+        "nombre": "Seaborgio",
+        "simbolo": "Sg",
+        "id_tabla_periodica": 106
+      },
+      {
+        "id_elemento": 36,
+        "nombre": "Manganeso",
+        "simbolo": "Mn",
+        "id_tabla_periodica": 25
+      },
+      {
+        "id_elemento": 37,
+        "nombre": "Tecnecio",
+        "simbolo": "Tc",
+        "id_tabla_periodica": 43
+      },
+      {
+        "id_elemento": 38,
+        "nombre": "Renio",
+        "simbolo": "Re",
+        "id_tabla_periodica": 75
+      },
+      {
+        "id_elemento": 39,
+        "nombre": "Bohrio",
+        "simbolo": "Bh",
+        "id_tabla_periodica": 107
+      },
+      {
+        "id_elemento": 42,
+        "nombre": "Hierro",
+        "simbolo": "Fe",
+        "id_tabla_periodica": 26
+      },
+      {
+        "id_elemento": 43,
+        "nombre": "Rutenio",
+        "simbolo": "Ru",
+        "id_tabla_periodica": 44
+      },
+      {
+        "id_elemento": 44,
+        "nombre": "Osmio",
+        "simbolo": "Os",
+        "id_tabla_periodica": 76
+      },
+      {
+        "id_elemento": 45,
+        "nombre": "Hasio",
+        "simbolo": "Hs",
+        "id_tabla_periodica": 108
+      },
+      {
+        "id_elemento": 48,
+        "nombre": "Cobalto",
+        "simbolo": "Co",
+        "id_tabla_periodica": 27
+      },
+      {
+        "id_elemento": 49,
+        "nombre": "Rodio",
+        "simbolo": "Rh",
+        "id_tabla_periodica": 45
+      },
+      {
+        "id_elemento": 50,
+        "nombre": "Iridio",
+        "simbolo": "Ir",
+        "id_tabla_periodica": 77
+      },
+      {
+        "id_elemento": 54,
+        "nombre": "Niquel",
+        "simbolo": "Ni",
+        "id_tabla_periodica": 28
+      },
+      {
+        "id_elemento": 55,
+        "nombre": "Paladio",
+        "simbolo": "Pd",
+        "id_tabla_periodica": 46
+      },
+      {
+        "id_elemento": 56,
+        "nombre": "Platino",
+        "simbolo": "Pt",
+        "id_tabla_periodica": 78
+      },
+      {
+        "id_elemento": 60,
+        "nombre": "Cobre",
+        "simbolo": "Cu",
+        "id_tabla_periodica": 29
+      },
+      {
+        "id_elemento": 61,
+        "nombre": "Plata",
+        "simbolo": "Ag",
+        "id_tabla_periodica": 47
+      },
+      {
+        "id_elemento": 62,
+        "nombre": "Oro",
+        "simbolo": "Au",
+        "id_tabla_periodica": 79
+      },
+      {
+        "id_elemento": 66,
+        "nombre": "Zinc",
+        "simbolo": "Zn",
+        "id_tabla_periodica": 30
+      },
+      {
+        "id_elemento": 67,
+        "nombre": "Cadmio",
+        "simbolo": "Cd",
+        "id_tabla_periodica": 48
+      },
+      {
+        "id_elemento": 68,
+        "nombre": "Mercurio",
+        "simbolo": "Hg",
+        "id_tabla_periodica": 80
+      }
+    ]
+  },
+  {
+    "id_familia": 4,
+    "descripcion": "Metaloides",
+    "elementos": [
+      {
+        "id_elemento": 72,
+        "nombre": "Boro",
+        "simbolo": "B",
+        "id_tabla_periodica": 5
+      },
+      {
+        "id_elemento": 81,
+        "nombre": "Silicio",
+        "simbolo": "Si",
+        "id_tabla_periodica": 14
+      },
+      {
+        "id_elemento": 82,
+        "nombre": "Germanio",
+        "simbolo": "Ge",
+        "id_tabla_periodica": 32
+      },
+      {
+        "id_elemento": 90,
+        "nombre": "Arsénico",
+        "simbolo": "As",
+        "id_tabla_periodica": 33
+      },
+      {
+        "id_elemento": 91,
+        "nombre": "Antimonio",
+        "simbolo": "Sb",
+        "id_tabla_periodica": 51
+      },
+      {
+        "id_elemento": 99,
+        "nombre": "Telurio",
+        "simbolo": "Te",
+        "id_tabla_periodica": 52
+      }
+    ]
+  },
+  {
+    "id_familia": 5,
+    "descripcion": "No metales reactivos",
+    "elementos": [
+      {
+        "id_elemento": 1,
+        "nombre": "Hidrogeno",
+        "simbolo": "H",
+        "id_tabla_periodica": 1
+      },
+      {
+        "id_elemento": 80,
+        "nombre": "Carbono",
+        "simbolo": "C",
+        "id_tabla_periodica": 6
+      },
+      {
+        "id_elemento": 88,
+        "nombre": "Nitrogeno",
+        "simbolo": "N",
+        "id_tabla_periodica": 7
+      },
+      {
+        "id_elemento": 89,
+        "nombre": "Fosforo",
+        "simbolo": "P",
+        "id_tabla_periodica": 15
+      },
+      {
+        "id_elemento": 96,
+        "nombre": "Oxigeno",
+        "simbolo": "O",
+        "id_tabla_periodica": 8
+      },
+      {
+        "id_elemento": 97,
+        "nombre": "Azufre",
+        "simbolo": "S",
+        "id_tabla_periodica": 16
+      },
+      {
+        "id_elemento": 98,
+        "nombre": "Selenio",
+        "simbolo": "Se",
+        "id_tabla_periodica": 34
+      },
+      {
+        "id_elemento": 104,
+        "nombre": "Fluor",
+        "simbolo": "F",
+        "id_tabla_periodica": 9
+      },
+      {
+        "id_elemento": 105,
+        "nombre": "Cloro",
+        "simbolo": "Cl",
+        "id_tabla_periodica": 17
+      },
+      {
+        "id_elemento": 106,
+        "nombre": "Bromo",
+        "simbolo": "Br",
+        "id_tabla_periodica": 35
+      },
+      {
+        "id_elemento": 107,
+        "nombre": "Yodo",
+        "simbolo": "I",
+        "id_tabla_periodica": 53
+      }
+    ]
+  },
+  {
+    "id_familia": 6,
+    "descripcion": "Gases nobles",
+    "elementos": [
+      {
+        "id_elemento": 112,
+        "nombre": "Helio",
+        "simbolo": "He",
+        "id_tabla_periodica": 2
+      },
+      {
+        "id_elemento": 113,
+        "nombre": "Neon",
+        "simbolo": "Ne",
+        "id_tabla_periodica": 10
+      },
+      {
+        "id_elemento": 114,
+        "nombre": "Argon",
+        "simbolo": "Ar",
+        "id_tabla_periodica": 18
+      },
+      {
+        "id_elemento": 115,
+        "nombre": "Kriptón",
+        "simbolo": "Kr",
+        "id_tabla_periodica": 36
+      },
+      {
+        "id_elemento": 116,
+        "nombre": "Xenón",
+        "simbolo": "Xe",
+        "id_tabla_periodica": 54
+      },
+      {
+        "id_elemento": 117,
+        "nombre": "Radón",
+        "simbolo": "Rn",
+        "id_tabla_periodica": 86
+      },
+      {
+        "id_elemento": 118,
+        "nombre": "Oganesón",
+        "simbolo": "Og",
+        "id_tabla_periodica": 118
+      }
+    ]
+  },
+  {
+    "id_familia": 7,
+    "descripcion": "Lantánidos",
+    "elementos": [
+      {
+        "id_elemento": 16,
+        "nombre": "Lantano",
+        "simbolo": "La",
+        "id_tabla_periodica": 57
+      },
+      {
+        "id_elemento": 22,
+        "nombre": "Cerio",
+        "simbolo": "Ce",
+        "id_tabla_periodica": 58
+      },
+      {
+        "id_elemento": 28,
+        "nombre": "Praseodimio",
+        "simbolo": "Pr",
+        "id_tabla_periodica": 59
+      },
+      {
+        "id_elemento": 34,
+        "nombre": "Neodimio",
+        "simbolo": "Nd",
+        "id_tabla_periodica": 60
+      },
+      {
+        "id_elemento": 40,
+        "nombre": "Prometio",
+        "simbolo": "Pm",
+        "id_tabla_periodica": 61
+      },
+      {
+        "id_elemento": 46,
+        "nombre": "Samario",
+        "simbolo": "Sm",
+        "id_tabla_periodica": 62
+      },
+      {
+        "id_elemento": 52,
+        "nombre": "Europio",
+        "simbolo": "Eu",
+        "id_tabla_periodica": 63
+      },
+      {
+        "id_elemento": 58,
+        "nombre": "Gadolinio",
+        "simbolo": "Gd",
+        "id_tabla_periodica": 64
+      },
+      {
+        "id_elemento": 64,
+        "nombre": "Terbio",
+        "simbolo": "Tb",
+        "id_tabla_periodica": 65
+      },
+      {
+        "id_elemento": 70,
+        "nombre": "Disprosio",
+        "simbolo": "Dy",
+        "id_tabla_periodica": 66
+      },
+      {
+        "id_elemento": 78,
+        "nombre": "Holmio",
+        "simbolo": "Ho",
+        "id_tabla_periodica": 67
+      },
+      {
+        "id_elemento": 86,
+        "nombre": "Erbio",
+        "simbolo": "Er",
+        "id_tabla_periodica": 68
+      },
+      {
+        "id_elemento": 94,
+        "nombre": "Tulio",
+        "simbolo": "Tm",
+        "id_tabla_periodica": 69
+      },
+      {
+        "id_elemento": 102,
+        "nombre": "Iterbio",
+        "simbolo": "Yb",
+        "id_tabla_periodica": 70
+      },
+      {
+        "id_elemento": 110,
+        "nombre": "Lutecio",
+        "simbolo": "Lu",
+        "id_tabla_periodica": 71
+      }
+    ]
+  },
+  {
+    "id_familia": 8,
+    "descripcion": "Actinoides",
+    "elementos": [
+      {
+        "id_elemento": 17,
+        "nombre": "Actinio",
+        "simbolo": "Ac",
+        "id_tabla_periodica": 89
+      },
+      {
+        "id_elemento": 23,
+        "nombre": "Torio",
+        "simbolo": "Th",
+        "id_tabla_periodica": 90
+      },
+      {
+        "id_elemento": 29,
+        "nombre": "Protactinio",
+        "simbolo": "Pa",
+        "id_tabla_periodica": 91
+      },
+      {
+        "id_elemento": 35,
+        "nombre": "Uranio",
+        "simbolo": "U",
+        "id_tabla_periodica": 92
+      },
+      {
+        "id_elemento": 41,
+        "nombre": "Neptunio",
+        "simbolo": "Np",
+        "id_tabla_periodica": 93
+      },
+      {
+        "id_elemento": 47,
+        "nombre": "Plutonio",
+        "simbolo": "Pu",
+        "id_tabla_periodica": 94
+      },
+      {
+        "id_elemento": 53,
+        "nombre": "Americio",
+        "simbolo": "Am",
+        "id_tabla_periodica": 95
+      },
+      {
+        "id_elemento": 59,
+        "nombre": "Curio",
+        "simbolo": "Cm",
+        "id_tabla_periodica": 96
+      },
+      {
+        "id_elemento": 65,
+        "nombre": "Berkelio",
+        "simbolo": "Bk",
+        "id_tabla_periodica": 97
+      },
+      {
+        "id_elemento": 71,
+        "nombre": "Californio",
+        "simbolo": "Cf",
+        "id_tabla_periodica": 98
+      },
+      {
+        "id_elemento": 79,
+        "nombre": "Einstenio",
+        "simbolo": "Es",
+        "id_tabla_periodica": 99
+      },
+      {
+        "id_elemento": 87,
+        "nombre": "Fermio",
+        "simbolo": "Fm",
+        "id_tabla_periodica": 100
+      },
+      {
+        "id_elemento": 95,
+        "nombre": "Mendelevio",
+        "simbolo": "Md",
+        "id_tabla_periodica": 101
+      },
+      {
+        "id_elemento": 103,
+        "nombre": "Nobelio",
+        "simbolo": "No",
+        "id_tabla_periodica": 102
+      },
+      {
+        "id_elemento": 111,
+        "nombre": "Lawrencio",
+        "simbolo": "Lr",
+        "id_tabla_periodica": 103
+      }
+    ]
+  },
+  {
+    "id_familia": 9,
+    "descripcion": "Propiedades desconocidas",
+    "elementos": [
+      {
+        "id_elemento": 51,
+        "nombre": "Meitnerio",
+        "simbolo": "Mt",
+        "id_tabla_periodica": 109
+      },
+      {
+        "id_elemento": 57,
+        "nombre": "Darmstatio",
+        "simbolo": "Ds",
+        "id_tabla_periodica": 110
+      },
+      {
+        "id_elemento": 63,
+        "nombre": "Roentgenio",
+        "simbolo": "Rg",
+        "id_tabla_periodica": 111
+      },
+      {
+        "id_elemento": 69,
+        "nombre": "Copernicio",
+        "simbolo": "Cn",
+        "id_tabla_periodica": 112
+      },
+      {
+        "id_elemento": 77,
+        "nombre": "Nihonio",
+        "simbolo": "Nh",
+        "id_tabla_periodica": 113
+      },
+      {
+        "id_elemento": 85,
+        "nombre": "Flerovio",
+        "simbolo": "Fl",
+        "id_tabla_periodica": 114
+      },
+      {
+        "id_elemento": 93,
+        "nombre": "Moscovio",
+        "simbolo": "Mc",
+        "id_tabla_periodica": 115
+      },
+      {
+        "id_elemento": 101,
+        "nombre": "Livermorio",
+        "simbolo": "Lv",
+        "id_tabla_periodica": 116
+      },
+      {
+        "id_elemento": 109,
+        "nombre": "Teneso",
+        "simbolo": "Ts",
+        "id_tabla_periodica": 117
+      }
+    ]
+  },
+  {
+    "id_familia": 10,
+    "descripcion": "Metales postransicionales",
+    "elementos": [
+      {
+        "id_elemento": 73,
+        "nombre": "Aluminio",
+        "simbolo": "Al",
+        "id_tabla_periodica": 13
+      },
+      {
+        "id_elemento": 74,
+        "nombre": "Galio",
+        "simbolo": "Ga",
+        "id_tabla_periodica": 31
+      },
+      {
+        "id_elemento": 75,
+        "nombre": "Indio",
+        "simbolo": "In",
+        "id_tabla_periodica": 49
+      },
+      {
+        "id_elemento": 76,
+        "nombre": "Talio",
+        "simbolo": "Tl",
+        "id_tabla_periodica": 81
+      },
+      {
+        "id_elemento": 83,
+        "nombre": "Estaño",
+        "simbolo": "Sn",
+        "id_tabla_periodica": 50
+      },
+      {
+        "id_elemento": 84,
+        "nombre": "Plomo",
+        "simbolo": "Pb",
+        "id_tabla_periodica": 82
+      },
+      {
+        "id_elemento": 92,
+        "nombre": "Bismuto",
+        "simbolo": "Bi",
+        "id_tabla_periodica": 83
+      },
+      {
+        "id_elemento": 100,
+        "nombre": "Polonio",
+        "simbolo": "Po",
+        "id_tabla_periodica": 84
+      },
+      {
+        "id_elemento": 108,
+        "nombre": "Astato",
+        "simbolo": "At",
+        "id_tabla_periodica": 85
+      }
+    ]
+  }
+]

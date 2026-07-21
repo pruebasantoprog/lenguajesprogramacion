@@ -1,4 +1,4 @@
-window.addEventListener("load",empezar(),false);
+window.addEventListener("load",empezar,false);
 
     function empezar(){
         let pedirDatos=document.getElementById("pruLambda");        
@@ -124,6 +124,153 @@ window.addEventListener("load",empezar(),false);
             "======================================================================================================\n"+
             "Socios activos\nMarcos\nLucia\nDavid\nFelipe\nSergio";
         });    
-                                 
+          
         
+        const cargarCategoria=()=>{
+            let categoria=document.querySelector('input[name="categorias"]:checked').value;
+            console.log("categorias",categoria)
+            let idCategoria=0;
+            switch(categoria){
+                case 'alcalinos':
+                    idCategoria=1;
+                    break;
+                case 'alcalinoterreos':
+                    idCategoria=2;
+                    break;
+                case 'transicionales':
+                    idCategoria=3;
+                    break;
+                case 'metaloides':
+                    idCategoria=4;
+                    break;
+                case 'nometal':
+                    idCategoria=5;
+                    break;
+                case 'gasnoble':
+                    idCategoria=6;
+                    break;
+                case 'lantanidos':
+                    idCategoria=7;
+                    break;
+                case 'actinoides':
+                    idCategoria=8;
+                    break;
+                case 'desconocidas':
+                    idCategoria=9;
+                    break;
+                case 'postransicionales':
+                    idCategoria=10;
+                    break;
+                default:
+                    idCategoria=0;
+            }
+            //Modificamos el color de los elementos
+            obtenerElementosFamilia(idCategoria,categoria)
+        };
+  
+
+        document.getElementById("cargarDatos").addEventListener("click", cargarCategoria);
+
+        async function obtenerElementosFamilia(familia,categoria){
+            const familiaEntero=parseInt(familia);
+            try{
+                const response=await fetch("json/elementos.json");
+                //const response=await fetch(`http://localhost:8080/api/elementos/${familiaEntero}`);
+                if(!response.ok){
+                    if (response.status === 404) {
+                        console.log("Familia de elementos no encontrado");
+                        const panelError=document.getElementById("panelError");
+                        panelError.style.display="flex";
+                        panelError.style.flexDirection="column";
+                        panelError.innerHTML=`<p>No se ha encontrado elementos para la familia: <strong>${familia}</strong></p>`;
+                    }
+                    throw new Error("No se encuentra el recurso");
+                }
+                //Si no se ha producido error
+                const data=await response.json();
+                console.log("data",data);
+                
+                data.forEach(familiaElementos=>{ 
+                    console.log("familiaElementos",familiaElementos);
+                   
+                });
+                let familiaEncontrada=false;
+                data.forEach(familiaElementos=>{                    
+                    if(familiaElementos.id_familia===familiaEntero){
+                        familiaEncontrada=true;
+                        const elementosFamilia=familiaElementos.elementos;
+                        const elementos=document.getElementsByClassName("elemento");
+                        document.getElementById("preCategoria").textContent=JSON.stringify(familiaElementos, null, 2);
+                        elementosFamilia.forEach(element=>{
+                            console.log("element",element," ",element.simbolo);
+                            //Obtenemos el elemento
+                            //const elemento=document.querySelector(`#${element.simbolo}`);
+                            const elemento = document.getElementById(element.simbolo);
+                            if ( ! elemento.innerHTML.includes("<span")) {                                
+                                elemento.innerHTML = `<span class="numeroElemento">${element.id_tabla_periodica}</span>
+                                                      <span class="simbolo">${elemento.innerHTML}</span>
+                                                      <span class="nombreElemento">${element.nombre}</span>
+                                `;
+                            }                            
+                            elemento.classList.add(determinarClase(familiaEntero));//Clase familia
+                        });
+                    }
+                });
+
+               if(!familiaEncontrada){
+                    const panelError=document.getElementById("panelError");
+                    panelError.style.display="flex";
+                    panelError.style.flexDirection="column";
+                    panelError.style.alignItems="center";
+                    panelError.innerHTML=`<p><strong>ATENCIÓN!!</strong> No se han encontrado elementos para la familia <strong>${categoria}</strong></p>`;                    
+                    document.getElementById("preCategoria").textContent="GET http://localhost:8080/api/elementos/11 net::ERR_ABORTED 404 (Not Found)";
+               }
+                
+                
+            }catch(error){
+                console.log("se ha producido un error",error);
+            }
+            
+
+        }
+
+         //Metodo que devuelve la clase de familia
+        const determinarClase=(idFamilia)=>{
+            let clase="";
+            switch(idFamilia){
+                case 1:
+                    clase='alcalinos';
+                    break;
+                case 2:
+                    clase='alcalinoterreos';
+                    break;
+                case 3:
+                    clase='transicionales';
+                    break;
+                case 4:
+                    clase='metaloides';
+                    break;
+                case 5:
+                    clase='noMetales';
+                    break;
+                case 6:
+                    clase='gasesNobles';
+                    break;
+                case 7:
+                    clase='lantanidos';
+                    break;
+                case 8:
+                    clase='actinoides';
+                    break;
+                case 9:
+                    clase='desconocidos';
+                    break;
+                case 10:
+                    clase='postransicionales';
+                    break;                       
+            }
+            console.log("Devuelve clase",clase);
+            return clase;
+        }
+          
     }
