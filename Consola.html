@@ -76,7 +76,7 @@
             Consola
         </div>
         <div class="card-body console-window">
-            <div class="esEditable" id="lambda" contenteditable="true"> Teclee 7 u 8 para versión de Java: </div>
+            <div class="esEditable" id="lambda" contenteditable="true"> Teclee 7 u 8 y pulse ENTER para versión de Java: </div>
             <pre class="m-0" id="preLambda">
 
             </pre>
@@ -150,7 +150,7 @@
             <div class="imagenesCodigo">
                 <span id="esplicacionControlador"> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
                 (Ejemplo: http://localhost:8080/api/elementos/4) entra en el Controlador, el cual llama al Servicio que le devuelve un objeto 
-                de la clase Optional. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
+                de la clase Optional que a su vez se obtiene del repositorio. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
                 base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
                 un error conocido 404 HttpStatus.NOT_FOUND </span>
                 <p><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>

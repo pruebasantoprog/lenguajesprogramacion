@@ -81,6 +81,9 @@ nav ul{
 .codigo{
     font-family: "JetBrains Mono", monospace;
 }
+.imagenesCodigo{
+    margin-top: 5px;
+}
 .imagenesCodigo p{
     text-align: center;
 }
@@ -117,6 +120,14 @@ nav ul{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.numeroElemento{
+    align-self: flex-start;
+    font-size: .7rem;
+}
+
+.nombreElemento{
+    font-size: .7rem;
 }
 
 #H  { grid-column: 1;  grid-row: 1; }

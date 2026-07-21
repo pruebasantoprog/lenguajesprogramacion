@@ -206,8 +206,11 @@ window.addEventListener("load",empezar,false);
                             //Obtenemos el elemento
                             //const elemento=document.querySelector(`#${element.simbolo}`);
                             const elemento = document.getElementById(element.simbolo);
-                            if ( ! elemento.innerHTML.includes("<span")) {
-                                elemento.innerHTML+=`<span style="font-size:.7rem">${element.nombre}</span>`;
+                            if ( ! elemento.innerHTML.includes("<span")) {                                
+                                elemento.innerHTML = `<span class="numeroElemento">${element.id_tabla_periodica}</span>
+                                                      <span class="simbolo">${elemento.innerHTML}</span>
+                                                      <span class="nombreElemento">${element.nombre}</span>
+                                `;
                             }                            
                             elemento.classList.add(determinarClase(familiaEntero));//Clase familia
                         });
