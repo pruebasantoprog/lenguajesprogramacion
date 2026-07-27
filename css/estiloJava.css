@@ -380,13 +380,16 @@ legend{
     font-weight: bold;
     margin-top: 20px;
 }
-#cargarDatos{
-    display: block;
-    margin: 10px auto;
+#cargarDatos,#btnBuscar{
     background-color: #3B82F6;
     color: white;
+    transition: .5s all;
 }
-#cargarDatos:hover {
+#cargarDatos{
+    display: block;
+    margin: 10px auto;            
+}
+#cargarDatos:hover, #btnBuscar:hover {
     background-color: #2563EB;
     cursor: pointer;
     transform: scale(1.1);
@@ -395,6 +398,43 @@ legend{
     display: none;
     margin: 10px auto;
     margin-bottom: 1px;
+}
+.contendorElementosStream{
+    display: flex;         
+    flex-direction: row;   
+    /*text-align: center;*/
+    justify-content: center;      
+    gap: 20px;            
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.contendorElementosStream> *{
+    /*background-color: blue;*/
+    border: medium solid #222;
+    color:white;
+}
+.elementoStream{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    --colorProgress: calc((sibling-index() - 1) / (sibling-count() - 1));
+    background-color: oklch(calc(30% + var(--colorProgress) *30%)
+        0.2
+        250deg);
+}
+.numeroElementoStream{          
+    font-size: .7rem;
+}
+.busqueda{
+    display: flex;         
+    flex-direction: row;           
+    justify-content: center;
+    gap: 10px; 
 }
 
 /*media queries*/
