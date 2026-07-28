@@ -436,6 +436,23 @@ legend{
     justify-content: center;
     gap: 10px; 
 }
+#subir{
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	list-style: none;
+	border: 2px solid black;
+	padding: 5px;
+	background-color: #3B82F6;	
+    transition: .5s all;
+	text-align: center;
+	color: white;
+	font-size: 1.1rem;
+}
+#subir:hover{
+	background-color: #2563EB;
+	transform: scale(0.95);
+}
 
 /*media queries*/
 @media(max-width: 768px){
