@@ -498,4 +498,10 @@ legend{
     .temas i{
         opacity: .5;
     }
+    .tabla-wrapper,.contenedorImagenes{
+        overflow-x:auto;
+    }
+    .contendorElementos{            
+        width:max-content;     
+    }
 }
