@@ -1,9 +1,43 @@
+:root{
+    --white-text:#fff; 
+    --azul-marino: #1F3A5F;
+}
 body{
     background-color: #6aaeb4;
     /*font-family: Arial, Helvetica, sans-serif;*/
     font-family: "Fira Code", monospace,Arial, Helvetica, sans-serif;
     /*font-optical-sizing: auto;*/
     /*background: linear-gradient(180deg,#21c8f6,#637bff)0%;*/
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    min-height: 4rem;
+}
+nav h2{
+    color: white;
+    padding-left: 1rem;
+}
+nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c8e8f1;
+    color: #558abb;
+}
+nav ul{
+    display: flex;
+}
+.icon{
+    /*Desaparece en resoluciones grandes*/
+    display: none;
+    font-size: 2rem;
 }
 h1{
     text-align: center;
@@ -16,7 +50,10 @@ h1{
     /*Rotamos el texto*/
     transform: rotate(-10deg);
 }
-.container{
+.descripcion{
+    width: 70%;
+}
+.container, .pokemonColecion{
     display: flex;
     justify-content: center;
     /*height: 70vh;*/
@@ -36,10 +73,7 @@ h1{
     height: auto;
     width: 50%;
     justify-content: space-evenly;
-    font-family: "Press Start 2P", system-ui;
-    
-    /*width: 30rem;
-    height: 22rem;*/
+    font-family: "Press Start 2P", system-ui; 
 }
 #pokemonName{
     margin: 0.2rem;
@@ -123,7 +157,74 @@ p{
 }
 
 @media(max-width:720px){
+    .navi-ul{
+        position: fixed;
+        left: -120%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: left;
+        transition: 0.5s;
+    }
+
+    .navi-ul.active{
+        left: 0;
+        top: 4rem;
+    }
+    .icon{
+        display: block;
+        cursor: pointer;
+        padding: .2rem;
+        margin-right: 1rem;
+        color: var(--white-text);
+    }
+    nav ul{
+        flex-direction: column;
+        background-color: #568eec;
+    }
+    nav ul a {
+        color: var(--azul-marino);
+        font-size: 1.5rem;
+        padding: 1rem;
+        transition: .3s;       
+    }
+    nav a:hover{
+        background-color: var(--azul-marino);
+        color: var(--white-text);
+    }
     .tarjeta{
         flex-direction: column;
+        width: 90%;
+        align-items: center;
     }
+    h1{
+        font-size: 2.5rem;
+    }
+    .descripcion{
+        width: 90%;
+    }
+    .buscador{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #pika{
+        width: 50%;
+    }
+    .parrafo{
+        font-size: .8rem;
+    }
+    .bar-space{
+        flex-direction: column;
+        justify-content: center;  
+        align-items: baseline;            
+    }
+    .bar{
+       padding: 0;
+       padding-left: 1rem;
+       margin-top: .2rem;
+       margin-bottom: .2rem;
+    }
+
 }

@@ -48,10 +48,22 @@ window.addEventListener("load",cargarPikachu(),false);
                 imgElement.style.display="block";*/
 
                 const caracteristicas=document.getElementById("caracteristicas");
+                const imgElement2=document.getElementById("pokemondream_world");
+
+                if(imgElement2.src && imgElement2.style.display !== "none"){
+                    console.log('No es nulo');
+                    //Añadimos el anterior pokemon a la colección
+                    const pokemonColecion=document.getElementById("pokemonColecion");               
+                    const copia = caracteristicas.cloneNode(true);
+                    copia.removeAttribute("id"); // evita IDs duplicados
+                    pokemonColecion.appendChild(copia);
+                }
+                
+
                 //Motramos la tarjeta de caracteristicas
                 caracteristicas.style="display:flex";
 
-                const imgElement2=document.getElementById("pokemondream_world");
+                
                 //imgElement2.src=data.sprites.other.showdown.front_shiny_female;
                 console.log("data.sprites.other.dream_world.front_default",data.sprites.other.dream_world.front_default);
                 if(data.sprites.other.dream_world.front_default!=null){
