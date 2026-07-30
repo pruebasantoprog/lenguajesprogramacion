@@ -46,8 +46,16 @@ window.addEventListener("load",cargarPikachu(),false);
 
                 imgElement.src=imagenPokemon;
                 imgElement.style.display="block";*/
-
+                
                 const caracteristicas=document.getElementById("caracteristicas");
+                const offset = 80; // altura del header
+
+                const top = caracteristicas.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                window.scrollTo({
+                top,
+                behavior: "smooth"
+                });
                 const imgElement2=document.getElementById("pokemondream_world");
 
                 if(imgElement2.src && imgElement2.style.display !== "none"){
