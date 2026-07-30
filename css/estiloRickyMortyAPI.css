@@ -3,11 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --white-text:#fff; 
+    --azul-marino: #1F3A5F;
+}
 body{
     width: 90%;
     align-items: center;
     margin: 0 auto;
     background-color: bisque;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    min-height: 4rem;
+}
+nav h2{
+    color: white;
+    padding-left: 1rem;
+}
+nav a {
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c8e8f1;
+    color: #558abb;
+}
+nav ul{
+    display: flex;
+}
+.icon{
+    /*Desaparece en resoluciones grandes*/
+    display: none;
+    font-size: 2rem;
 }
 h1{
     text-align: center;
@@ -53,4 +87,42 @@ fieldset{
 
 button{
     margin-top: 15px;
+}
+@media(max-width:786px){
+    .navi-ul{
+        position: fixed;
+        left: -120%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: left;
+        transition: 0.5s;
+    }
+
+    .navi-ul.active{
+        left: 0;
+        top: 4rem;
+    }
+    .icon{
+        display: block;
+        cursor: pointer;
+        padding: .2rem;
+        margin-right: 1rem;
+        color: var(--white-text);
+    }
+    nav ul{
+        flex-direction: column;
+        background-color: #568eec;
+    }
+    nav ul a {
+        color: var(--azul-marino);
+        font-size: 1.5rem;
+        padding: 1rem;
+        transition: .3s;       
+    }
+    nav a:hover{
+        background-color: var(--azul-marino);
+        color: var(--white-text);
+    }
 }
