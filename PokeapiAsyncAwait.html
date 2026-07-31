@@ -9,15 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Press+Start+2P&display=swap" rel="stylesheet">
-
-     <link rel="stylesheet" href="css/estiloPokeAPI.css">    
+    <!-- Usando los iconos de font oson 6-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
+    <!--Icono página-->
+    <link rel="icon" href="images/icono.png">
+    <link rel="stylesheet" href="css/estiloPokeAPI.css">    
 </head>
 <body>
+    <header>
+        <nav>
+            <h2><i class="fab fa-js" aria-hidden="true"></i> JavaScript</h2>
+            <ul class="navi-ul">
+                <a href="EjemplosJavaScript.html"><i class="fa fa-home"></i> Inicio</a>
+                <a href="ColoresXMLAjax.html"><i class="fas fa-code" aria-hidden="true"></i> jQuery</a>
+                <a href="#"><i class="fa fas fa-sync" aria-hidden="true"></i> Async/Await</a>
+                <a href="FetchRickyMortyAPI.html"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Fetch API</a>
+            </ul>
+            <!--Hamburguesa--> 
+            <a href="#" class="icon"><i class="fa fa-bars"></i></a>           
+        </nav>        
+    </header>
     <main>
         <article>
             <div class="container">
                 <h1>POKÉAPI</h1>
-                <div>
+                <div class="descripcion">
                     <p style="text-align: center;"><strong >Esta página web utiliza la API RESTful de Pokémon PokeApi.</strong></p>
                     <p>Para obtener la imagen de Pikachu en movimiento se usa un fetch para obtener la imagen del archivo JSON que proporciona la API.
                     Cuando buscamos un Pokemon se llama a una función usando Async/await que obtiene la imagen y las caracteristicas del archivo JSON y 
@@ -71,10 +87,12 @@
                             
                         </div>
                     </div>
-                </div>
+                </div>                
             </div>
+            <div class="pokemonColecion" id="pokemonColecion"></div>
         </article>
     </main>
     <script src="js/PokeAPI.js"></script>
+    <script src="js/JavaScriptIndex.js"></script>
 </body>
 </html>

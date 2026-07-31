@@ -25,15 +25,16 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav id="inicio">
             <h2><i class="bi bi-filetype-java"></i> Java 8</h2>
             <ul class="navi-ul">
-                <a href="index.html"><i class="bi bi-house"></i></i> Inicio</a>
-                <a href="#ejemlambda"><i class="bi bi-arrow-left-right"></i> Lambda</a>
-                <a href="#optional"><i class="bi bi-shield-check"></i> Optional</a>
-                <a href="#funcdefault"><i class="bi bi-diagram-3"></i> Interfaz funcional</a>
-                <a href="#metref"><i class="bi bi-link-45deg"></i> Method References</a>
-                <a href="#foreachRemoveIfSort"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
+                <a href="index.html" class="text-decoration-none"><i class="bi bi-house"></i></i> Inicio</a>
+                <a href="#ejemlambda" class="text-decoration-none"><i class="bi bi-arrow-left-right"></i> Lambda</a>
+                <a href="#optional" class="text-decoration-none"><i class="bi bi-shield-check"></i> Optional</a>                
+                <a href="#funcdefault" class="text-decoration-none"><i class="bi bi-diagram-3"></i> Interfaz funcional</a>
+                <a href="#stream" class="text-decoration-none"><i class="bi bi-shuffle"></i> Stream</a>
+                <a href="#metref" class="text-decoration-none"><i class="bi bi-link-45deg"></i> Method References</a>
+                <a href="#foreachRemoveIfSort" class="text-decoration-none"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
             </ul>
             <!--Hamburguesa--> 
             <a href="#" class="icon"><i class="bi bi-menu-up"></i></a>           
@@ -47,6 +48,7 @@
         <a href="#ejemlambda"><span class="badge text-bg-primary">Lambda</span></a>
         <a href="#optional"><span class="badge text-bg-primary">Optional</span></a>
         <a href="#funcdefault"><span class="badge text-bg-primary">Interfaz funcional/default</span></a>
+        <a href="#stream"><span class="badge text-bg-primary">Stream</span></a>
         <a href="#metref"><span class="badge text-bg-primary">Method References</span></a>
         <a href="#foreachRemoveIfSort"><span class="badge text-bg-primary">ForEach/RemoveIf/Sort</span></a>
     </div>
@@ -69,9 +71,11 @@
             </pre>
         </div>
     </div>
-    
+    <div>
+	    <a href="#inicio" id="subir"><i class="bi bi-arrow-up-circle-fill"></i>Subir</a>
+	</div>
     <!--margen de 0.25rem con mt-1-->
-    <div class="card bg-dark text-light mt-1">
+    <div class="card bg-dark text-light mt-1 mb-3">
         <div class="card-header bg-secondary text-white">
             Consola
         </div>
@@ -86,12 +90,13 @@
         permite gestionar los errores NullPointerException para reducirlos. Esta clase debe ser usada con cuidado en aplicaciones críticas 
         por rendimiento ya que consume recursos. Optional puede contener un valor nulo, podemos saber si el objeto de la clase tiene valor
         nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:
-        <ul>
-            <li><span>isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
-            <li><span>orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
+        <!--BootStrap-->
+        <ul class="list-group">
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
                 siempre y solo establece el valor si recibe un nulo</li>
-            <li><span>orElseGet():</span>Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
-            <li><span>orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseGet():</span>Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
             NumberFormatException si el valor que debe tener es numérico.</li>           
         </ul>       
     </div>
@@ -100,25 +105,27 @@
         <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la aplicación deje de 
             funcionar.</p>
             
-            <div class="contendorElementos">
-                <div class="elemento" id="H">H</div><div class="elemento" id="Li">Li</div><div class="elemento" id="Na">Na</div><div class="elemento" id="K">K</div><div class="elemento" id="Rb">Rb</div><div class="elemento" id="Cs">Cs</div><div class="elemento" id="Fr">Fr</div>
-                <div class="elemento" id="Be">Be</div><div class="elemento" id="Mg">Mg</div><div class="elemento" id="Ca">Ca</div><div class="elemento" id="Sr">Sr</div><div class="elemento" id="Ba">Ba</div><div class="elemento" id="Ra">Ra</div>
-                <div class="elemento" id="Sc">Sc</div><div class="elemento" id="Y">Y</div><div class="elemento" id="La">La</div><div class="elemento" id="Ac">Ac</div>
-                <div class="elemento" id="Ti">Ti</div><div class="elemento" id="Zr">Zr</div><div class="elemento" id="Hf">Hf</div><div class="elemento" id="Rf">Rf</div><div class="elemento" id="Ce">Ce</div><div class="elemento" id="Th">Th</div>
-                <div class="elemento" id="V">V</div><div class="elemento" id="Nb">Nb</div><div class="elemento" id="Ta">Ta</div><div class="elemento" id="Db">Db</div><div class="elemento" id="Pr">Pr</div><div class="elemento" id="Pa">Pa</div>
-                <div class="elemento" id="Cr">Cr</div><div class="elemento" id="Mo">Mo</div><div class="elemento" id="W">W</div><div class="elemento" id="Sg">Sg</div><div class="elemento" id="Nd">Nd</div><div class="elemento" id="U">U</div>
-                <div class="elemento" id="Mn">Mn</div><div class="elemento" id="Tc">Tc</div><div class="elemento" id="Re">Re</div><div class="elemento" id="Bh">Bh</div><div class="elemento" id="Pm">Pm</div><div class="elemento" id="Np">Np</div>
-                <div class="elemento" id="Fe">Fe</div><div class="elemento" id="Ru">Ru</div><div class="elemento" id="Os">Os</div><div class="elemento" id="Hs">Hs</div><div class="elemento" id="Sm">Sm</div><div class="elemento" id="Pu">Pu</div>
-                <div class="elemento" id="Co">Co</div><div class="elemento" id="Rh">Rh</div><div class="elemento" id="Ir">Ir</div><div class="elemento" id="Mt">Mt</div><div class="elemento" id="Eu">Eu</div><div class="elemento" id="Am">Am</div>
-                <div class="elemento" id="Ni">Ni</div><div class="elemento" id="Pd">Pd</div><div class="elemento" id="Pt">Pt</div><div class="elemento" id="Ds">Ds</div><div class="elemento" id="Gd">Gd</div><div class="elemento" id="Cm">Cm</div>
-                <div class="elemento" id="Cu">Cu</div><div class="elemento" id="Ag">Ag</div><div class="elemento" id="Au">Au</div><div class="elemento" id="Rg">Rg</div><div class="elemento" id="Tb">Tb</div><div class="elemento" id="Bk">Bk</div>
-                <div class="elemento" id="Zn">Zn</div><div class="elemento" id="Cd">Cd</div><div class="elemento" id="Hg">Hg</div><div class="elemento" id="Cn">Cn</div><div class="elemento" id="Dy">Dy</div><div class="elemento" id="Cf">Cf</div>
-                <div class="elemento" id="B">B</div><div class="elemento" id="Al">Al</div><div class="elemento" id="Ga">Ga</div><div class="elemento" id="In">In</div><div class="elemento" id="Tl">Tl</div><div class="elemento" id="Nh">Nh</div><div class="elemento" id="Ho">Ho</div><div class="elemento" id="Es">Es</div>
-                <div class="elemento" id="C">C</div><div class="elemento" id="Si">Si</div><div class="elemento" id="Ge">Ge</div><div class="elemento" id="Sn">Sn</div><div class="elemento" id="Pb">Pb</div><div class="elemento" id="Fl">Fl</div><div class="elemento" id="Er">Er</div><div class="elemento" id="Fm">Fm</div>
-                <div class="elemento" id="N">N</div><div class="elemento" id="P">P</div><div class="elemento" id="As">As</div><div class="elemento" id="Sb">Sb</div><div class="elemento" id="Bi">Bi</div><div class="elemento" id="Mc">Mc</div><div class="elemento" id="Tm">Tm</div><div class="elemento" id="Md">Md</div>
-                <div class="elemento" id="O">O</div><div class="elemento" id="S">S</div><div class="elemento" id="Se">Se</div><div class="elemento" id="Te">Te</div><div class="elemento" id="Po">Po</div><div class="elemento" id="Lv">Lv</div><div class="elemento" id="Yb">Yb</div><div class="elemento" id="No">No</div>
-                <div class="elemento" id="F">F</div><div class="elemento" id="Cl">Cl</div><div class="elemento" id="Br">Br</div><div class="elemento" id="I">I</div><div class="elemento" id="At">At</div><div class="elemento" id="Ts">Ts</div><div class="elemento" id="Lu">Lu</div><div class="elemento" id="Lr">Lr</div>
-                <div class="elemento" id="He">He</div><div class="elemento" id="Ne">Ne</div><div class="elemento" id="Ar">Ar</div><div class="elemento" id="Kr">Kr</div><div class="elemento" id="Xe">Xe</div><div class="elemento" id="Rn">Rn</div><div class="elemento" id="Og">Og</div>
+            <div class="tabla-wrapper">
+                <div class="contendorElementos">
+                    <div class="elemento" id="H">H</div><div class="elemento" id="Li">Li</div><div class="elemento" id="Na">Na</div><div class="elemento" id="K">K</div><div class="elemento" id="Rb">Rb</div><div class="elemento" id="Cs">Cs</div><div class="elemento" id="Fr">Fr</div>
+                    <div class="elemento" id="Be">Be</div><div class="elemento" id="Mg">Mg</div><div class="elemento" id="Ca">Ca</div><div class="elemento" id="Sr">Sr</div><div class="elemento" id="Ba">Ba</div><div class="elemento" id="Ra">Ra</div>
+                    <div class="elemento" id="Sc">Sc</div><div class="elemento" id="Y">Y</div><div class="elemento" id="La">La</div><div class="elemento" id="Ac">Ac</div>
+                    <div class="elemento" id="Ti">Ti</div><div class="elemento" id="Zr">Zr</div><div class="elemento" id="Hf">Hf</div><div class="elemento" id="Rf">Rf</div><div class="elemento" id="Ce">Ce</div><div class="elemento" id="Th">Th</div>
+                    <div class="elemento" id="V">V</div><div class="elemento" id="Nb">Nb</div><div class="elemento" id="Ta">Ta</div><div class="elemento" id="Db">Db</div><div class="elemento" id="Pr">Pr</div><div class="elemento" id="Pa">Pa</div>
+                    <div class="elemento" id="Cr">Cr</div><div class="elemento" id="Mo">Mo</div><div class="elemento" id="W">W</div><div class="elemento" id="Sg">Sg</div><div class="elemento" id="Nd">Nd</div><div class="elemento" id="U">U</div>
+                    <div class="elemento" id="Mn">Mn</div><div class="elemento" id="Tc">Tc</div><div class="elemento" id="Re">Re</div><div class="elemento" id="Bh">Bh</div><div class="elemento" id="Pm">Pm</div><div class="elemento" id="Np">Np</div>
+                    <div class="elemento" id="Fe">Fe</div><div class="elemento" id="Ru">Ru</div><div class="elemento" id="Os">Os</div><div class="elemento" id="Hs">Hs</div><div class="elemento" id="Sm">Sm</div><div class="elemento" id="Pu">Pu</div>
+                    <div class="elemento" id="Co">Co</div><div class="elemento" id="Rh">Rh</div><div class="elemento" id="Ir">Ir</div><div class="elemento" id="Mt">Mt</div><div class="elemento" id="Eu">Eu</div><div class="elemento" id="Am">Am</div>
+                    <div class="elemento" id="Ni">Ni</div><div class="elemento" id="Pd">Pd</div><div class="elemento" id="Pt">Pt</div><div class="elemento" id="Ds">Ds</div><div class="elemento" id="Gd">Gd</div><div class="elemento" id="Cm">Cm</div>
+                    <div class="elemento" id="Cu">Cu</div><div class="elemento" id="Ag">Ag</div><div class="elemento" id="Au">Au</div><div class="elemento" id="Rg">Rg</div><div class="elemento" id="Tb">Tb</div><div class="elemento" id="Bk">Bk</div>
+                    <div class="elemento" id="Zn">Zn</div><div class="elemento" id="Cd">Cd</div><div class="elemento" id="Hg">Hg</div><div class="elemento" id="Cn">Cn</div><div class="elemento" id="Dy">Dy</div><div class="elemento" id="Cf">Cf</div>
+                    <div class="elemento" id="B">B</div><div class="elemento" id="Al">Al</div><div class="elemento" id="Ga">Ga</div><div class="elemento" id="In">In</div><div class="elemento" id="Tl">Tl</div><div class="elemento" id="Nh">Nh</div><div class="elemento" id="Ho">Ho</div><div class="elemento" id="Es">Es</div>
+                    <div class="elemento" id="C">C</div><div class="elemento" id="Si">Si</div><div class="elemento" id="Ge">Ge</div><div class="elemento" id="Sn">Sn</div><div class="elemento" id="Pb">Pb</div><div class="elemento" id="Fl">Fl</div><div class="elemento" id="Er">Er</div><div class="elemento" id="Fm">Fm</div>
+                    <div class="elemento" id="N">N</div><div class="elemento" id="P">P</div><div class="elemento" id="As">As</div><div class="elemento" id="Sb">Sb</div><div class="elemento" id="Bi">Bi</div><div class="elemento" id="Mc">Mc</div><div class="elemento" id="Tm">Tm</div><div class="elemento" id="Md">Md</div>
+                    <div class="elemento" id="O">O</div><div class="elemento" id="S">S</div><div class="elemento" id="Se">Se</div><div class="elemento" id="Te">Te</div><div class="elemento" id="Po">Po</div><div class="elemento" id="Lv">Lv</div><div class="elemento" id="Yb">Yb</div><div class="elemento" id="No">No</div>
+                    <div class="elemento" id="F">F</div><div class="elemento" id="Cl">Cl</div><div class="elemento" id="Br">Br</div><div class="elemento" id="I">I</div><div class="elemento" id="At">At</div><div class="elemento" id="Ts">Ts</div><div class="elemento" id="Lu">Lu</div><div class="elemento" id="Lr">Lr</div>
+                    <div class="elemento" id="He">He</div><div class="elemento" id="Ne">Ne</div><div class="elemento" id="Ar">Ar</div><div class="elemento" id="Kr">Kr</div><div class="elemento" id="Xe">Xe</div><div class="elemento" id="Rn">Rn</div><div class="elemento" id="Og">Og</div>
+                </div>
             </div>
             <fieldset>
                 <legend>Seleccione una categoría:</legend>                
@@ -137,7 +144,7 @@
                 <div id="panelError"></div>
                 
             </fieldset>
-            <div class="card bg-dark text-light mt-1">
+            <div class="card bg-dark text-light mt-1 mb-3">
             <div class="card-header bg-secondary text-white">
                 JSON generado por Spring Boot
                 </div>
@@ -154,7 +161,9 @@
                 base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
                 un error conocido 404 HttpStatus.NOT_FOUND </span>
                 <p><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
-                <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
+                <div class="contenedorImagenes">
+                    <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
+                </div>
             </div>
     </div>
     <div class="codigo" id="funcdefault"><span class="tituloCod">Ejemplo interfal funcional y metodo default:</span> Una interfaz funcional es aquella interfaz que 
@@ -170,9 +179,9 @@
             </pre>
         </div>
     </div>
-    <button class="btn btn-success mt-1" id="runFuncionalDefault"> <i class="bi bi-play-fill"></i> Run </button>
+    <span>Pulse <strong>"Run"</strong> para ejecutar código </span><button class="btn btn-success mt-1" id="runFuncionalDefault"> <i class="bi bi-play-fill"></i> Run </button>
     <!--margen de 0.25rem con mt-1-->
-    <div class="card bg-dark text-light mt-1">
+    <div class="card bg-dark text-light mt-1 mb-3">
         <div class="card-header bg-secondary text-white">
             Consola
         </div>
@@ -180,6 +189,48 @@
             <pre class="m-0" id="preFuncionalDefault">
 
             </pre>
+        </div>
+    </div>
+    <div class="codigo" id="stream"><span class="tituloCod">API Stream:</span> Un Stream es una secuencia de elementos que permite procesar datos 
+        de forma declarativa, ayudan a manipular colecciones mediante operaciones que se dividen entre intermedias y terminales.
+        <ul>
+            <li><span class="tituloCod">Operaciones intermedias:</span>No ejecutan nada por sí solas y describen que querenos hacer por ejemplo filtrar, ordenar, 
+                transformar, limitar, etc., para lo cual crean un nuevo Stream.</li>
+            <li><span class="tituloCod">Operaciones terminales:</span>Son las operaciones que consumen el Stream y desencadenan la ejecución de las operaciones 
+                intermedias, por ejemplo contar, calcular el valor máximo, recorrer cada elemento, pasar a List, etc.</li>            
+        </ul>
+        <p><strong>Importante un Stream solo puede consumirse una vez al ejecutar una operación terminal y cualquier intento de volver a 
+            usarlo provoca una IllegalStateException</strong></p>
+        <div class="codigo" id="optional">
+            <span class="tituloCod">Ejemplo API Stream:</span>
+            <p>Imaginemos que queremos los elementos quimicos que empiezan por una letra o texto que estén ordenados por 
+                id de la tabla periódica, para lo cual accedemos desde el controlador que tenemos para familia de elementos para  
+                no crear un controlador específico para elementos (se podría hacer), le pasamos la url con el valor seleccionado.
+                Ejemplo http://localhost:8080/api/elementos/empezarpor/a.</p>
+            <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
+            <!--BootStrap-->
+            <ul class="list-group">
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span>Es una estructura similar a un mapa 
+                    que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
+                    elementos de cada familia(alcalinos, metaloides, etc.)</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span>Es un método de la clase Stream que nos permite seleccionar elementos 
+                    según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
+                    le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span>Ordena los elementos de una lista permitiendo usar Comparator</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span>Es una función que permite operar con los elementos de una lista uno a uno. 
+                En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
+                elementos se devuelven y cuales no</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span>Método que consume el Stream convirtiéndolo a una lista.</li>
+            </ul>
+                
+            <div class="busqueda">
+                    <input type="text" name="textoBusqueda" id="textoBusqueda" placeholder="Teclee una letra/s">
+                    <input type="button" id="btnBuscar" value="Buscar Elementos">
+            </div>   
+            <div id="contendorElementosStream" class="contendorElementosStream"></div>
+            <div class="contenedorImagenes">
+                <img src="images/EndpointEmpezarPor1.jpg" alt="EndPoint1"><img src="images/EndpointEmpezarPor2.jpg" alt="EndPoint2">
+            </div>
         </div>
     </div>
 
@@ -195,9 +246,10 @@
             </pre>
         </div>
     </div>
-    <button class="btn btn-success mt-1" id="runMethodReference"> <i class="bi bi-play-fill"></i> Run </button>
+    <span>Pulse <strong>"Run"</strong> para ejecutar código </span><button class="btn btn-success mt-1" id="runMethodReference"> <i class="bi bi-play-fill"></i> Run </button>
+    
     <!--margen de 0.25rem con mt-1-->
-    <div class="card bg-dark text-light mt-1">
+    <div class="card bg-dark text-light mt-1 mb-3">
         <div class="card-header bg-secondary text-white">
             Consola
         </div>
@@ -208,18 +260,23 @@
         </div>
     </div>
     <div class="codigo" id="foreachRemoveIfSort"><span class="tituloCod">forEach, removeIf y sort:</span> 
-        <ul>
-            <li><span>forEach:</span> Para recorrer los elementos de un array en Java 7 podiamos usar un forEach con un for usando el operador 
-                '::' de la siguiente manera for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                que practicamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual recibe una 
-                lógica que nosotros implementemospodemos usar una lambda o un método estático con el operador '::'</li>
-            <li><span>removeIf:</span> En Java 7 para eliminar una ocurrencia de un array no podíamos usar un forEach con remove porque se 
-                producía excepción ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
-                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica como elimnación, 
-                agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada elemento debe borrarse. </li>
-            <li><span>sort:</span> En Java 7 para ordenar una lista tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un 
-                Comparator con la lógica de comparación para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista 
-                de elementos al cual podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
+        <!--BootStrap-->
+        <ul class="list-group">
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">forEach:</span> Para recorrer los elementos de 
+                un array en Java 7 podiamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
+                que practicamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                recibe una lógica que nosotros implementemospodemos usar una lambda o un método estático con el operador '::'</li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">removeIf:</span> En Java 7 para eliminar una 
+                ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
+                ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
+                como elimnación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                elemento debe borrarse. </li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sort:</span> En Java 7 para ordenar una lista 
+                tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
+                para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
+                podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
         </ul>
     </div>
     <div class="card bg-dark text-light">
@@ -232,9 +289,9 @@
             </pre>
         </div>
     </div>
-    <button class="btn btn-success mt-1" id="runEachRemoveSort"> <i class="bi bi-play-fill"></i> Run </button>
+    <span>Pulse <strong>"Run"</strong> para ejecutar código </span><button class="btn btn-success mt-1" id="runEachRemoveSort"> <i class="bi bi-play-fill"></i> Run </button>
     <!--margen de 0.25rem con mt-1-->
-    <div class="card bg-dark text-light mt-1">
+    <div class="card bg-dark text-light mt-1 mb-3">
         <div class="card-header bg-secondary text-white">
             Consola
         </div>

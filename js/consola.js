@@ -272,5 +272,63 @@ window.addEventListener("load",empezar,false);
             console.log("Devuelve clase",clase);
             return clase;
         }
+
+        
+        const buscarElementos=()=>{
+            console.log("textoBuscar.value",textoBuscar.value);
+            contendorElementosStream.innerHTML = "";
+            elementos=[];
+            fetch("json/elementos.json")
+            //fetch(`http://localhost:8080/api/elementos/empezarpor/${textoBuscar.value}`)
+            .then(response=>{
+                if(!response.ok){
+                    throw new Error("Error al recuperar json")
+                }
+                //Si no hay error convertimos la respuesta a xml con text()
+                return response.json();
+             })
+             .then(data=>{
+                data.forEach(familia => {
+                    familia.elementos.forEach(element => {
+                        if(element.nombre.toLowerCase().startsWith(textoBuscar.value.toLowerCase())){
+                            elementos.push({"id_tabla_periodica":element.id_tabla_periodica,"simbolo":element.simbolo, "nombre":element.nombre});
+                        }                    
+                    })
+                })                
+            })
+            .finally(()=>{
+                elementos.sort((a,b)=>a.id_tabla_periodica-b.id_tabla_periodica);
+                console.log("antes de forEach ", elementos.length);
+                elementos.forEach(element=>{
+                    console.log("Entra en forEach");
+                    let divElemento=document.createElement("div");                
+                    let spanId=document.createElement("span");
+                    spanId.classList.add("numeroElementoStream");
+                    spanId.textContent=element.id_tabla_periodica;
+                    divElemento.appendChild(spanId);
+
+                    let spanSimbolo=document.createElement("span");
+                    spanSimbolo.classList.add("simbolo");
+                    spanSimbolo.textContent=element.simbolo;
+                    divElemento.appendChild(spanSimbolo);
+
+                    let spanElemento=document.createElement("span");
+                    spanElemento.classList.add("nombreElemento");
+                    spanElemento.textContent=element.nombre;
+                    divElemento.appendChild(spanElemento);
+
+                    divElemento.classList.add("elementoStream");
+
+                    contendorElementosStream.appendChild(divElemento);
+                });
+            });        
+        }
+
+        let textoBuscar=document.getElementById("textoBusqueda");
+        let btnBuscar=document.getElementById("btnBuscar");
+        btnBuscar.addEventListener("click", buscarElementos);
+        let elementos=[];
+        let contendorElementosStream=document.getElementById("contendorElementosStream");
+     
           
     }

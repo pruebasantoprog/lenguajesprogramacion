@@ -56,7 +56,7 @@ public class AppLambda {
 		String version="";
 		
 		do {
-			 System.out.print("Teclee 7 u 8 para versión de Java: ");
+			 System.out.print("Teclee 7 u 8 y pulse ENTER para versión de Java: ");
 			 version = sc.nextLine();			
 		}while( ! version.equals("7") && ! version.equals("8"));
 		

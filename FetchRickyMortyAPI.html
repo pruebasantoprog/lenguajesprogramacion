@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Usando los iconos de font oson 6-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> 
     <!--Icono página-->
     <link rel="icon" href="images/icono.png">
     <link rel="stylesheet" href="css/estiloRickyMortyAPI.css">    
 </head>
 <body>  
-
+    <header>
+        <nav>
+            <h2><i class="fab fa-js" aria-hidden="true"></i> JavaScript</h2>
+            <ul class="navi-ul">
+                <a href="EjemplosJavaScript.html"><i class="fa fa-home"></i> Inicio</a>
+                <a href="ColoresXMLAjax.html"><i class="fas fa-code" aria-hidden="true"></i> jQuery</a>
+                <a href="PokeapiAsyncAwait.html"><i class="fa fas fa-sync" aria-hidden="true"></i> Async/Await</a>
+                <a href="#"><i class="fas fa-exchange-alt" aria-hidden="true"></i> Fetch API</a>
+            </ul>
+            <!--Hamburguesa--> 
+            <a href="#" class="icon"><i class="fa fa-bars"></i></a>           
+        </nav>        
+    </header>
     <h1>Personajes The Rick and Morty API</h1>
     <div>
-        <p>Esta página consume la API Rest The Rick and Morty API mediante <strong>FETCH</strong>, para obtener del <strong>JSON</strong> 
-            que devuelve la API inicialmente los 5 primeros personajes de "The Rick and Morty". También permite añadir más personajes 
-            seleccionando el genero (femenino, masculino, desconocido y todos).</p>
+        <p>Esta página consume la <strong>API Rest The Rick and Morty API</strong> mediante <strong>FETCH</strong>, para obtener 
+        del <strong>JSON</strong> que devuelve la API inicialmente los 5 primeros personajes de <strong>"The Rick and Morty"
+        </strong>. También permite añadir más personajes seleccionando el genero (femenino, masculino, desconocido y todos).</p>
     </div>
      
     <fieldset>
@@ -49,6 +63,6 @@
 </body>
 
 <script src="js/RickMortyAPI.js"></script>
-
+<script src="js/JavaScriptIndex.js"></script>
          
 </html>
