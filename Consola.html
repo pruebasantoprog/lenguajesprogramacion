@@ -260,18 +260,23 @@
         </div>
     </div>
     <div class="codigo" id="foreachRemoveIfSort"><span class="tituloCod">forEach, removeIf y sort:</span> 
-        <ul>
-            <li><span>forEach:</span> Para recorrer los elementos de un array en Java 7 podiamos usar un forEach con un for usando el operador 
-                '::' de la siguiente manera for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                que practicamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual recibe una 
-                lógica que nosotros implementemospodemos usar una lambda o un método estático con el operador '::'</li>
-            <li><span>removeIf:</span> En Java 7 para eliminar una ocurrencia de un array no podíamos usar un forEach con remove porque se 
-                producía excepción ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
-                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica como elimnación, 
-                agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada elemento debe borrarse. </li>
-            <li><span>sort:</span> En Java 7 para ordenar una lista tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un 
-                Comparator con la lógica de comparación para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista 
-                de elementos al cual podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
+        <!--BootStrap-->
+        <ul class="list-group">
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">forEach:</span> Para recorrer los elementos de 
+                un array en Java 7 podiamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
+                que practicamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                recibe una lógica que nosotros implementemospodemos usar una lambda o un método estático con el operador '::'</li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">removeIf:</span> En Java 7 para eliminar una 
+                ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
+                ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
+                como elimnación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                elemento debe borrarse. </li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sort:</span> En Java 7 para ordenar una lista 
+                tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
+                para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
+                podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
         </ul>
     </div>
     <div class="card bg-dark text-light">

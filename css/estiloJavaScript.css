@@ -127,7 +127,7 @@ button{
 }
 button:hover{
     transform: scale(1.2);
-	transition: .2s; 
+	transition: .5s all; 
     background-color: oklch(from black calc(l + 0.3) c h);
     
 }

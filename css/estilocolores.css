@@ -67,6 +67,16 @@ html{
     margin: 0 auto;
 }
 
+button{
+    background-color: #3B82F6;
+    color: white;
+    transition: .5s all;
+}
+button:hover {
+    background-color: #2563EB;
+    cursor: pointer;
+    transform: scale(1.2);
+}
 /*#imagen{
     margin: 0 auto;
     padding: 0 10px;
