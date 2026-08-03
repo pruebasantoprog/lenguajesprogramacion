@@ -56,9 +56,9 @@
     
     <div class="container mt-3">
     <!--<div class="container mt-4"></div>-->
-    <div class="codigo" id="ejemlambda"><span class="tituloCod">Ejemplo Lambda:</span> Las expresiones lambda de Java 8 son métodos o funciones anonimas
+    <div class="codigo" id="ejemlambda"><span class="tituloCod">Ejemplo Lambda:</span> Las expresiones lambda de Java 8 son métodos o funciones anónimas
         que no necesitan un identificador para ser llamadas y que usan los parámetros, el operador -> y la expresión,
-        utilizando progamación declarativa. En Java 7 utilizamos programación imperativa lo que implica que tenemos que
+        utilizando programación declarativa. En Java 7 utilizamos programación imperativa lo que implica que tenemos que
         indicar todos los pasos.
      </div>
     <div class="card bg-dark text-light">
@@ -95,7 +95,7 @@
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
                 siempre y solo establece el valor si recibe un nulo</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseGet():</span>Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
+            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseGet():</span> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
             NumberFormatException si el valor que debe tener es numérico.</li>           
         </ul>       
@@ -166,7 +166,7 @@
                 </div>
             </div>
     </div>
-    <div class="codigo" id="funcdefault"><span class="tituloCod">Ejemplo interfal funcional y metodo default:</span> Una interfaz funcional es aquella interfaz que 
+    <div class="codigo" id="funcdefault"><span class="tituloCod">Ejemplo interfaz funcional y método default:</span> Una interfaz funcional es aquella interfaz que 
     solamente puede tener un método abstracto y que permite usar expresiones lambda para invocar a dicho método. También permite definir 
     otros métodos "default" y estáticos, que pueden ser llamados y no tiene porque ser sobrescritos en las clases que implemente el interfaz.</div>
     <div class="card bg-dark text-light">
@@ -194,9 +194,9 @@
     <div class="codigo" id="stream"><span class="tituloCod">API Stream:</span> Un Stream es una secuencia de elementos que permite procesar datos 
         de forma declarativa, ayudan a manipular colecciones mediante operaciones que se dividen entre intermedias y terminales.
         <ul>
-            <li><span class="tituloCod">Operaciones intermedias:</span>No ejecutan nada por sí solas y describen que querenos hacer por ejemplo filtrar, ordenar, 
+            <li><span class="tituloCod">Operaciones intermedias:</span> No ejecutan nada por sí solas y describen que querenos hacer por ejemplo filtrar, ordenar, 
                 transformar, limitar, etc., para lo cual crean un nuevo Stream.</li>
-            <li><span class="tituloCod">Operaciones terminales:</span>Son las operaciones que consumen el Stream y desencadenan la ejecución de las operaciones 
+            <li><span class="tituloCod">Operaciones terminales:</span> Son las operaciones que consumen el Stream y desencadenan la ejecución de las operaciones 
                 intermedias, por ejemplo contar, calcular el valor máximo, recorrer cada elemento, pasar a List, etc.</li>            
         </ul>
         <p><strong>Importante un Stream solo puede consumirse una vez al ejecutar una operación terminal y cualquier intento de volver a 
@@ -210,17 +210,17 @@
             <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
             <!--BootStrap-->
             <ul class="list-group">
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span>Es una estructura similar a un mapa 
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
                     que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
                     elementos de cada familia(alcalinos, metaloides, etc.)</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span>Es un método de la clase Stream que nos permite seleccionar elementos 
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
                     según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
                     le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span>Ordena los elementos de una lista permitiendo usar Comparator</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span>Es una función que permite operar con los elementos de una lista uno a uno. 
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno a uno. 
                 En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
                 elementos se devuelven y cuales no</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span>Método que consume el Stream convirtiéndolo a una lista.</li>
+                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</li>
             </ul>
                 
             <div class="busqueda">
@@ -263,15 +263,15 @@
         <!--BootStrap-->
         <ul class="list-group">
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">forEach:</span> Para recorrer los elementos de 
-                un array en Java 7 podiamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
                 for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                que practicamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
-                recibe una lógica que nosotros implementemospodemos usar una lambda o un método estático con el operador '::'</li>
+                que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</li>
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">removeIf:</span> En Java 7 para eliminar una 
                 ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
                 ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
                 podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
-                como elimnación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
                 elemento debe borrarse. </li>
             <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sort:</span> En Java 7 para ordenar una lista 
                 tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
