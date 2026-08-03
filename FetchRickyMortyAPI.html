@@ -28,20 +28,17 @@
     <div>
         <p>Esta página consume la <strong>API Rest The Rick and Morty API</strong> mediante <strong>FETCH</strong>, para obtener 
         del <strong>JSON</strong> que devuelve la API inicialmente los 5 primeros personajes de <strong>"The Rick and Morty"
-        </strong>. También permite añadir más personajes seleccionando el genero (femenino, masculino, desconocido y todos).</p>
+        </strong>. También permite añadir más personajes seleccionando el género (femenino, masculino, desconocido y todos).</p>
     </div>
      
     <fieldset>
             <br/>
             <legend>Genero de Personaje:</legend>
-            <input type="radio" id="todos" name="genero" value="todos" checked />
-            <label for="todos">Todos</label>
-            <input type="radio" id="Male" name="genero" value="Masculino"/>
-            <label for="rojo">Masculino</label>
-            <input type="radio" id="Female" name="genero" value="Femenino"/>
-            <label for="rosa">Femenino</label>
-            <input type="radio" id="unknown" name="genero" value="Desconocido"/>
-            <label for="blanco">Desconocido</label>
+            
+            <label for="todos"><input type="radio" id="todos" name="genero" value="todos" checked /> Todos</label>
+            <label for="rojo"><input type="radio" id="Male" name="genero" value="Masculino"/> Masculino</label>
+            <label for="rosa"><input type="radio" id="Female" name="genero" value="Femenino"/> Femenino</label>
+            <label for="blanco"><input type="radio" id="unknown" name="genero" value="Desconocido"/> Desconocido</label>
             <br/>
             <button id="cargarDatos" onclick="cargarGenero()">Añadir Personajes</button>
             <br/><br/>
