@@ -87,6 +87,7 @@ fieldset{
 
 button{
     margin-top: 15px;
+    padding: 5px;
     background-color: #3B82F6;
     color: white;
     transition: .5s all;
@@ -133,5 +134,22 @@ button:hover {
     nav a:hover{
         background-color: var(--azul-marino);
         color: var(--white-text);
+    }
+    fieldset{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 15px;
+    }
+    fieldset button{
+        margin-top: 1px;
+        align-self: center;
+    }
+    main{
+        /* 1 columna*/
+        grid-template-columns: 1fr;
+        gap: 12px;        
     }
 }
