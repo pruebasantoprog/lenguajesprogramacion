@@ -426,6 +426,16 @@ legend{
     background-color: oklch(calc(30% + var(--colorProgress) *30%)
         0.2
         250deg);
+    scale: 0.5;
+    opacity: 0;
+    animation: 300ms aumentar ease-out forwards;                 
+    animation-delay: calc((sibling-index() - 1)*200ms);
+}
+@keyframes aumentar{
+    to{
+        scale: 1;
+        opacity: 1;
+    }
 }
 .numeroElementoStream{          
     font-size: .7rem;
@@ -452,6 +462,27 @@ legend{
 #subir:hover{
 	background-color: #2563EB;
 	transform: scale(0.95);
+}
+#progreso{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border: 1px solid var(--postransicionales);
+    background:var(--alcalinos);
+    z-index: 9999;
+    transform-origin: 0 50%;
+    animation: progresar linear;
+    animation-timeline: scroll();
+}
+@keyframes progresar{
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
 }
 
 /*media queries*/
@@ -497,6 +528,13 @@ legend{
     }
     .temas i{
         opacity: .5;
+    }
+    .busqueda{
+        flex-direction: column;
+        align-items: center;
+    }
+    .busqueda >*{
+        width: 70%;
     }
     .tabla-wrapper,.contenedorImagenes{
         overflow-x:auto;

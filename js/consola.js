@@ -67,11 +67,15 @@ window.addEventListener("load",empezar,false);
                 }else{
                     let resultadoEjec="";
                     if(version==7){
-                        resultadoEjec="Java 7 usando Collections.sort con una clase anonima con Comparator que implementa el método compare el cual llamará a compareTo\n"+
+                        resultadoEjec="Estados Iniciales Deuda:\nPagada\nVencida\nEn gestión de cobro\nAplazada\nEn Contencioso\nIncobrable\n"+
+                                      "============================\n"+
+                                      "Java 7 usando Collections.sort con una clase anonima con Comparator que implementa el método compare el cual llamará a compareTo\n"+
                                       "Lista estados ordenada con Java 7\nAplazada\nEn Contencioso\nEn gestión de cobro\nIncobrable\n"+
                                       "Pagada\nVencida\n";
                     }else{
-                        resultadoEjec="Java 8 usando Collections.sort pasamos directamante los estados y con operador -> y llamamos directamante a compareTo entre los estados\n"+
+                        resultadoEjec="Estados Iniciales Deuda:\nPagada\nVencida\nEn gestión de cobro\nAplazada\nEn Contencioso\nIncobrable\n"+
+                                      "============================\n"+
+                                      "Java 8 usando Collections.sort pasamos directamante los estados con operador -> y llamamos directamante a compareTo entre los estados\n"+
                                       "Lista estados ordenada con Java 8\nAplazada\nEn Contencioso\nEn gestión de cobro\nIncobrable\n"+
                                       "Pagada\nVencida\n";
                     }
@@ -122,7 +126,7 @@ window.addEventListener("load",empezar,false);
             "Ordenar socios por edad\nNombre:Marcos Edad:20\nNombre:Lucia Edad:23\nNombre:Ana Edad:31\nNombre:David Edad:37\n"+
             "Nombre:Diana Edad:39\nNombre:Laura Edad:57\nombre:Felipe Edad:68\nNombre:Sergio Edad:71\n"+
             "======================================================================================================\n"+
-            "Socios activos\nMarcos\nLucia\nDavid\nFelipe\nSergio";
+            "Socios activos eliminando los NO activos con removeIf\nMarcos\nLucia\nDavid\nFelipe\nSergio";
         });    
           
         

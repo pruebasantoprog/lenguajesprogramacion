@@ -60,6 +60,10 @@ public class AppLambda {
 			 version = sc.nextLine();			
 		}while( ! version.equals("7") && ! version.equals("8"));
 		
+		System.out.println("Estados Iniciales Deuda sin ordenar:");
+		app.estadosDeuda.forEach(System.out::println);
+		System.out.println("============================");
+		
 		if(version.equals("7")) {
 			app.ordenarEstadosJava7();
 			
