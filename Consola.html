@@ -20,13 +20,13 @@
 
     <title>Java 8</title>
 
-    <link rel="stylesheet" href="css/estiloJava.css">    
-
+    <link rel="stylesheet" href="css/estiloJava.css">  
+   
 </head>
 <body>
     <div id="progreso"></div>
     <header>
-        <nav id="inicio">
+        <!--<nav id="inicio">
             <h2><i class="bi bi-filetype-java"></i> Java 8</h2>
             <ul class="navi-ul">
                 <a href="index.html" class="text-decoration-none"><i class="bi bi-house"></i></i> Inicio</a>
@@ -36,12 +36,50 @@
                 <a href="#stream" class="text-decoration-none"><i class="bi bi-shuffle"></i> Stream</a>
                 <a href="#metref" class="text-decoration-none"><i class="bi bi-link-45deg"></i> Method References</a>
                 <a href="#foreachRemoveIfSort" class="text-decoration-none"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
-            </ul>
+            </ul>-->
             <!--Hamburguesa--> 
-            <a href="#" class="icon"><i class="bi bi-menu-up"></i></a>           
-        </nav>
-         <h1 class="jetbrains-mono">Ejemplos de Código Java 8</h1>
+            <!--<a href="#" class="icon"><i class="bi bi-menu-up"></i></a>           
+        </nav>-->
+         
     </header>
+    <nav class="navbar navbar-expand-md mi-navbar" data-bs-theme="dark" id="inicio">
+    <div class="container-fluid">
+        <!--<h2><i class="bi bi-filetype-java"></i> Java 8</h2>-->
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-filetype-java"></i> Java 8
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">            
+                <a class="nav-link active" href="index.html"><i class="bi bi-house"></i></i> Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#ejemlambda"><i class="bi bi-arrow-left-right"></i> Lambda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#optional"><i class="bi bi-shield-check"></i> Optional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#funcdefault"><i class="bi bi-diagram-3"></i> Interfaz funcional</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#stream"><i class="bi bi-shuffle"></i> Stream</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#metref"><i class="bi bi-link-45deg"></i> Method References</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#foreachRemoveIfSort"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
+            </li>
+        </ul>
+        
+        </div>
+    </div>
+    </nav>
+    <h1 class="jetbrains-mono">Ejemplos de Código Java 8</h1>
     
     <div class="temas col-12">
         <i class="bi bi-filetype-java"></i>
@@ -260,26 +298,44 @@
             </pre>
         </div>
     </div>
-    <div class="codigo" id="foreachRemoveIfSort"><span class="tituloCod">forEach, removeIf y sort:</span> 
-        <!--BootStrap-->
-        <ul class="list-group">
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">forEach:</span> Para recorrer los elementos de 
-                un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
-                for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
-                recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">removeIf:</span> En Java 7 para eliminar una 
-                ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
-                ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
-                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
-                como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
-                elemento debe borrarse. </li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sort:</span> En Java 7 para ordenar una lista 
-                tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
-                para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
-                podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
-        </ul>
+    <div class="codigo" id="foreachRemoveIfSort"><span class="tituloCod">forEach, removeIf y sort:</span>         
     </div>
+    <section class="operaciones">
+        <div class="container">
+            <div class="row">
+                <!--forEach-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <p class="operaciones-titulo">forEach</p>
+                    <p> Para recorrer los elementos de 
+                    un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                    for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
+                    que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                    recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</p>
+                </div>
+                <!--removeIf-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-funnel"></i>
+                    <p class="operaciones-titulo">removeIf</p>
+                    <p> En Java 7 para eliminar una 
+                    ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
+                    ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                    podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
+                    como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                    elemento debe borrarse.</p>
+                </div>
+                <!--sort-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-sort-alpha-down"></i>
+                    <p class="operaciones-titulo">sort</p>
+                    <p> En Java 7 para ordenar una lista 
+                    tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
+                    para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
+                    podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
             Aspecto IDE Eclipse

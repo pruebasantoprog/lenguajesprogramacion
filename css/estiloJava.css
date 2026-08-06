@@ -30,17 +30,20 @@ h1 {
     padding: 10px 0;
 }
 
-nav{
+.mi-navbar{
+    background-color: var(--azul-marino);    
+}
+.mi-navbar .nav-link:hover {    
+    color: var(--noMetales);
+}
+/*nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--azul-marino);
     min-height: 4rem;
 }
-nav h2{
-    color: white;
-    padding-left: 1rem;
-}
+
 nav a {
     color: white;
     font-size: 1.1rem;
@@ -56,9 +59,9 @@ nav ul{
 }
 .icon{
     /*Desaparece en resoluciones grandes*/
-    display: none;
+    /*display: none;
     font-size: 2rem;
-}
+}*/
 
 .console-window {
     background-color: #1e1e1e; /* estilo IntelliJ */
@@ -445,6 +448,7 @@ legend{
     flex-direction: row;           
     justify-content: center;
     gap: 10px; 
+    margin-bottom: 20px;
 }
 #subir{
 	position: fixed;
@@ -462,6 +466,36 @@ legend{
 #subir:hover{
 	background-color: #2563EB;
 	transform: scale(0.95);
+}
+.operaciones{
+    padding: 5px 40px 20px 40px;
+    text-align: center;
+}
+
+.operaciones i{
+    font-size: 2.5rem;
+    color: #2979FF;
+    background-color: black;
+    padding: 8px 19px;
+    border-radius: 50%;
+}
+
+.operaciones-titulo{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+.operaciones .columna{
+    padding: 20px;
+    border: 2px solid #8080804d;
+    border: 2px solid #C8A27C;
+    /*border: 2px solid #8B5E3C;*/
+    /*border: 2px solid #5B8DEF;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 #progreso{
     position: fixed;
@@ -487,7 +521,7 @@ legend{
 
 /*media queries*/
 @media(max-width: 768px){
-    .navi-ul{
+    /*.navi-ul{
         position: fixed;
         left: -100%;
         top: 5rem;
@@ -522,7 +556,7 @@ legend{
     nav a:hover{
         background-color: var(--azul-marino);
         color: var(--white-text);
-    }
+    }*/
     .tarjeta h6{
         opacity: 1;
     }
@@ -541,5 +575,8 @@ legend{
     }
     .contendorElementos{            
         width:max-content;     
+    }
+    .operaciones .columna{
+        font-size: .89rem;
     }
 }

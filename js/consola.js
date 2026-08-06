@@ -63,7 +63,7 @@ window.addEventListener("load",empezar,false);
              if (e.key === "Enter") { 
                 //alert('Ha pulsado enter');
                 if(version==0){
-                    document.getElementById("lambda").textContent="Teclee 7 u 8 para versión de Java: ";
+                    document.getElementById("lambda").textContent="Teclee 7 u 8 y pulse ENTER para versión de Java: ";
                 }else{
                     let resultadoEjec="";
                     if(version==7){
