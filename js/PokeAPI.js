@@ -82,13 +82,15 @@ window.addEventListener("load",cargarPikachu(),false);
                 imgElement2.style.display="block";
                 imgElement2.style.maxWidth="50%";
                 
-
+                const nombreDePokemon=document.getElementById("nombreDePokemon");
                 const ataque=document.getElementById("ataque");
                 const salud=document.getElementById("salud");
                 const defensa=document.getElementById("defensa");
                 const velocidad=document.getElementById("velocidad");
                 const peso=document.getElementById("peso");
 
+                nombreDePokemon.textContent=nombrePokemon.charAt(0).toUpperCase()+nombrePokemon.slice(1);
+                nombreDePokemon.style.color="white";
                 //Ataque
                 let attack=document.getElementById("attack");
                 let ataquePokemon=data.stats[1].base_stat;
