@@ -75,6 +75,37 @@ h1{
     justify-content: space-evenly;
     font-family: "Press Start 2P", system-ui; 
 }
+.acoplamiento{
+    position: sticky;      
+    top: calc(40px + ((sibling-index() - 1) * 5px));
+    margin: .3rem;
+    animation: apilar linear both;
+    corner-shape: squircle;
+}
+#parrafoColeccion{
+    font-size: large;
+    letter-spacing: .2rem;
+    color: var(--white-text);
+    text-shadow: 2px 3px var(--azul-marino);
+}
+@keyframes apilar {
+    0%{
+        transform: translateY(0) translateY(0)
+                   rotate(0) scale(1) ;
+    }
+    35%{
+        transform: translateY(100px) translateZ(-200px)
+                    rotate(8deg) scale(.92);
+    }
+    70%{
+        transform: translateY(20px) translateY(-120px)
+                    rotate(2deg) scale(.95);
+    }
+    100%{
+        transform: translateY(0) translateY(0)
+                   rotate(0) scale(1) ;
+    }
+}
 #pokemonName{
     margin: 0.2rem;
     margin-top: 1.8rem;           

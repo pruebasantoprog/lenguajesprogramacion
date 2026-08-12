@@ -64,6 +64,8 @@ window.addEventListener("load",cargarPikachu(),false);
                     const pokemonColecion=document.getElementById("pokemonColecion");               
                     const copia = caracteristicas.cloneNode(true);
                     copia.removeAttribute("id"); // evita IDs duplicados
+                    //Clase para acoplamiento
+                    copia.classList.add("acoplamiento");
                     pokemonColecion.appendChild(copia);
                 }
                 

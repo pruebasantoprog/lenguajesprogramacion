@@ -36,14 +36,17 @@
                 <div class="descripcion">
                     <p style="text-align: center;"><strong >Esta página web utiliza la API RESTful de Pokémon PokeApi.</strong></p>
                     <p>Para obtener la imagen de Pikachu en movimiento se usa un fetch para obtener la imagen del archivo JSON que proporciona la API.
-                    Cuando buscamos un Pokemon se llama a una función usando Async/await que obtiene la imagen y las características del archivo JSON y 
-                    se los pasa a otra función que crea el efecto de barra de progreso. <strong>Nombres de pokemon conocidos:</strong> Pikachu, Charizard, Mewtwo, Eevee,
-                    Gengar, Mew, Snorlax, Bulbasaur, Cetoddle, Drampa, etc.</p>
+                    Cuando buscamos un Pokémon se llama a una función usando Async/await que obtiene la imagen y las características del archivo JSON y 
+                    se los pasa a otra función que crea el efecto de barra de progreso.</p>
+                    <p>Con CSS se crea el efecto de apilamiento cuando consultamos varios pokémon o si añadimos varias veces el mismo pokémon y
+                        movemos la rueda del ratón varias veces hacia abajo.</p>
+                    <p><strong>Nombres de pokémon conocidos:</strong> Pikachu, Charizard, Mewtwo, Eevee,
+                    Gengar, Mew, Snorlax, Bulbasaur, Cetoddle, Drampa, Squirtle, Charmander, Charmeleon, etc.</p>
                 </div>
                 <div class="buscador">
                     <img src="" alt="Pikachu" id="pika" style="display:none;">
-                    <input type="text" id="pokemonName" placeholder="Introduzca nombre Pokemon">
-                    &nbsp;<button onclick="fetchData()"><span>Buscar Pokemon</span></button> 
+                    <input type="text" id="pokemonName" placeholder="Introduzca nombre Pokémon">
+                    &nbsp;<button onclick="fetchData()"><span>Buscar Pokémon</span></button> 
                 </div>
                 <br/>
                  <div id="panelError"></div>
@@ -90,7 +93,9 @@
                     </div>
                 </div>                
             </div>
-            <div class="pokemonColecion" id="pokemonColecion"></div>
+            <div class="pokemonColecion" id="pokemonColecion">
+                <p id="parrafoColeccion">COLECCIÓN DE POKEMON</p>
+            </div>
         </article>
     </main>
     <script src="js/PokeAPI.js"></script>
