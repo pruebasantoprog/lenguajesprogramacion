@@ -181,8 +181,8 @@ let intervalo;
                         }
                         
                         //Mostramos la tabla una vez rellenada
-                        //$("#datos").show();
-                        //$('#datos').fadeIn("slow");
+                        //$("#datos").show();                       
+                        //Hacemos que aparezcan los elementos con efecto fadeIn
                         $('#datos').stop(true, true).hide().fadeIn('slow');
                     });
             });
