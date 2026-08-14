@@ -181,7 +181,9 @@ let intervalo;
                         }
                         
                         //Mostramos la tabla una vez rellenada
-                        $("#datos").show();
+                        //$("#datos").show();
+                        //$('#datos').fadeIn("slow");
+                        $('#datos').stop(true, true).hide().fadeIn('slow');
                     });
             });
           
