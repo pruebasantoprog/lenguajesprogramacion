@@ -149,7 +149,7 @@ window.addEventListener("load",empezar(),false);
         /*Temporada 5*/"Mort Dinner Rick Andre","Mortyplicity","A Rickconvenient Mort","Rickdependence Spray","Amortycan Grickfitti",
         "Rick and Morty’s Thanksploitation Spectacular","Gotron Jerrysis Rickvangelion","Rickternal Friendshine of the Spotless Mort",
         "Forgetting Sarick Mortshall","Rickmurai Jack"];
-        /*,/*Temporada 6"Solaricks","Rick: A Mort Well Lived","Bethic Twinstic","Night Family","Final DeSmithation","Jurisick Mort",
+        /*Los siguientes episodios aún no están en la API,/*Temporada 6"Solaricks","Rick: A Mort Well Lived","Bethic Twinstic","Night Family","Final DeSmithation","Jurisick Mort",
         "Full Meta Jackrick","Analyze Piss","A Rick in King Mortur's Mort","Ricktional Mortpoon's Rickmas Mortcation",
         /*Temporada 7"How Poopy Got His Poop Back","The Jerrick Trap","Air Force Wong","That's Amorte","Unmortricken",
         "Rickfending Your Mort","Wet Kuat Amortican Summer","Rise of the Numbericons: The Movie","Mort: Ragnarick","Fear No Mort",
