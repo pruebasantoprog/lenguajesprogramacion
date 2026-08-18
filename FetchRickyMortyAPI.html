@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,9 +26,11 @@
     </header>
     <h1>Personajes The Rick and Morty API</h1>
     <div>
-        <p>Esta página consume la <strong>API Rest The Rick and Morty API</strong> mediante <strong>FETCH</strong>, para obtener 
-        del <strong>JSON</strong> que devuelve la API inicialmente los 5 primeros personajes de <strong>"The Rick and Morty"
-        </strong>. También permite añadir más personajes seleccionando el género (femenino, masculino, desconocido y todos).</p>
+        <p>Esta página consume la <strong>API Rest 'The Rick and Morty API'</strong> mediante <strong>FETCH</strong>, para obtener 
+        del <strong>JSON</strong> que devuelve la API inicialmente los 5 primeros personajes (porque así se lo hemos indicado en 
+        la url) de <strong>"The Rick and Morty"</strong>. También permite añadir más personajes seleccionando el género (femenino, 
+        masculino, desconocido y todos) y pulsando en "Añadir Personajes", o bien podemos elegir un episodio y añadir los 
+        personajes de dicho episodio pulsando en "Añadir Personajes Episodio".</p>
     </div>
      
     <fieldset>
@@ -49,6 +51,7 @@
                 
                </select>     
         </label>
+        <button id="cargarDatos" onclick="cargarEpisodio()">Añadir Personajes Episodio</button>
     </fieldset>
     <br/>
     <main>

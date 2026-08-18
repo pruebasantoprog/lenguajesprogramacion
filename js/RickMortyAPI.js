@@ -136,25 +136,25 @@ window.addEventListener("load",empezar(),false);
         const nombresEpisodios=["",
         /*Temporada 1*/"Episodio Piloto","Perro cortacésped","Parque de Anatomía","M. Night Shaym-Aliens!",
         "Meeseeks and Destroy","Rick Potion #9","Raising Gazorpazorp","Rixty Minutes","Something Ricked This Way Comes",
-        "lose Rick-counters of the Rick Kind","Ricksy Business",
+        "Close Rick-counters of the Rick Kind","Ricksy Business",
         /*Temporada 2*/"A Rickle in Time","Mortynight Run","Auto Erotic Assimilation","Total Rickall","Get Schwifty",
         "The Ricks Must Be Crazy","Big Trouble in Little Sanchez","Interdimensional Cable 2: Tempting Fate","Look Who's Purging Now",
         "The Wedding Squanchers",
         /*Temporada 3*/"The Rickshank Rickdemption","Rickmancing the Stone","Pickle Rick","Vindicators 3: The Return of Worldender",
         "The Whirly Dirly Conspiracy","Rest and Ricklaxation","The Ricklantis Mixup","Morty's Mind Blowers","The ABC's of Beth",
         "The Rickchurian Mortydate",
-        /*Temporada 4*/"Edge of Tomorty: Rick Die Rickpeat","The Old Man and the Seat","One Crew over the Crewcoo's Morty",
+        /*Temporada 4*/"Edge of Tomorty: Rick, Die, Rickpeat","The Old Man and the Seat","One Crew over the Crewcoo's Morty",
         "Claw and Hoarder: Special Ricktim's Morty","Rattlestar Ricklactica","Never Ricking Morty","Promortyus","The Vat of Acid Episode",
         "Childrick of Mort","Star Mort Rickturn of the Jerri",
         /*Temporada 5*/"Mort Dinner Rick Andre","Mortyplicity","A Rickconvenient Mort","Rickdependence Spray","Amortycan Grickfitti",
         "Rick and Morty’s Thanksploitation Spectacular","Gotron Jerrysis Rickvangelion","Rickternal Friendshine of the Spotless Mort",
-        "Forgetting Sarick Mortshall","Rickmurai Jack",
-        /*Temporada 6*/"Solaricks","Rick: A Mort Well Lived","Bethic Twinstic","Night Family","Final DeSmithation","Jurisick Mort",
+        "Forgetting Sarick Mortshall","Rickmurai Jack"];
+        /*,/*Temporada 6"Solaricks","Rick: A Mort Well Lived","Bethic Twinstic","Night Family","Final DeSmithation","Jurisick Mort",
         "Full Meta Jackrick","Analyze Piss","A Rick in King Mortur's Mort","Ricktional Mortpoon's Rickmas Mortcation",
-        /*Temporada 7*/"How Poopy Got His Poop Back","The Jerrick Trap","Air Force Wong","That's Amorte","Unmortricken",
+        /*Temporada 7"How Poopy Got His Poop Back","The Jerrick Trap","Air Force Wong","That's Amorte","Unmortricken",
         "Rickfending Your Mort","Wet Kuat Amortican Summer","Rise of the Numbericons: The Movie","Mort: Ragnarick","Fear No Mort",
-        /*Temporada 8*/"Summer of All Fears","Valkyrick","The Rick, The Mort & The Ugly","The Last Temptation of Jerry",
-        "Cryo Mort a Rickver","The Curicksous Case of Bethjamin Button","Ricker than Fiction","Nomortland","Morty Daddy","Hot Rick"];
+        /*Temporada 8"Summer of All Fears","Valkyrick","The Rick, The Mort & The Ugly","The Last Temptation of Jerry",
+        "Cryo Mort a Rickver","The Curicksous Case of Bethjamin Button","Ricker than Fiction","Nomortland","Morty Daddy","Hot Rick"];*/
 
         const episodio=document.getElementById("episodio");
     
@@ -164,6 +164,60 @@ window.addEventListener("load",empezar(),false);
             optionEpi.textContent=nombreEpisodio;
             episodio.appendChild(optionEpi);
         });
+    }
+
+    function cargarEpisodio(){
+        const numEpisodio=document.getElementById("episodio").value;
+        console.log("numEpisodio=",numEpisodio);
+        if(numEpisodio!=0){
+            let direccion=`https://rickandmortyapi.com/api/episode/${numEpisodio}`;
+            fetch(direccion)
+            .then(response=>response.json())/*Obtenemos la respuesta en formato json*/
+            .then(data=>{
+                const urlsPersonajes=data.characters;
+
+                urlsPersonajes.forEach(url=>
+                    fetch(url)
+                    .then(respuesta=>respuesta.json())
+                    .then(datos=>{
+                        let especie="";
+                        let estado="";  
+                        let genero="";
+                        especie=retornarEspecie(datos.species);
+                        console.log("Especie",especie);
+                        estado=retornarEstado(datos.status,datos.gender);
+                        genero=retornarGenero(datos.gender); 
+                        //Comprobamos si ya existe el personaje para no añadirlo otra vez pasamos elemento.id a Number
+                        const existe = document.getElementById(String(datos.id)) !== null;
+                        /*const existe = Array.from(arrayPersonajes)
+                            .some(elemento => Number(elemento.id) === personaje.id);*/                    
+
+                        if(!existe){
+                            const article=document.createRange().createContextualFragment(/*html*/
+                                `<article class="personaje" id="${datos.id}">
+                                <div class="contenedor-imagen">
+                                    <img src="${datos.image}" alt="Personaje">
+                                </div>
+                                <h2>${datos.name}</h2>
+                                <span>Estado: ${estado}</span>
+                                <br/>
+                                <span>Especie: ${especie}</span>
+                                <br/>
+                                <span>Localización: ${datos.location.name}</span>
+                                <br/>
+                                <span>Genero: ${genero}</span>
+                                </article>`
+                            );
+                            const main=document.querySelector("main");
+                            main.append(article);
+                        }
+                    })
+                );
+
+            })
+            .catch(error=>console.log(error));
+        }
+        
     }
 
     function cargarGenero(){
