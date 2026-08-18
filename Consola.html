@@ -116,21 +116,52 @@
     <div class="codigo" id="optional"><span class="tituloCod">Optional:</span> Optional es una clase que viene en el JDK 1.8 que nos 
         permite gestionar los errores NullPointerException para reducirlos. Esta clase debe ser usada con cuidado en aplicaciones críticas 
         por rendimiento ya que consume recursos. Optional puede contener un valor nulo, podemos saber si el objeto de la clase tiene valor
-        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:
-        <!--BootStrap-->
-        <ul class="list-group">
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
-                siempre y solo establece el valor si recibe un nulo</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseGet():</span> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
-            NumberFormatException si el valor que debe tener es numérico.</li>           
-        </ul>       
+        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:       
     </div>
+    <!--BootStrap-->
+    <section class="operaciones">
+        <div class="container d-flex flex-column gap-3">
+            <div class="row justify-content-center gap-2">
+                <!--isPresent() - isEmpty()-->
+                <div class="columna col-12 col-md-4">
+                    <p><i class="bi bi-check-circle"></i>
+                    <i class="bi bi-dash-circle"></i></p>
+                    <p class="operaciones-titulo">isPresent() - isEmpty()</p>
+                    <p> Nos permiten 
+                saber si un valor ha sido inicializado. <span class="tituloCod">isPresent()</span> viene con <strong>JDK 1.8</strong>
+                 y si es false nos indica que el objeto está vacio. <span class="tituloCod">isEmpty()</span> se añadio con 
+                 <strong>JDK 11</strong> y si es true indica que el objeto está vacio</p>
+                </div>
+                <!--orElse()-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-arrow-left-right"></i>
+                    <p class="operaciones-titulo">orElse()</p>
+                    <p> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta siempre 
+                        y solo establece el valor si recibe un nulo</p>
+                </div>                
+            </div>
+            <div class="row justify-content-center gap-2">
+                <!--orElseGet()-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-gear"></i>
+                    <p class="operaciones-titulo">orElseGet()</p>
+                    <p> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</p>
+                </div>                
+                <!--orElseThrow()-->
+                <div class="columna col-12 col-md-4">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <p class="operaciones-titulo">orElseThrow()</p>
+                    <p> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
+                        NumberFormatException si el valor que debe tener es numérico.</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="codigo" id="optional"><span class="tituloCod">Ejemplo orElseGet:</span>
-        <p>Supongamos que queremos obtener los elementos de cada categoría con una aplicación llamando a un API Rest de Spring Boot.</p>
-        <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la aplicación deje de 
-            funcionar.</p>
+        <p>Supongamos que queremos obtener los elementos químicos de cada categoría con una aplicación llamando a un API Rest de 
+            Spring Boot.</p>
+        <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la 
+            aplicación deje de funcionar.</p>
             
             <div class="tabla-wrapper">
                 <div class="contendorElementos">
