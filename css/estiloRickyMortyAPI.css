@@ -79,7 +79,7 @@ article{
 }
 
 fieldset{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
@@ -87,6 +87,7 @@ fieldset{
 
 button{
     margin-top: 15px;
+    margin-left: 5px;
     padding: 5px;
     background-color: #3B82F6;
     color: white;
@@ -95,9 +96,10 @@ button{
 button:hover {
     background-color: #2563EB;
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 select{
+    appearance: auto; /*Navegadores que no soportan appearance: base-select;*/
     appearance: base-select;
     min-width: 50%;
     border: 2px solid rgba(18, 17, 17, 0.3);
@@ -188,5 +190,10 @@ select:open::picker-icon{
     }
     select{
          min-width: 100px;
+    }
+    button{
+        font-size: .8rem;
+        margin-bottom: 10px;  
+        margin-left: 0;    
     }
 }
