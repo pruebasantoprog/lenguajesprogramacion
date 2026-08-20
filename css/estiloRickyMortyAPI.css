@@ -100,13 +100,18 @@ button:hover {
 }
 select{
     appearance: auto; /*Navegadores que no soportan appearance: base-select;*/
-    appearance: base-select;
+    /*appearance: base-select;*/
     min-width: 50%;
     border: 2px solid rgba(18, 17, 17, 0.3);
     padding: 5px;
     background: #b6d8db;
 }
-::picker(select){
+@supports (appearance: base-select) {
+  select {
+    appearance: base-select;
+  }
+
+  select::picker(select) {
     appearance: base-select;
     background: #b6d8db;
     border: 2px solid rgba(18, 17, 17, 0.3);
@@ -114,7 +119,17 @@ select{
     margin-top: 5px;
     padding: 3px;
     box-shadow: 0 0 10px rgba(0,0,0,.4) inset;
+  }
 }
+/*::picker(select){
+    appearance: base-select;
+    background: #b6d8db;
+    border: 2px solid rgba(18, 17, 17, 0.3);
+    border-radius: 20px;
+    margin-top: 5px;
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4) inset;
+}*/
 option{
     transition: .25s;
 }
