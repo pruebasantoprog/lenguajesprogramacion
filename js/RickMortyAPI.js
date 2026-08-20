@@ -168,54 +168,78 @@ window.addEventListener("load",empezar(),false);
 
     function cargarEpisodio(){
         const numEpisodio=document.getElementById("episodio").value;
+        let cargarEpisodio = document.getElementById("cargarEpisodio");
+
         console.log("numEpisodio=",numEpisodio);
         if(numEpisodio!=0){
+            //Deshabilitamos botón
+            cargarEpisodio.disabled = true;
+            cargarEpisodio.textContent = "Cargando...";
+
             let direccion=`https://rickandmortyapi.com/api/episode/${numEpisodio}`;
             fetch(direccion)
-            .then(response=>response.json())/*Obtenemos la respuesta en formato json*/
+            .then(response=>{ 
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                return response.json();})/*Obtenemos la respuesta en formato json*/
             .then(data=>{
                 const urlsPersonajes=data.characters;
 
-                urlsPersonajes.forEach(url=>
-                    fetch(url)
+                return Promise.all(urlsPersonajes.map(url=>{
+                    //Devolvemos cada fectch del map
+                    return fetch(url)
                     .then(respuesta=>respuesta.json())
-                    .then(datos=>{
-                        let especie="";
-                        let estado="";  
-                        let genero="";
-                        especie=retornarEspecie(datos.species);
-                        console.log("Especie",especie);
-                        estado=retornarEstado(datos.status,datos.gender);
-                        genero=retornarGenero(datos.gender); 
-                        //Comprobamos si ya existe el personaje para no añadirlo otra vez pasamos elemento.id a Number
-                        const existe = document.getElementById(String(datos.id)) !== null;
-                        /*const existe = Array.from(arrayPersonajes)
-                            .some(elemento => Number(elemento.id) === personaje.id);*/                    
+                }))
+                .then(datos=>{
+                    console.log(datos);
+                    datos.forEach(personaje=>{
+                            console.log(personaje.name);
+                            console.log(personaje.image);
+                            console.log(personaje);
+                            let especie="";
+                            let estado="";  
+                            let genero="";
+                            especie=retornarEspecie(personaje.species);
+                            console.log("Especie",especie);
+                            estado=retornarEstado(personaje.status,personaje.gender);
+                            genero=retornarGenero(personaje.gender); 
+                            //Comprobamos si ya existe el personaje para no añadirlo otra vez pasamos elemento.id a Number
+                            const existe = document.getElementById(String(personaje.id)) !== null;
+                            /*const existe = Array.from(arrayPersonajes)
+                                .some(elemento => Number(elemento.id) === personaje.id);*/                    
 
-                        if(!existe){
-                            const article=document.createRange().createContextualFragment(/*html*/
-                                `<article class="personaje" id="${datos.id}">
-                                <div class="contenedor-imagen">
-                                    <img src="${datos.image}" alt="Personaje">
-                                </div>
-                                <h2>${datos.name}</h2>
-                                <span>Estado: ${estado}</span>
-                                <br/>
-                                <span>Especie: ${especie}</span>
-                                <br/>
-                                <span>Localización: ${datos.location.name}</span>
-                                <br/>
-                                <span>Genero: ${genero}</span>
-                                </article>`
-                            );
-                            const main=document.querySelector("main");
-                            main.append(article);
-                        }
+                            if(!existe){
+                                const article=document.createRange().createContextualFragment(/*html*/
+                                    `<article class="personaje" id="${personaje.id}">
+                                    <div class="contenedor-imagen">
+                                        <img src="${personaje.image}" alt="Personaje">
+                                    </div>
+                                    <h2>${personaje.name}</h2>
+                                    <span>Estado: ${estado}</span>
+                                    <br/>
+                                    <span>Especie: ${especie}</span>
+                                    <br/>
+                                    <span>Localización: ${personaje.location.name}</span>
+                                    <br/>
+                                    <span>Genero: ${genero}</span>
+                                    </article>`
+                                );
+                                const main=document.querySelector("main");
+                                main.append(article);
+                            }
                     })
-                );
+                })              
 
             })
-            .catch(error=>console.log(error));
+            .catch(error=>console.log(error))            
+            .finally(()=>{
+                //Volvemos a habilitar el botón
+                console.log("Entra en finally");
+                cargarEpisodio.disabled=false;
+                cargarEpisodio.textContent="Añadir Personajes Episodio";
+            });
         }
         
     }
