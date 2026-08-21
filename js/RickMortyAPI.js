@@ -169,6 +169,7 @@ window.addEventListener("load",empezar(),false);
     function cargarEpisodio(){
         const numEpisodio=document.getElementById("episodio").value;
         let cargarEpisodio = document.getElementById("cargarEpisodio");
+        let numPersonaje=0;
 
         console.log("numEpisodio=",numEpisodio);
         if(numEpisodio!=0){
@@ -211,8 +212,12 @@ window.addEventListener("load",empezar(),false);
                                 .some(elemento => Number(elemento.id) === personaje.id);*/                    
 
                             if(!existe){
+                                //Guardamos el primer personaje recuperado
+                                if(numPersonaje==0){
+                                    numPersonaje=personaje.id;
+                                }
                                 const article=document.createRange().createContextualFragment(/*html*/
-                                    `<article class="personaje" id="${personaje.id}">
+                                    `<article class="personaje" id="${personaje.id}" tabindex="-1">
                                     <div class="contenedor-imagen">
                                         <img src="${personaje.image}" alt="Personaje">
                                     </div>
@@ -235,10 +240,15 @@ window.addEventListener("load",empezar(),false);
             })
             .catch(error=>console.log(error))            
             .finally(()=>{
-                //Volvemos a habilitar el botón
-                console.log("Entra en finally");
+                //Volvemos a habilitar el botón                
                 cargarEpisodio.disabled=false;
                 cargarEpisodio.textContent="Añadir Personajes Episodio";
+                //Si hemos añadido personajes vamos al primero
+                if(numPersonaje!=0){
+                    console.log("Entra en numPersonaje!=0");
+                    const primerNuevoPer=document.getElementById(numPersonaje);
+                    primerNuevoPer.focus();
+                }
             });
         }
         

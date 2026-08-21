@@ -136,8 +136,7 @@ option{
 option:hover, option:checked{
     background: rgba(255,255,255,.8);
 }
-option::checkmark{
-    color: yellow;
+option::checkmark{    
     content: "✅";
 }
 select::picker-icon{
@@ -147,6 +146,11 @@ select::picker-icon{
 }
 select:open::picker-icon{
     rotate:180deg;
+}
+
+.personaje:focus{
+    outline: 7px solid #F29F05;
+    outline-offset: 4px;
 }
 
 @media(max-width:786px){
