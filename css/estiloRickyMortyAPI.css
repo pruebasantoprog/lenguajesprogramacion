@@ -152,6 +152,9 @@ select:open::picker-icon{
     outline: 7px solid #F29F05;
     outline-offset: 4px;
 }
+footer{
+    margin-top: 10px;
+}
 
 @media(max-width:786px){
     .navi-ul{

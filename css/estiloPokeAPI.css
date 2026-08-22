@@ -198,6 +198,11 @@ p{
     padding-right: 1rem;
 }
 
+footer{
+    margin-top: 50px;
+    text-align: center;
+}
+
 @media(max-width:720px){
     .navi-ul{
         position: fixed;
