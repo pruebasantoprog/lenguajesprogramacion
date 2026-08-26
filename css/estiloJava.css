@@ -13,6 +13,10 @@
     --white-text:#fff;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background-color: bisque;
     font-family: Arial, Helvetica, sans-serif;
@@ -36,32 +40,6 @@ h1 {
 .mi-navbar .nav-link:hover {    
     color: var(--noMetales);
 }
-/*nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--azul-marino);
-    min-height: 4rem;
-}
-
-nav a {
-    color: white;
-    font-size: 1.1rem;
-    padding: 0 1rem;
-}
-
-nav a:hover {
-    color: #c8e8f1;
-    color: #558abb;
-}
-nav ul{
-    display: flex;
-}
-.icon{
-    /*Desaparece en resoluciones grandes*/
-    /*display: none;
-    font-size: 2rem;
-}*/
 
 .console-window {
     background-color: #1e1e1e; /* estilo IntelliJ */
@@ -94,6 +72,7 @@ nav ul{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
 .badges-contenedor{
     font-size: 20px;
     font-weight: bold;

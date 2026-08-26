@@ -265,7 +265,7 @@ public class CollectionProcessor {
 		
 		//Eliminar socios que no estén activos
 		socios.removeIf(x-> ! x.isActivo());
-		System.out.println("Socios activos");
+		System.out.println("Socios activos eliminando los NO activos con removeIf");
 		socios.forEach(x->System.out.println(x.getNombre()));	
 	}
 }
