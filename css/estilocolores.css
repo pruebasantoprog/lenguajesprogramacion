@@ -99,16 +99,44 @@ td{
 }
 
 h1{
+    display: flex;
     text-align: center;
+    align-content: center;
+    justify-content: center;
     padding: .5rem;
     font-size: 4rem;    
     color: SeaGreen;
-    font-weight: 900;
+    font-weight: 900;   
+}
+h1 i{
+    font-size: 4rem;
     /*text-shadow: desplazamientoX desplazamientoY desenfoque color;*/
-    text-shadow: 7px 7px black,/*Sombra desplazada 7px a la derecha,7px hacia abajo, sin desenfoque,negro*/
+    text-shadow: 3px 3px black,/*Sombra desplazada 7px a la derecha,7px hacia abajo, sin desenfoque,negro*/
                     1px -1px 0 #000,/*Desplaza 1px hacia la derecha, -1px hacia arriba*/
                 -1px  1px 0 #000,/*Desplaza 1px hacia la izquierda, 1px hacia abajo*/
                 1px  1px 0 #000;/*Desplaza 1px hacia derecha y 1px hacia abajo */
+}
+svg{
+    width: 800px;
+    height: 100px;
+}
+svg text{
+    font-size: 2.1rem;
+    stroke: SeaGreen;
+    stroke-width: 1;
+    fill: transparent;
+    stroke-dasharray: 150;
+    stroke-dashoffset: 100;
+    animation: dibujar 4s forwards;
+}
+@keyframes dibujar{
+    40%{
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: SeaGreen;
+    }
 }
 
 /*fieldset {
