@@ -168,7 +168,7 @@ nav ul{
 
 .button{
     border-radius: 3rem;
-    box-shadow: 0 1rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0 1rem 1rem rgba(0,0,0,0.4);
     color: var(--white-text);
     font-size: 1.2rem;
     padding: .8rem 1.5rem;
@@ -184,6 +184,7 @@ nav ul{
     cursor: pointer;
     /*Invertimos los colores*/
     filter: invert(1);
+    box-shadow: 0 1rem 1rem -.5rem white;
 }
 .columna-derecha .button::before {
     content: attr(data-tooltip);
