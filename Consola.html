@@ -58,6 +58,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#metref"><i class="bi bi-link-45deg"></i> Method References</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" href="#string11"><i class="bi bi-stars"></i> String Java 11</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#foreachRemoveIfSort"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
                     </li>
@@ -77,6 +80,7 @@
         <a href="#funcdefault"><span class="badge text-bg-primary">Interfaz funcional/default</span></a>
         <a href="#stream"><span class="badge text-bg-primary">Stream</span></a>
         <a href="#metref"><span class="badge text-bg-primary">Method References</span></a>
+        <a href="#string11"><span class="badge text-bg-primary">String Java 11</span></a>
         <a href="#foreachRemoveIfSort"><span class="badge text-bg-primary">ForEach/RemoveIf/Sort</span></a>
     </div>
     </div>
@@ -123,36 +127,44 @@
         <div class="container d-flex flex-column gap-3">
             <div class="row justify-content-center gap-2">
                 <!--isPresent() - isEmpty()-->
-                <div class="columna col-12 col-md-4">
-                    <p><i class="bi bi-check-circle"></i>
-                    <i class="bi bi-dash-circle"></i></p>
-                    <p class="operaciones-titulo">isPresent() - isEmpty()</p>
-                    <p> Nos permiten 
-                saber si un valor ha sido inicializado. <span class="tituloCod">isPresent()</span> viene con <strong>JDK 1.8</strong>
-                 y si es false nos indica que el objeto está vacio. <span class="tituloCod">isEmpty()</span> se añadio con 
-                 <strong>JDK 11</strong> y si es true indica que el objeto está vacio</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <p><i class="bi bi-check-circle"></i>
+                        <i class="bi bi-dash-circle"></i></p>
+                        <p class="operaciones-titulo">isPresent() - isEmpty()</p>
+                        <p> Nos permiten saber si un valor ha sido inicializado. <span class="tituloCod">isPresent()</span> 
+                            viene con <strong>JDK 1.8</strong> y si es false nos indica que el objeto está vacio. 
+                            <span class="tituloCod">isEmpty()</span> se añadio con <strong>JDK 11</strong> y si es true indica 
+                            que el objeto está vacio</p>
+                    </div>
                 </div>
                 <!--orElse()-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-arrow-left-right"></i>
-                    <p class="operaciones-titulo">orElse()</p>
-                    <p> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta siempre 
-                        y solo establece el valor si recibe un nulo</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <p class="operaciones-titulo">orElse()</p>
+                        <p> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
+                            siempre y solo establece el valor si recibe un nulo</p>
+                    </div>
                 </div>                
             </div>
             <div class="row justify-content-center gap-2">
                 <!--orElseGet()-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-gear"></i>
-                    <p class="operaciones-titulo">orElseGet()</p>
-                    <p> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-gear"></i>
+                        <p class="operaciones-titulo">orElseGet()</p>
+                        <p> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</p>
+                    </div>
                 </div>                
                 <!--orElseThrow()-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-exclamation-triangle"></i>
-                    <p class="operaciones-titulo">orElseThrow()</p>
-                    <p> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
-                        NumberFormatException si el valor que debe tener es numérico.</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <p class="operaciones-titulo">orElseThrow()</p>
+                        <p> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
+                            NumberFormatException si el valor que debe tener es numérico.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,7 +230,7 @@
                 de la clase Optional que a su vez se obtiene del repositorio. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
                 base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
                 un error conocido 404 HttpStatus.NOT_FOUND </span>
-                <p><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
+                <p class="aspectoIntellij"><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
                 <div class="contenedorImagenes">
                     <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
                 </div>
@@ -288,6 +300,7 @@
                     <input type="button" id="btnBuscar" value="Buscar Elementos">
             </div>   
             <div id="contendorElementosStream" class="contendorElementosStream"></div>
+            <p class="aspectoIntellij"><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
             <div class="contenedorImagenes">
                 <img src="images/EndpointEmpezarPor1.jpg" alt="EndPoint1"><img src="images/EndpointEmpezarPor2.jpg" alt="EndPoint2">
             </div>
@@ -320,40 +333,158 @@
             </pre>
         </div>
     </div>
+    <div class="codigo mt-3" id="string11"><i class="bi bi-stars"></i> <span class="tituloCod">String Java 11:</span> 
+        En JDK 11 aparecieron 6 métodos en la clase java.util.String
+    </div>
+    <!--BootStrap-->    
+    <section class="operaciones">
+        
+        <div class="container d-flex flex-column gap-3">
+            <div class="row justify-content-center gy-3 gx-3">
+                <!--isBlank()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <p><i class="bi bi-circle"></i></p>                    
+                        <p class="operaciones-titulo">isBlank()</p>
+                        <p> Esta función comprueba si un método está vacío o no devolviendo true o false, si tenemos varios espacios 
+                            en blanco devuelve true</p>
+                    </div>
+                </div>
+                <!--repeat()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-repeat"></i>
+                        <p class="operaciones-titulo">repeat()</p>
+                        <p> Repite una cadena el número de veces que le indiquemos como parámetro</p>
+                    </div>
+                </div>     
+                <!--lines()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-list"></i>
+                        <p class="operaciones-titulo">lines()</p>
+                        <p> Permite convertir un texto que tenga un separador en una lista, para lo cual crea un stream() que se 
+                            puede convertir desde Java 8 a collect para convertirlo en lista</p>
+                    </div>
+                </div>            
+            </div>
+            <div class="row justify-content-center gx-3">
+                <!--strip()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-eraser"></i>
+                        <p class="operaciones-titulo">strip()</p>
+                        <p> Permite eliminar espacios en blanco tanto de la derecha como de la izquierda</p>
+                    </div>
+                </div>                
+                <!--stripLeading()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-align-start"></i>
+                        <p class="operaciones-titulo">stripLeading()</p>
+                        <p> Elimina espacios en blanco solo por la iquierda.</p>
+                    </div>
+                </div>
+                 <!--stripTrailing()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-align-end"></i>
+                        <p class="operaciones-titulo">stripTrailing()</p>
+                        <p> Elimina espacios en blanco solo por la derecha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="codigo" id="difStripTrim">
+            <p><strong>Diferencia entre strip() y trim(): </strong>Ambos eliminan los espacios en blanco, pero <strong>trim()</strong>
+         utiliza una regla antigua que le permite reconocer caracteres de control ('\t', '\n') y espacios básicos. <strong>strip()</strong>
+         además de reconocer los espacios de trim() reconoce espacios como '\u2003 EM SPACE' y '\u2005 FOUR-PER-EM SPACE' porque 
+         utiliza Character.isWhitespace para combrobar si un caracter es un espacio en blanco.</p>
+         <p>Si intentamos hacer un test para comprobar nuestros métodos pasando un texto por ejemplo: "\t IDE Eclipse \u2003" el método 
+            que use .trim() no eleminará '\u2003' y devolverá 'IDE Eclipse \u2003'</p>
+        </div>      
+        
+    </section>
+    <div class="card bg-dark text-light">
+            <div class="card-header bg-secondary text-white">
+                Aspecto IDE Eclipse
+            </div>
+            <div class="card-body console-window">
+                <pre class="m-0">
+                    <code class="language-java" id="codStringJava11"></code>                    
+                </pre>
+            </div>
+    </div>
+    <span>Pulse <strong>"Run JUnit Test"</strong> para ejecutar código test</span>
+    <button class="btn btn-success mt-1" id="runJUnit" onclick="ejecutarJUnit()"> <i class="bi bi-play-fill"></i> Run JUnit Test </button>
+    <div class="contenedorJUnit">
+        <div class="cabeceraUnit" id="cabeceraUnit">
+            <span>Jupiter JUnit 5</span>        
+        </div>
+
+        <div class="junit-tests">
+            <div class="test">            
+                <span class="nombrePrueba">testTextoEnBlanco</span>            
+            </div>
+
+            <div class="test">
+                <span class="nombrePrueba">testRepetirTexto</span>            
+            </div>
+
+            <div class="test">
+                <span class="nombrePrueba">eliminarEspaciosConStrip</span>            
+            </div>
+            <div class="test">
+                <span class="nombrePrueba">eliminarEspaciosTrim</span>            
+            </div>
+        </div>
+
+        <div class="resultadoJunit" id="resultado">
+            
+        </div>
+    </div>
+
+
     <div class="codigo mt-3" id="foreachRemoveIfSort"><i class="bi bi-list-check"></i> <span class="tituloCod">forEach, removeIf y sort:</span>         
     </div>
     <section class="operaciones">
         <div class="container">
             <div class="row">
                 <!--forEach-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-arrow-repeat"></i>
-                    <p class="operaciones-titulo">forEach</p>
-                    <p> Para recorrer los elementos de 
-                    un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
-                    for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                    que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
-                    recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <p class="operaciones-titulo">forEach</p>
+                        <p> Para recorrer los elementos de 
+                        un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                        for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
+                        que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                        recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</p>
+                    </div>
                 </div>
                 <!--removeIf-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-funnel"></i>
-                    <p class="operaciones-titulo">removeIf</p>
-                    <p> En Java 7 para eliminar una 
-                    ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
-                    ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
-                    podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
-                    como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
-                    elemento debe borrarse.</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-funnel"></i>
+                        <p class="operaciones-titulo">removeIf</p>
+                        <p> En Java 7 para eliminar una 
+                        ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
+                        ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                        podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
+                        como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                        elemento debe borrarse.</p>
+                    </div>
                 </div>
                 <!--sort-->
-                <div class="columna col-12 col-md-4">
-                    <i class="bi bi-sort-alpha-down"></i>
-                    <p class="operaciones-titulo">sort</p>
-                    <p> En Java 7 para ordenar una lista 
-                    tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
-                    para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
-                    podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</p>
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-sort-alpha-down"></i>
+                        <p class="operaciones-titulo">sort</p>
+                        <p> En Java 7 para ordenar una lista 
+                        tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
+                        para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
+                        podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</p>
+                    </div>
                 </div>
             </div>
         </div>

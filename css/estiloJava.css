@@ -65,12 +65,16 @@ h1 {
 .imagenesCodigo{
     margin-top: 5px;
 }
-.imagenesCodigo p{
+.aspectoIntellij{
     text-align: center;
 }
 .codigo, #esplicacionControlador{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+#difStripTrim{
+    margin-top: 12px;
+    text-align: left;
 }
 
 .badges-contenedor{
@@ -471,10 +475,12 @@ legend{
     border: 2px solid #C8A27C;
     /*border: 2px solid #8B5E3C;*/
     /*border: 2px solid #5B8DEF;*/
+    box-shadow: 4px 4px 4px rgba(80, 60, 40, 0.20);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    height: 100%;
 }
 #progreso{
     position: fixed;
@@ -498,44 +504,87 @@ legend{
     }
 }
 
+.contenedorJUnit {
+    margin: 16px 0;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: system-ui, sans-serif;
+}
+
+.cabeceraUnit {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    font-weight: 600;
+}
+
+.resultadoJUnit {
+    color: #3fb950;
+    font-size: 13px;
+}
+
+.junit-tests {
+    padding: 8px 0;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    padding: 7px 14px;
+    gap: 10px;
+}
+
+.test:hover {
+    background: #161b22;
+}
+
+.icon {
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.passed .icon {
+    color: #3fb950;
+}
+
+.failed .icon {
+    color: #f85149;
+}
+
+.nombrePrueba {
+    flex: 1;
+    font-family: monospace;
+}
+
+.time {
+    color: #8b949e;
+    font-size: 12px;
+}
+
+.resultadoJunit {
+    padding: 10px 14px;
+    border-top: 1px solid #30363d;
+    font-size: 13px;
+}
+
+.aciertos {
+    color: #3fb950;
+    margin-right: 15px;
+}
+
+.fallo {
+    color: #f85149;
+}
+
 /*media queries*/
 @media(max-width: 768px){
-    /*.navi-ul{
-        position: fixed;
-        left: -100%;
-        top: 5rem;
-        flex-direction: column;
-        background-color: #fff;
-        width: 100%;
-        text-align: left;
-        transition: 0.5s;
-    }
-
-    .navi-ul.active{
-        left: 0;
-        top: 4rem;
-    }
-    .icon{
-        display: block;
-        cursor: pointer;
-        padding: .2rem;
-        margin-right: 1rem;
-        color: var(--white-text);
-    }
-    nav ul{
-        flex-direction: column;
-        background-color: #568eec;
-    }
-    nav ul a {
-        color: var(--azul-marino);
-        font-size: 1.5rem;
-        padding: 1rem;
-        transition: .3s;
-    }
-    nav a:hover{
-        background-color: var(--azul-marino);
-        color: var(--white-text);
-    }*/
+    
     .tarjeta h6{
         opacity: 1;
     }

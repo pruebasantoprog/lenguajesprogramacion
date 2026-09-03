@@ -43,6 +43,7 @@ window.addEventListener("load",empezar,false);
         document.getElementById('defaultFuncional').innerHTML=mapa.get('defaultFuncional').trim();
         document.getElementById('MethodReference').innerHTML=mapa.get('MethodReference').trim();
         document.getElementById('EachRemoveSort').innerHTML=mapa.get('EachRemoveSort').trim();
+        document.getElementById('codStringJava11').innerHTML=mapa.get('codStringJava11').trim();
         console.log("Valor de get ",mapa.size);
         console.log("Valor="+mapa.get('defaultFuncional'));
 
@@ -335,4 +336,57 @@ window.addEventListener("load",empezar,false);
         let contendorElementosStream=document.getElementById("contendorElementosStream");
      
           
+    }
+
+    async function ejecutarJUnit(){
+        const tests = document.querySelectorAll(".test");
+
+        try{
+            await Promise.all(
+                [...tests].map((test, index) => {
+                    return new Promise((resolve) => {
+            //tests.forEach((test, index) => {
+                setTimeout(() => {
+                    const spanTiempo=document.createElement("span");
+                    spanTiempo.classList.add("time");
+                    spanTiempo.textContent=Math.random().toFixed(3).toString();
+                    test.appendChild(spanTiempo);
+
+                    if(index==3){
+                        test.classList.add("failed");
+                        const spanFailed=document.createElement("span");
+                        spanFailed.classList.add("icon");
+                        spanFailed.textContent="✗";
+                        test.appendChild(spanFailed);
+                    }else{
+                        test.classList.add("passed");
+                        const spanPassed=document.createElement("span");
+                        spanPassed.classList.add("icon");
+                        spanPassed.textContent="✓";
+                        test.appendChild(spanPassed);
+                    }
+                resolve();
+                }, index * 700);
+            });
+                })
+            );
+        }finally{
+            console.log("Entra en finally");
+            const resultado=document.getElementById("resultado");
+            const spanExito=document.createElement("span");
+            spanExito.textContent="3 tests successful";
+            spanExito.classList.add("aciertos");
+            resultado.appendChild(spanExito);
+            const spanFallo=document.createElement("span");
+            spanFallo.textContent="1 test failed org.opentest4j.AssertionFailedError: expected: <IDE Eclipse> but was: <IDE Eclipse  >";
+            spanFallo.classList.add("fallo");
+            resultado.appendChild(spanFallo);
+
+            const cabeceraJUnit=document.getElementById("cabeceraUnit");
+            const spanFinalizado=document.createElement("span");
+            spanFinalizado.textContent="Tests finished";
+            spanFinalizado.classList.add("resultadoJUnit");
+            cabeceraJUnit.appendChild(spanFinalizado);
+        }
+        
     }
