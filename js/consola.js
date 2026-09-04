@@ -340,6 +340,8 @@ window.addEventListener("load",empezar,false);
 
     async function ejecutarJUnit(){
         const tests = document.querySelectorAll(".test");
+        const botonJUnit = document.getElementById("runJUnit");
+        botonJUnit.disabled = true;
 
         try{
             await Promise.all(

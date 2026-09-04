@@ -380,6 +380,10 @@ legend{
     cursor: pointer;
     transform: scale(1.1);
 }
+.boton-shape{
+    border-radius: 4em;
+    corner-shape: round bevel bevel round;
+}
 #panelError{
     display: none;
     margin: 10px auto;
