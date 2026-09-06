@@ -381,7 +381,7 @@ legend{
     transform: scale(1.1);
 }
 .boton-shape{
-    border-radius: 4em;
+    border-radius: 1em 4em 4em 1em;
     corner-shape: round bevel bevel round;
 }
 #panelError{
