@@ -366,6 +366,16 @@ legend{
     font-weight: bold;
     margin-top: 20px;
 }
+#textoBusqueda{
+    background-color:  #e6e0d8;
+    border: 2px solid #b8afa5;
+    color: #333;
+}
+#textoBusqueda:focus{
+    border: 2px solid #2563EB;    
+    background-color: #fdfcfa;
+    outline: none;
+}
 #cargarDatos,#btnBuscar{
     background-color: #3B82F6;
     color: white;
