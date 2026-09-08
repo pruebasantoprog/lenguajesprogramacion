@@ -8,6 +8,7 @@ window.addEventListener("load",empezar(),false);
     function obtenerPersonajes(gender,species){
         console.log("entra en obtenerPersonajes en archivo js");
         let direccion="https://rickandmortyapi.com/api/character";
+        
         if(gender!=null){
             
             if(gender!='todos'){
@@ -75,9 +76,14 @@ window.addEventListener("load",empezar(),false);
                 );
             })
         }else{
-
+            let cargarDatos = document.getElementById("cargarDatos");
+            let numPersonaje=0;
             let arrayPersonajes=document.getElementsByClassName("personaje");
             console.log("arrayPersonajes",arrayPersonajes);
+             //Deshabilitamos botón
+            cargarDatos.disabled = true;
+            cargarDatos.textContent = "Cargando...";
+
 
             fetch(direccion)
             .then(response=>response.json())/*Obtenemos la respuesta en formato json*/
@@ -106,8 +112,12 @@ window.addEventListener("load",empezar(),false);
                           .some(elemento => Number(elemento.id) === personaje.id);*/                    
 
                     if(!existe){
+                        //Guardamos el primer personaje recuperado
+                        if(numPersonaje==0){
+                            numPersonaje=personaje.id;
+                        }
                         const article=document.createRange().createContextualFragment(/*html*/
-                            `<article class="personaje" id="${personaje.id}">
+                            `<article class="personaje" id="${personaje.id}" tabindex="-1">
                             <div class="contenedor-imagen">
                                 <img src="${personaje.image}" alt="Personaje">
                             </div>
@@ -126,6 +136,18 @@ window.addEventListener("load",empezar(),false);
                     }
                     
                 });
+            })
+            .catch(error=>console.log(error)) 
+            .finally(()=>{
+                //Volvemos a habilitar el botón                
+                cargarDatos.disabled=false;
+                cargarDatos.textContent="Añadir Personajes";
+                //Si hemos añadido personajes vamos al primero
+                if(numPersonaje!=0){
+                    console.log("Entra en numPersonaje!=0");
+                    const primerNuevoPer=document.getElementById(numPersonaje);
+                    primerNuevoPer.focus();
+                }
             });
         }
         
