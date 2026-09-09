@@ -12,6 +12,7 @@ body{
     align-items: center;
     margin: 0 auto;
     background-color: bisque;
+    font-family: "Roboto Condensed", sans-serif;
 }
 nav{
     display: flex;
