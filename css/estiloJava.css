@@ -380,6 +380,9 @@ legend{
     background-color: #3B82F6;
     color: white;
     transition: .5s all;
+    box-shadow: 4px 4px 4px rgba(80, 60, 40, 0.40),
+                inset 1px 1px 0 #60A5FA,
+                inset -.5px -1px 0 #2563EB;
 }
 #cargarDatos{
     display: block;
@@ -389,10 +392,29 @@ legend{
     background-color: #2563EB;
     cursor: pointer;
     transform: scale(1.1);
+    box-shadow: 4px 4px 4px rgba(80, 60, 40, 0.40),
+                inset 2px 2px 0 #3B82F6,
+                inset -1px -2px 0 #1D4ED8;
+}
+#cargarDatos:active, #btnBuscar:active{
+    transform: scale(.9);
 }
 .boton-shape{
     border-radius: 1em 4em 4em 1em;
-    corner-shape: round bevel bevel round;
+    corner-shape: round bevel bevel round;  
+}
+.btn-success{
+     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.20),
+    inset 0 -2px 0 rgba(0, 70, 40, 0.25);
+    box-shadow: 4px 4px 4px rgba(80, 60, 40, 0.40),
+                inset 2px 2px 0 #3aa875,
+                inset -1px -2px 0 #12643e;
+}
+.btn-success:active{
+    transform: scale(.9);
+    box-shadow: 3px 3px 3px rgba(80, 60, 40, 0.40),
+                inset 1px 1px 0 #3aa875,
+                inset -.5px -1px 0 #12643e;
 }
 #panelError{
     display: none;
@@ -424,7 +446,7 @@ legend{
     padding-right: 30px;
     --colorProgress: calc((sibling-index() - 1) / (sibling-count() - 1));
     background-color: oklch(calc(30% + var(--colorProgress) *30%)
-        0.2
+        0.3
         250deg);
     scale: 0.5;
     opacity: 0;
