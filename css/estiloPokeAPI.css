@@ -55,6 +55,10 @@ h1{
 .descripcion{
     width: 70%;
 }
+#descAPI{
+    text-align: center; 
+    text-wrap: balance;
+}
 .container, .pokemonColecion{
     display: flex;
     justify-content: center;
