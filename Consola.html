@@ -372,7 +372,7 @@
                     </div>
                 </div>            
             </div>
-            <div class="row justify-content-center gx-3">
+            <div class="row justify-content-center gx-3 gy-3">
                 <!--strip()-->
                 <div class="col-12 col-md-4">
                     <div class="columna">
@@ -473,7 +473,8 @@
                         <p class="operaciones-titulo">removeIf</p>
                         <p> En Java 7 para eliminar una 
                         ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
-                        ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                        <span class="d-inline d-md-none">Concurrent-Modification-Exception</span>
+                        <span class="d-none d-md-inline">ConcurrentModificationException</span>, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
                         podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
                         como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
                         elemento debe borrarse.</p>
