@@ -21,7 +21,19 @@ body{
     background-color: bisque;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.hero{
+    min-height: 30vh;
+    clip-path: polygon(
+     0 0,
+     100% 0,
+     100% 90%,
+     75% 100%,
+     0 90%
+    );
+    background-image: url(../images/imagenjava.jpeg);
+    background-repeat: no-repeat;   
+    background-position: center;
+}
 /*Fuente JetBrains Mono*/
 h1 { 
     text-align: center;
@@ -404,8 +416,8 @@ legend{
     corner-shape: round bevel bevel round;  
 }
 .btn-success{
-     box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.20),
-    inset 0 -2px 0 rgba(0, 70, 40, 0.25);
+    /* box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.20),
+    inset 0 -2px 0 rgba(0, 70, 40, 0.25);*/
     box-shadow: 4px 4px 4px rgba(80, 60, 40, 0.40),
                 inset 2px 2px 0 #3aa875,
                 inset -1px -2px 0 #12643e;
@@ -518,6 +530,9 @@ legend{
     justify-content: flex-start;
     height: 100%;
 }
+.operaciones .columna p{
+    word-wrap:break-word;
+}
 #progreso{
     position: fixed;
     top: 0;
@@ -621,12 +636,16 @@ legend{
 /*media queries*/
 @media(max-width: 768px){
     
+    .hero{
+        min-height: 42vh;
+        background-size: cover;
+    }
     .tarjeta h6{
         opacity: 1;
     }
-    .temas i{
+    /*.temas i{
         opacity: .5;
-    }
+    }*/
     .busqueda{
         flex-direction: column;
         align-items: center;
