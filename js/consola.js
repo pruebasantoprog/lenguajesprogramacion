@@ -222,13 +222,17 @@ window.addEventListener("load",empezar,false);
                     }
                 });
 
-               if(!familiaEncontrada){
-                    const panelError=document.getElementById("panelError");
+               const panelError=document.getElementById("panelError");
+               if(!familiaEncontrada){                    
                     panelError.style.display="flex";
                     panelError.style.flexDirection="column";
                     panelError.style.alignItems="center";
                     panelError.innerHTML=`<p><strong>ATENCIÓN!!</strong> No se han encontrado elementos para la familia <strong>${categoria}</strong></p>`;                    
+                    panelError.classList.add("alert");
+                    panelError.classList.add("alert-primary");
                     document.getElementById("preCategoria").textContent="GET http://localhost:8080/api/elementos/11 net::ERR_ABORTED 404 (Not Found)";
+               }else{
+                    panelError.style.display="none";
                }
                 
                 
