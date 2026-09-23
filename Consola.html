@@ -124,7 +124,7 @@
     <div class="codigo mt-3" id="optional"><i class="bi bi-shield-check"></i> <span class="tituloCod">Optional:</span> Optional es una clase que viene en el JDK 1.8 que nos 
         permite gestionar los errores NullPointerException para reducirlos. Esta clase debe ser usada con cuidado en aplicaciones críticas 
         por rendimiento ya que consume recursos. Optional puede contener un valor nulo, podemos saber si el objeto de la clase tiene valor
-        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:       
+        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, <span class="tituloCod">métodos que conviene conocer:</span>       
     </div>
     <!--BootStrap-->
     <section class="operaciones">
@@ -173,11 +173,18 @@
             </div>
         </div>
     </section>
-    <div class="codigo mt-3" id="optional"><span class="tituloCod">Ejemplo orElseGet:</span>
-        <p>Supongamos que queremos obtener los elementos químicos de cada categoría con una aplicación llamando a un API Rest de 
-            Spring Boot.</p>
-        <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la 
-            aplicación deje de funcionar.</p>
+    <div class="codigo mt-3" id="optional">
+        <div class="card mb-3 bg-light border-success border-3">
+            <div class="card-header">
+                <span class="tituloCod">Ejemplo orElseGet:</span>
+            </div>
+            <div class="card-body">
+                <p>Supongamos que queremos obtener los elementos químicos de cada categoría con una aplicación llamando a un API Rest de 
+                    Spring Boot.</p>
+                <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la 
+                    aplicación deje de funcionar.</p>
+            </div>
+        </div>
             
             <div class="tabla-wrapper">
                 <div class="contendorElementos">
@@ -229,11 +236,12 @@
                 </div>
             </div>
             <div class="imagenesCodigo">
-                <span id="esplicacionControlador"> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
+                <span id="explicacionControlador"><span class="tituloCod">Explicación:</span> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
                 (Ejemplo: http://localhost:8080/api/elementos/4) entra en el Controlador, el cual llama al Servicio que le devuelve un objeto 
                 de la clase Optional que a su vez se obtiene del repositorio. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
                 base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
-                un error conocido 404 HttpStatus.NOT_FOUND </span>
+                un error conocido 404 HttpStatus.NOT_FOUND que podemos tratar para mostrar el error que queramos al usuario(ATENCIÓN!! 
+                No se han encontrado elementos para la familia inexistentes). </span>
                 <p class="aspectoIntellij"><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
                 <div class="contenedorImagenes">
                     <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
@@ -283,21 +291,25 @@
                 id de la tabla periódica, para lo cual accedemos desde el controlador que tenemos para familia de elementos para  
                 no crear un controlador específico para elementos (se podría hacer), le pasamos la url con el valor seleccionado.
                 Ejemplo http://localhost:8080/api/elementos/empezarpor/a.</p>
-            <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
-            <!--BootStrap-->
-            <ul class="list-group">
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
-                    que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
-                    elementos de cada familia(alcalinos, metaloides, etc.)</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
-                    según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
-                    le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno a uno. 
-                En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
-                elementos se devuelven y cuales no</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</li>
-            </ul>
+            <div class="card mb-3 bg-light border-success border-3">
+                <div class="card-header">
+                    <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
+                </div>
+                <!--BootStrap-->
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
+                        que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
+                        elementos de cada familia(alcalinos, metaloides, etc.)</li>
+                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
+                        según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
+                        le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
+                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</li>
+                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno a uno. 
+                    En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
+                    elementos se devuelven y cuales no</li>
+                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</li>
+                </ul>
+            </div>
                 
             <div class="busqueda">
                     <input type="text" name="textoBusqueda" id="textoBusqueda" placeholder="Teclee una letra/s">
@@ -313,7 +325,7 @@
 
     <div class="codigo mt-3" id="metref"><i class="bi bi-link-45deg"></i><span class="tituloCod">Referencias de Métodos (Method 
         References):</span> Es una forma de llamar  a funciones existentes con el operador '::' como si fueran expresiones lambda 
-        pero sin expresar todo el camino</div>
+        pero sin expresar todo el camino.</div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
             Aspecto IDE Eclipse
@@ -405,7 +417,7 @@
          además de reconocer los espacios de trim() reconoce espacios como '\u2003 EM SPACE' y '\u2005 FOUR-PER-EM SPACE' porque 
          utiliza Character.isWhitespace para combrobar si un caracter es un espacio en blanco.</p>
          <p>Si intentamos hacer un test para comprobar nuestros métodos pasando un texto por ejemplo: "\t IDE Eclipse \u2003" el método 
-            que use .trim() no eleminará '\u2003' y devolverá 'IDE Eclipse \u2003'</p>
+            que use .trim() no eleminará '\u2003' y devolverá 'IDE Eclipse \u2003' por lo que no pasará el test de JUnit.</p>
         </div>      
         
     </section>
