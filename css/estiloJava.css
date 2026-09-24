@@ -374,6 +374,9 @@ h1 {
     color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
+.form-check-input {
+    border: 3px solid var(--bs-success);
+}
 legend{
     font-size: medium;
     font-weight: bold;
