@@ -297,17 +297,24 @@
                 </div>
                 <!--BootStrap-->
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center"><p><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
                         que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
-                        elementos de cada familia(alcalinos, metaloides, etc.)</li>
-                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
+                        elementos de cada familia(alcalinos, metaloides, etc.)</p><span class="badge bg-success">1</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center"><p><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
                         según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
-                        le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
-                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</li>
-                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno a uno. 
-                    En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
-                    elementos se devuelven y cuales no</li>
-                    <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</li>
+                        le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</p>
+                        <span class="badge bg-success">2</span>
+                    </li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</p>
+                        <span class="badge bg-success">3</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno 
+                            a uno. En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que 
+                            datos del elementos se devuelven y cuales no</p><span class="badge bg-success">4</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</p>
+                        <span class="badge bg-success">5</span></li>
                 </ul>
             </div>
                 
