@@ -20,46 +20,81 @@
 
     <title>Java 8</title>
 
-    <link rel="stylesheet" href="css/estiloJava.css">    
+    <link rel="stylesheet" href="css/estiloJava.css">  
 
+    <!--Icono página-->
+    <link rel="icon" href="images/icono.png">
+   
 </head>
 <body>
-    <header>
-        <nav id="inicio">
-            <h2><i class="bi bi-filetype-java"></i> Java 8</h2>
-            <ul class="navi-ul">
-                <a href="index.html" class="text-decoration-none"><i class="bi bi-house"></i></i> Inicio</a>
-                <a href="#ejemlambda" class="text-decoration-none"><i class="bi bi-arrow-left-right"></i> Lambda</a>
-                <a href="#optional" class="text-decoration-none"><i class="bi bi-shield-check"></i> Optional</a>                
-                <a href="#funcdefault" class="text-decoration-none"><i class="bi bi-diagram-3"></i> Interfaz funcional</a>
-                <a href="#stream" class="text-decoration-none"><i class="bi bi-shuffle"></i> Stream</a>
-                <a href="#metref" class="text-decoration-none"><i class="bi bi-link-45deg"></i> Method References</a>
-                <a href="#foreachRemoveIfSort" class="text-decoration-none"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
-            </ul>
-            <!--Hamburguesa--> 
-            <a href="#" class="icon"><i class="bi bi-menu-up"></i></a>           
+    <div id="progreso"></div>
+    <header>       
+        <nav class="navbar navbar-expand-md mi-navbar" data-bs-theme="dark" id="inicio">
+            <div class="container-fluid">
+                <!--<h2><i class="bi bi-filetype-java"></i> Java 8</h2>-->
+                <a class="navbar-brand" href="#">
+                    <i class="bi bi-filetype-java"></i> Java 8
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">            
+                        <a class="nav-link active" href="index.html"><i class="bi bi-house"></i></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#ejemlambda"><i class="bi bi-arrow-left-right"></i> Lambda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#optional"><i class="bi bi-shield-check"></i> Optional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#funcdefault"><i class="bi bi-diagram-3"></i> Interfaz funcional</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#stream"><i class="bi bi-shuffle"></i> Stream</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#metref"><i class="bi bi-link-45deg"></i> Method References</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" href="#string11"><i class="bi bi-stars"></i> String Java 11</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#foreachRemoveIfSort"><i class="bi bi-list-check"></i>ForEach/RemoveIf/Sort</span></a>
+                    </li>
+                </ul>
+                
+                </div>
+            </div>
         </nav>
-         <h1 class="jetbrains-mono">Ejemplos de Código Java 8</h1>
+        <div class="hero">
+             <h1 class="jetbrains-mono">Ejemplos de Código Java 8</h1>
+            <div class="temas col-12">
+                <i class="bi bi-filetype-java"></i>
+                <div class="badges-contenedor">
+                    <a href="#ejemlambda"><span class="badge text-bg-primary">Lambda</span></a>
+                    <a href="#optional"><span class="badge text-bg-primary">Optional</span></a>
+                    <a href="#funcdefault"><span class="badge text-bg-primary">Interfaz funcional/default</span></a>
+                    <a href="#stream"><span class="badge text-bg-primary">Stream</span></a>
+                    <a href="#metref"><span class="badge text-bg-primary">Method References</span></a>
+                    <a href="#string11"><span class="badge text-bg-primary">String Java 11</span></a>
+                    <a href="#foreachRemoveIfSort"><span class="badge text-bg-primary">ForEach/RemoveIf/Sort</span></a>
+                </div>
+            </div>
+        </div>
+   
     </header>
     
-    <div class="temas col-12">
-        <i class="bi bi-filetype-java"></i>
-        <div class="badges-contenedor">
-        <a href="#ejemlambda"><span class="badge text-bg-primary">Lambda</span></a>
-        <a href="#optional"><span class="badge text-bg-primary">Optional</span></a>
-        <a href="#funcdefault"><span class="badge text-bg-primary">Interfaz funcional/default</span></a>
-        <a href="#stream"><span class="badge text-bg-primary">Stream</span></a>
-        <a href="#metref"><span class="badge text-bg-primary">Method References</span></a>
-        <a href="#foreachRemoveIfSort"><span class="badge text-bg-primary">ForEach/RemoveIf/Sort</span></a>
-    </div>
-    </div>
+    
     
     <div class="container mt-3">
     <!--<div class="container mt-4"></div>-->
-    <div class="codigo" id="ejemlambda"><span class="tituloCod">Ejemplo Lambda:</span> Las expresiones lambda de Java 8 son métodos o funciones anónimas
-        que no necesitan un identificador para ser llamadas y que usan los parámetros, el operador -> y la expresión,
-        utilizando programación declarativa. En Java 7 utilizamos programación imperativa lo que implica que tenemos que
-        indicar todos los pasos.
+    <div class="codigo mt-3" id="ejemlambda"><i class="bi bi-arrow-left-right"></i> <span class="tituloCod">Ejemplo Lambda:</span>
+        Las expresiones lambda de Java 8 son métodos o funciones anónimas que no necesitan un identificador para ser llamadas y 
+        que usan los parámetros, el operador -> y la expresión, utilizando programación declarativa. En Java 7 utilizamos 
+        programación imperativa lo que implica que tenemos que indicar todos los pasos.
      </div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
@@ -86,24 +121,70 @@
             </pre>
         </div>
     </div>
-    <div class="codigo" id="optional"><span class="tituloCod">Optional:</span> Optional es una clase que viene en el JDK 1.8 que nos 
+    <div class="codigo mt-3" id="optional"><i class="bi bi-shield-check"></i> <span class="tituloCod">Optional:</span> Optional es una clase que viene en el JDK 1.8 que nos 
         permite gestionar los errores NullPointerException para reducirlos. Esta clase debe ser usada con cuidado en aplicaciones críticas 
         por rendimiento ya que consume recursos. Optional puede contener un valor nulo, podemos saber si el objeto de la clase tiene valor
-        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, métodos que conviene conocer:
-        <!--BootStrap-->
-        <ul class="list-group">
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">isPresent():</span> Nos permite saber si un valor ha sido inicializado</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElse():</span>span> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
-                siempre y solo establece el valor si recibe un nulo</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseGet():</span> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">orElseThrow:</span> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
-            NumberFormatException si el valor que debe tener es numérico.</li>           
-        </ul>       
+        nulo, es decir si está inicializada, por lo que podemos actuar en consecuencia, <span class="tituloCod">métodos que conviene conocer:</span>       
     </div>
-    <div class="codigo" id="optional"><span class="tituloCod">Ejemplo orElseGet:</span>
-        <p>Supongamos que queremos obtener los elementos de cada categoría con una aplicación llamando a un API Rest de Spring Boot.</p>
-        <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la aplicación deje de 
-            funcionar.</p>
+    <!--BootStrap-->
+    <section class="operaciones">
+        <div class="container d-flex flex-column gap-3">
+            <div class="row justify-content-center gap-2">
+                <!--isPresent() - isEmpty()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <p><i class="bi bi-check-circle"></i>
+                        <i class="bi bi-dash-circle"></i></p>
+                        <p class="operaciones-titulo">isPresent() - isEmpty()</p>
+                        <p> Nos permiten saber si un valor ha sido inicializado. <span class="tituloCod">isPresent()</span> 
+                            viene con <strong>JDK 1.8</strong> y si es false nos indica que el objeto está vacio. 
+                            <span class="tituloCod">isEmpty()</span> se añadio con <strong>JDK 11</strong> y si es true indica 
+                            que el objeto está vacio</p>
+                    </div>
+                </div>
+                <!--orElse()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-arrow-left-right"></i>
+                        <p class="operaciones-titulo">orElse()</p>
+                        <p> Permite establecer un valor por defecto en caso de que el valor sea nulo. Este método se ejecuta 
+                            siempre y solo establece el valor si recibe un nulo</p>
+                    </div>
+                </div>                
+            </div>
+            <div class="row justify-content-center gap-2">
+                <!--orElseGet()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-gear"></i>
+                        <p class="operaciones-titulo">orElseGet()</p>
+                        <p> Se diferencia de orElse() en que solo se ejecuta si el objeto está a nulo</p>
+                    </div>
+                </div>                
+                <!--orElseThrow()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        <p class="operaciones-titulo">orElseThrow()</p>
+                        <p> Podemos lanzar una excepción diferente de NullPointerException si el valor es nulo, por ejemplo 
+                            NumberFormatException si el valor que debe tener es numérico.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="codigo mt-3" id="optional">
+        <div class="card mb-3 bg-light border-success border-3">
+            <div class="card-header">
+                <span class="tituloCod">Ejemplo orElseGet:</span>
+            </div>
+            <div class="card-body">
+                <p>Supongamos que queremos obtener los elementos químicos de cada categoría con una aplicación llamando a un API Rest de 
+                    Spring Boot.</p>
+                <p>Podemos controlar que nos consulten una categoría inexistente devolviendo un código de error en vez de que la 
+                    aplicación deje de funcionar.</p>
+            </div>
+        </div>
             
             <div class="tabla-wrapper">
                 <div class="contendorElementos">
@@ -129,19 +210,19 @@
             </div>
             <fieldset>
                 <legend>Seleccione una categoría:</legend>                
-                <label for="alcalinos" class="sombraAlcalina"><input type="radio" id="alcalinos" name="categorias" value="alcalinos" checked /> Metales alcalinos</label>
-                <label for="alcalinoterreos" class="sombraAlcalinoterreos"><input type="radio" id="alcalinoterreos" name="categorias" value="alcalinoterreos"/> Metales alcalinoterreos</label>
-                <label for="transicionales" class="sombraTransicionales"><input type="radio" id="transicionales" name="categorias" value="transicionales"/> Metales transicionales</label>
-                <label for="metaloides" class="sombraMetaloides"><input type="radio" id="metaloides" name="categorias" value="metaloides"/> Metaloides</label>
-                <label for="nometal" class="sombraNoMetales"><input type="radio" id="nometal" name="categorias" value="nometal"/> No metales reactivos</label>
-                <label for="gasnoble" class="sombraGasesNobles"><input type="radio" id="gasnoble" name="categorias" value="gasnoble"/> Gases nobles</label>
-                <label for="lantanidos" class="sombraLantanidos"><input type="radio" id="lantanidos" name="categorias" value="lantanidos"/> Lantánidos</label>
-                <label for="actinoides" class="sombraActinoides"><input type="radio" id="actinoides" name="categorias" value="actinoides"/> Actinoides</label>
-                <label for="desconocidas" class="sombraDesconocidos"><input type="radio" id="desconocidas" name="categorias" value="desconocidas"/> Propiedades desconocidas</label>
-                <label for="postransicionales" class="sombraPostransicionales"><input type="radio" id="postransicionales" name="categorias" value="postransicionales"/> Metales postransicionales</label>
-                <label for="inexistentes" class="sombraInexistente"><input type="radio" id="inexistentes" name="categorias" value="inexistentes"/> Elementos Inexistentes</label>
+                <label for="alcalinos" class="sombraAlcalina form-check-label"><input type="radio" class="form-check-input" id="alcalinos" name="categorias" value="alcalinos" checked /> Metales alcalinos</label>
+                <label for="alcalinoterreos" class="sombraAlcalinoterreos form-check-label"><input type="radio" class="form-check-input" id="alcalinoterreos" name="categorias" value="alcalinoterreos"/> Metales alcalinoterreos</label>
+                <label for="transicionales" class="sombraTransicionales form-check-label"><input type="radio" class="form-check-input" id="transicionales" name="categorias" value="transicionales"/> Metales transicionales</label>
+                <label for="metaloides" class="sombraMetaloides form-check-label"><input type="radio" class="form-check-input" id="metaloides" name="categorias" value="metaloides"/> Metaloides</label>
+                <label for="nometal" class="sombraNoMetales form-check-label"><input type="radio" class="form-check-input" id="nometal" name="categorias" value="nometal"/> No metales reactivos</label>
+                <label for="gasnoble" class="sombraGasesNobles form-check-label"><input type="radio" class="form-check-input" id="gasnoble" name="categorias" value="gasnoble"/> Gases nobles</label>
+                <label for="lantanidos" class="sombraLantanidos form-check-label"><input type="radio" class="form-check-input" id="lantanidos" name="categorias" value="lantanidos"/> Lantánidos</label>
+                <label for="actinoides" class="sombraActinoides form-check-label"><input type="radio" class="form-check-input" id="actinoides" name="categorias" value="actinoides"/> Actinoides</label>
+                <label for="desconocidas" class="sombraDesconocidos form-check-label"><input type="radio" class="form-check-input" id="desconocidas" name="categorias" value="desconocidas"/> Propiedades desconocidas</label>
+                <label for="postransicionales" class="sombraPostransicionales form-check-label"><input type="radio" class="form-check-input" id="postransicionales" name="categorias" value="postransicionales"/> Metales postransicionales</label>
+                <label for="inexistentes" class="sombraInexistente form-check-label"><input type="radio" class="form-check-input" id="inexistentes" name="categorias" value="inexistentes"/> Elementos Inexistentes</label>
                 <button id="cargarDatos">Cargar Categoría</button>
-                <div id="panelError"></div>
+                <div id="panelError" role="alert"></div>
                 
             </fieldset>
             <div class="card bg-dark text-light mt-1 mb-3">
@@ -155,20 +236,22 @@
                 </div>
             </div>
             <div class="imagenesCodigo">
-                <span id="esplicacionControlador"> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
+                <span id="explicacionControlador"><span class="tituloCod">Explicación:</span> Cuando se llama a la aplicación de Spring Boot con un endpoint con la url api/elementos/ con el {id}  de una categoría 
                 (Ejemplo: http://localhost:8080/api/elementos/4) entra en el Controlador, el cual llama al Servicio que le devuelve un objeto 
                 de la clase Optional que a su vez se obtiene del repositorio. Si este objeto no es nulo se transforma en un objeto DTO para no esponer directamente los datos de la 
                 base de datos y elegir que mostrar, se devuelve en formato JSON. Por el contrario si el objeto es nulo Spring Boot devuelve 
-                un error conocido 404 HttpStatus.NOT_FOUND </span>
-                <p><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
+                un error conocido 404 HttpStatus.NOT_FOUND que podemos tratar para mostrar el error que queramos al usuario(ATENCIÓN!! 
+                No se han encontrado elementos para la familia inexistentes). </span>
+                <p class="aspectoIntellij"><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
                 <div class="contenedorImagenes">
                     <img src="images/Controlador.jpg" alt="Controlador"><img src="images/MapperDTO.jpg" alt="MapperDTO">
                 </div>
             </div>
     </div>
-    <div class="codigo" id="funcdefault"><span class="tituloCod">Ejemplo interfaz funcional y método default:</span> Una interfaz funcional es aquella interfaz que 
-    solamente puede tener un método abstracto y que permite usar expresiones lambda para invocar a dicho método. También permite definir 
-    otros métodos "default" y estáticos, que pueden ser llamados y no tiene porque ser sobrescritos en las clases que implemente el interfaz.</div>
+    <div class="codigo mt-3" id="funcdefault"><i class="bi bi-diagram-3"></i> <span class="tituloCod">Ejemplo interfaz funcional y 
+    método default:</span> Una interfaz funcional es aquella interfaz que solamente puede tener un método abstracto y que 
+    permite usar expresiones lambda para invocar a dicho método. También permite definir otros métodos "default" y estáticos, 
+    que pueden ser llamados y no tiene porque ser sobrescritos en las clases que implemente el interfaz.</div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
             Aspecto IDE Eclipse
@@ -191,8 +274,9 @@
             </pre>
         </div>
     </div>
-    <div class="codigo" id="stream"><span class="tituloCod">API Stream:</span> Un Stream es una secuencia de elementos que permite procesar datos 
-        de forma declarativa, ayudan a manipular colecciones mediante operaciones que se dividen entre intermedias y terminales.
+    <div class="codigo mt-3" id="stream"><i class="bi bi-shuffle"></i> <span class="tituloCod">API Stream:</span> Un Stream es una 
+        secuencia de elementos que permite procesar datos de forma declarativa, ayudan a manipular colecciones mediante 
+        operaciones que se dividen entre intermedias y terminales.
         <ul>
             <li><span class="tituloCod">Operaciones intermedias:</span> No ejecutan nada por sí solas y describen que querenos hacer por ejemplo filtrar, ordenar, 
                 transformar, limitar, etc., para lo cual crean un nuevo Stream.</li>
@@ -207,35 +291,48 @@
                 id de la tabla periódica, para lo cual accedemos desde el controlador que tenemos para familia de elementos para  
                 no crear un controlador específico para elementos (se podría hacer), le pasamos la url con el valor seleccionado.
                 Ejemplo http://localhost:8080/api/elementos/empezarpor/a.</p>
-            <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
-            <!--BootStrap-->
-            <ul class="list-group">
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
-                    que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
-                    elementos de cada familia(alcalinos, metaloides, etc.)</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
-                    según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
-                    le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno a uno. 
-                En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que datos del 
-                elementos se devuelven y cuales no</li>
-                <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</li>
-            </ul>
+            <div class="card mb-3 bg-light border-success border-3">
+                <div class="card-header">
+                    <p>Para obtener el resultado realizaremos las siguientes operaciones:</p>
+                </div>
+                <!--BootStrap-->
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center"><p><span class="tituloCod">flatMap o mapa plano (Stream Flattening):</span> Es una estructura similar a un mapa 
+                        que nos permite trabajar con estructuras anidadas. En este caso nos permite obtener un nuevo Stream con los 
+                        elementos de cada familia(alcalinos, metaloides, etc.)</p><span class="badge bg-success">1</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center"><p><span class="tituloCod">filter:</span> Es un método de la clase Stream que nos permite seleccionar elementos 
+                        según una condición. Para este caso filtraremos para obtener los elementos que comiencen por una cadena que 
+                        le pasemos, por ejemplo si pasamos la cadena "Co" debería devolver los elementos Cobalto, Cobre y Copernicio</p>
+                        <span class="badge bg-success">2</span>
+                    </li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">sorted:</span> Ordena los elementos de una lista permitiendo usar Comparator</p>
+                        <span class="badge bg-success">3</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">map:</span> Es una función que permite operar con los elementos de una lista uno 
+                            a uno. En este caso lo usamos para transformar cada elemento de la base de datos a DTO para decidir que 
+                            datos del elementos se devuelven y cuales no</p><span class="badge bg-success">4</span></li>
+                    <li class="list-group-item mb-2 bg-transparent d-flex justify-content-between align-items-center">
+                        <p><span class="tituloCod">toList:</span> Método que consume el Stream convirtiéndolo a una lista.</p>
+                        <span class="badge bg-success">5</span></li>
+                </ul>
+            </div>
                 
             <div class="busqueda">
                     <input type="text" name="textoBusqueda" id="textoBusqueda" placeholder="Teclee una letra/s">
                     <input type="button" id="btnBuscar" value="Buscar Elementos">
             </div>   
             <div id="contendorElementosStream" class="contendorElementosStream"></div>
+            <p class="aspectoIntellij"><strong><u>Aspecto IDE Intellij IDEA</u></strong></p>
             <div class="contenedorImagenes">
                 <img src="images/EndpointEmpezarPor1.jpg" alt="EndPoint1"><img src="images/EndpointEmpezarPor2.jpg" alt="EndPoint2">
             </div>
         </div>
     </div>
 
-    <div class="codigo" id="metref"><span class="tituloCod">Referencias de Métodos (Method References):</span> Es una forma de llamar  a funciones existentes con el operador '::' 
-        como si fueran expresiones lambda pero sin expresar todo el camino</div>
+    <div class="codigo mt-3" id="metref"><i class="bi bi-link-45deg"></i><span class="tituloCod">Referencias de Métodos (Method 
+        References):</span> Es una forma de llamar  a funciones existentes con el operador '::' como si fueran expresiones lambda 
+        pero sin expresar todo el camino.</div>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
             Aspecto IDE Eclipse
@@ -259,26 +356,163 @@
             </pre>
         </div>
     </div>
-    <div class="codigo" id="foreachRemoveIfSort"><span class="tituloCod">forEach, removeIf y sort:</span> 
-        <!--BootStrap-->
-        <ul class="list-group">
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">forEach:</span> Para recorrer los elementos de 
-                un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
-                for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
-                que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
-                recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">removeIf:</span> En Java 7 para eliminar una 
-                ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
-                ConcurrentModificationException, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
-                podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
-                como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
-                elemento debe borrarse. </li>
-            <li class="list-group-item mb-2 bg-transparent"><span class="tituloCod">sort:</span> En Java 7 para ordenar una lista 
-                tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
-                para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
-                podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</li>
-        </ul>
+    <div class="codigo mt-3" id="string11"><i class="bi bi-stars"></i> <span class="tituloCod">String Java 11:</span> 
+        En JDK 11 aparecieron 6 métodos en la clase java.util.String
     </div>
+    <!--BootStrap-->    
+    <section class="operaciones">
+        
+        <div class="container d-flex flex-column gap-3">
+            <div class="row justify-content-center gy-3 gx-3">
+                <!--isBlank()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <p><i class="bi bi-circle"></i></p>                    
+                        <p class="operaciones-titulo">isBlank()</p>
+                        <p> Esta función comprueba si un método está vacío o no devolviendo true o false, si tenemos varios espacios 
+                            en blanco devuelve true</p>
+                    </div>
+                </div>
+                <!--repeat()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-repeat"></i>
+                        <p class="operaciones-titulo">repeat()</p>
+                        <p> Repite una cadena el número de veces que le indiquemos como parámetro</p>
+                    </div>
+                </div>     
+                <!--lines()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-list"></i>
+                        <p class="operaciones-titulo">lines()</p>
+                        <p> Permite convertir un texto que tenga un separador en una lista, para lo cual crea un stream() que se 
+                            puede convertir desde Java 8 a collect para convertirlo en lista</p>
+                    </div>
+                </div>            
+            </div>
+            <div class="row justify-content-center gx-3 gy-3">
+                <!--strip()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-eraser"></i>
+                        <p class="operaciones-titulo">strip()</p>
+                        <p> Permite eliminar espacios en blanco tanto de la derecha como de la izquierda</p>
+                    </div>
+                </div>                
+                <!--stripLeading()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-align-start"></i>
+                        <p class="operaciones-titulo">stripLeading()</p>
+                        <p> Elimina espacios en blanco solo por la iquierda.</p>
+                    </div>
+                </div>
+                 <!--stripTrailing()-->
+                <div class="col-12 col-md-4">
+                    <div class="columna">
+                        <i class="bi bi-align-end"></i>
+                        <p class="operaciones-titulo">stripTrailing()</p>
+                        <p> Elimina espacios en blanco solo por la derecha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="codigo" id="difStripTrim">
+            <p><strong>Diferencia entre strip() y trim(): </strong>Ambos eliminan los espacios en blanco, pero <strong>trim()</strong>
+         utiliza una regla antigua que le permite reconocer caracteres de control ('\t', '\n') y espacios básicos. <strong>strip()</strong>
+         además de reconocer los espacios de trim() reconoce espacios como '\u2003 EM SPACE' y '\u2005 FOUR-PER-EM SPACE' porque 
+         utiliza Character.isWhitespace para combrobar si un caracter es un espacio en blanco.</p>
+         <p>Si intentamos hacer un test para comprobar nuestros métodos pasando un texto por ejemplo: "\t IDE Eclipse \u2003" el método 
+            que use .trim() no eleminará '\u2003' y devolverá 'IDE Eclipse \u2003' por lo que no pasará el test de JUnit.</p>
+        </div>      
+        
+    </section>
+    <div class="card bg-dark text-light">
+            <div class="card-header bg-secondary text-white">
+                Aspecto IDE Eclipse
+            </div>
+            <div class="card-body console-window">
+                <pre class="m-0">
+                    <code class="language-java" id="codStringJava11"></code>                    
+                </pre>
+            </div>
+    </div>
+    <span>Pulse <strong>"Run JUnit Test"</strong> para ejecutar código test</span>
+    <button class="btn btn-success mt-1 boton-shape" id="runJUnit" onclick="ejecutarJUnit()"> <i class="bi bi-play-fill"></i> Run JUnit Test </button>
+    <div class="contenedorJUnit">
+        <div class="cabeceraUnit" id="cabeceraUnit">
+            <span>Jupiter JUnit 5</span>        
+        </div>
+
+        <div class="junit-tests">
+            <div class="test">            
+                <span class="nombrePrueba">testTextoEnBlanco</span>            
+            </div>
+
+            <div class="test">
+                <span class="nombrePrueba">testRepetirTexto</span>            
+            </div>
+
+            <div class="test">
+                <span class="nombrePrueba">eliminarEspaciosConStrip</span>            
+            </div>
+            <div class="test">
+                <span class="nombrePrueba">eliminarEspaciosTrim</span>            
+            </div>
+        </div>
+
+        <div class="resultadoJunit" id="resultado">
+            
+        </div>
+    </div>
+
+
+    <div class="codigo mt-3" id="foreachRemoveIfSort"><i class="bi bi-list-check"></i> <span class="tituloCod">forEach, removeIf y sort:</span>         
+    </div>
+    <section class="operaciones">
+        <div class="container">
+            <div class="row">
+                <!--forEach-->
+                <div class="col-12 col-lg-4">
+                    <div class="columna">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <p class="operaciones-titulo">forEach</p>
+                        <p> Para recorrer los elementos de 
+                        un array en Java 7 podíamos usar un forEach con un for usando el operador '::' de la siguiente manera 
+                        for(String s::arrayStrings), en Java8 podemos usar nombreArray.forEach que dentro pide un Consumer 
+                        que prácticamente es una interfaz funcional con un único método llamado accept() dentro del cual dentro del cual 
+                        recibe una lógica que nosotros implementemos podemos usar una lambda o un método estático con el operador '::'</p>
+                    </div>
+                </div>
+                <!--removeIf-->
+                <div class="col-12 col-lg-4">
+                    <div class="columna">
+                        <i class="bi bi-funnel"></i>
+                        <p class="operaciones-titulo">removeIf</p>
+                        <p> En Java 7 para eliminar una 
+                        ocurrencia de un array no podíamos usar un forEach con remove porque se producía excepción 
+                        <span class="d-inline d-md-none">Concurrent-Modification-Exception</span>
+                        <span class="d-none d-md-inline">ConcurrentModificationException</span>, por lo que debíamos usar un Iterator y recorrer el array con while. En Java 8 
+                        podemos usar menos código usando removeIf con un predicado, es decir con instrucciones que representan una lógica 
+                        como eliminación, agregación, condicionales, etc., por lo que vamos a poder usar una lambda que indique si cada 
+                        elemento debe borrarse.</p>
+                    </div>
+                </div>
+                <!--sort-->
+                <div class="col-12 col-lg-4">
+                    <div class="columna">
+                        <i class="bi bi-sort-alpha-down"></i>
+                        <p class="operaciones-titulo">sort</p>
+                        <p> En Java 7 para ordenar una lista 
+                        tenemos Collections.sort(lista) y si es un objeto tenemos que pasarle un Comparator con la lógica de comparación 
+                        para ordenar la lista de elementos. En Java 8 tenemos el método sort de la propia lista de elementos al cual 
+                        podemos pasarle una lambda con el criterio de ordenación, por ejemplo lista.sort((x,y)->x.comparteTo(y)).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="card bg-dark text-light">
         <div class="card-header bg-secondary text-white">
             Aspecto IDE Eclipse

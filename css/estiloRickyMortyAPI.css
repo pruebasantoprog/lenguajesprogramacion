@@ -12,6 +12,7 @@ body{
     align-items: center;
     margin: 0 auto;
     background-color: bisque;
+    font-family: "Roboto Condensed", sans-serif;
 }
 nav{
     display: flex;
@@ -79,7 +80,7 @@ article{
 }
 
 fieldset{
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
     justify-content: center;
     text-align: center;
@@ -87,6 +88,7 @@ fieldset{
 
 button{
     margin-top: 15px;
+    margin-left: 5px;
     padding: 5px;
     background-color: #3B82F6;
     color: white;
@@ -95,7 +97,64 @@ button{
 button:hover {
     background-color: #2563EB;
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+select{
+    appearance: auto; /*Navegadores que no soportan appearance: base-select;*/
+    /*appearance: base-select;*/
+    min-width: 50%;
+    border: 2px solid rgba(18, 17, 17, 0.3);
+    padding: 5px;
+    background: #b6d8db;
+}
+@supports (appearance: base-select) {
+  select {
+    appearance: base-select;
+  }
+
+  select::picker(select) {
+    appearance: base-select;
+    background: #b6d8db;
+    border: 2px solid rgba(18, 17, 17, 0.3);
+    border-radius: 20px;
+    margin-top: 5px;
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4) inset;
+  }
+}
+/*::picker(select){
+    appearance: base-select;
+    background: #b6d8db;
+    border: 2px solid rgba(18, 17, 17, 0.3);
+    border-radius: 20px;
+    margin-top: 5px;
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.4) inset;
+}*/
+option{
+    transition: .25s;
+}
+option:hover, option:checked{
+    background: rgba(255,255,255,.8);
+}
+option::checkmark{    
+    content: "✅";
+}
+select::picker-icon{
+    font-size: 1.2rem;
+    transition: .3s;
+        
+}
+select:open::picker-icon{
+    rotate:180deg;
+}
+
+.personaje:focus{
+    outline: 7px solid #F29F05;
+    outline-offset: 4px;
+}
+footer{
+    margin-top: 10px;
 }
 
 @media(max-width:786px){
@@ -151,5 +210,13 @@ button:hover {
         /* 1 columna*/
         grid-template-columns: 1fr;
         gap: 12px;        
+    }
+    select{
+         min-width: 100px;
+    }
+    button{
+        font-size: .8rem;
+        margin-bottom: 10px;  
+        margin-left: 0;    
     }
 }

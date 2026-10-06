@@ -60,6 +60,10 @@ public class AppLambda {
 			 version = sc.nextLine();			
 		}while( ! version.equals("7") && ! version.equals("8"));
 		
+		System.out.println("Estados Iniciales Deuda sin ordenar:");
+		app.estadosDeuda.forEach(System.out::println);
+		System.out.println("============================");
+		
 		if(version.equals("7")) {
 			app.ordenarEstadosJava7();
 			
@@ -261,7 +265,7 @@ public class CollectionProcessor {
 		
 		//Eliminar socios que no estén activos
 		socios.removeIf(x-> ! x.isActivo());
-		System.out.println("Socios activos");
+		System.out.println("Socios activos eliminando los NO activos con removeIf");
 		socios.forEach(x->System.out.println(x.getNombre()));	
 	}
 }
@@ -305,6 +309,71 @@ class Socio{
 	public String toString() {
 		return "Datos socio: [nombre=" + nombre + ", activo=" + activo + ", edad=" + edad + "]";
 	}	
+}
+
+	 ]]>
+	</codigo>
+</codigos>
+<codigos>
+	<nombre>codStringJava11</nombre>
+	<codigo><![CDATA[package string;
+
+public class OperacionesString {
+	
+	public boolean textoEnBlanco(String texto) {
+		return texto.isBlank();
+	}
+	
+	public String repetirTexto(String texto, int numVeces) {
+		return texto.repeat(numVeces);
+	}
+	
+	public String eliminarEspaciosConStrip(String texto) {
+		return texto.strip();
+	}
+	
+	public String eliminarEspaciosTrim(String texto) {
+		return texto.trim();
+	}
+}
+
+package string;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class OperacionesStringTest {
+
+	@Test
+	void testTextoEnBlanco() {
+		OperacionesString operaciones=new OperacionesString();
+		
+		assertTrue(operaciones.textoEnBlanco("   "));
+	}
+
+	@Test
+	void testRepetirTexto() {
+		OperacionesString operaciones=new OperacionesString();
+		
+		assertEquals("JavaJavaJavaJava", operaciones.repetirTexto("Java", 4));
+		
+	}
+	
+	@Test
+	void eliminarEspaciosConStrip() {
+		OperacionesString operaciones=new OperacionesString();
+		
+		assertEquals("IDE Eclipse", operaciones.eliminarEspaciosConStrip("\t IDE Eclipse \u2003"));
+	}
+	
+	@Test
+	void eliminarEspaciosTrim() {
+		OperacionesString operaciones=new OperacionesString();
+		
+		assertEquals("IDE Eclipse", operaciones.eliminarEspaciosTrim("\t IDE Eclipse \u2003"));
+	}
+
 }
 
 	 ]]>

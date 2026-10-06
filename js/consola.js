@@ -43,6 +43,7 @@ window.addEventListener("load",empezar,false);
         document.getElementById('defaultFuncional').innerHTML=mapa.get('defaultFuncional').trim();
         document.getElementById('MethodReference').innerHTML=mapa.get('MethodReference').trim();
         document.getElementById('EachRemoveSort').innerHTML=mapa.get('EachRemoveSort').trim();
+        document.getElementById('codStringJava11').innerHTML=mapa.get('codStringJava11').trim();
         console.log("Valor de get ",mapa.size);
         console.log("Valor="+mapa.get('defaultFuncional'));
 
@@ -63,15 +64,19 @@ window.addEventListener("load",empezar,false);
              if (e.key === "Enter") { 
                 //alert('Ha pulsado enter');
                 if(version==0){
-                    document.getElementById("lambda").textContent="Teclee 7 u 8 para versión de Java: ";
+                    document.getElementById("lambda").textContent="Teclee 7 u 8 y pulse ENTER para versión de Java: ";
                 }else{
                     let resultadoEjec="";
                     if(version==7){
-                        resultadoEjec="Java 7 usando Collections.sort con una clase anonima con Comparator que implementa el método compare el cual llamará a compareTo\n"+
+                        resultadoEjec="Estados Iniciales Deuda:\nPagada\nVencida\nEn gestión de cobro\nAplazada\nEn Contencioso\nIncobrable\n"+
+                                      "============================\n"+
+                                      "Java 7 usando Collections.sort con una clase anonima con Comparator que implementa el método compare el cual llamará a compareTo\n"+
                                       "Lista estados ordenada con Java 7\nAplazada\nEn Contencioso\nEn gestión de cobro\nIncobrable\n"+
                                       "Pagada\nVencida\n";
                     }else{
-                        resultadoEjec="Java 8 usando Collections.sort pasamos directamante los estados y con operador -> y llamamos directamante a compareTo entre los estados\n"+
+                        resultadoEjec="Estados Iniciales Deuda:\nPagada\nVencida\nEn gestión de cobro\nAplazada\nEn Contencioso\nIncobrable\n"+
+                                      "============================\n"+
+                                      "Java 8 usando Collections.sort pasamos directamante los estados con operador -> y llamamos directamante a compareTo entre los estados\n"+
                                       "Lista estados ordenada con Java 8\nAplazada\nEn Contencioso\nEn gestión de cobro\nIncobrable\n"+
                                       "Pagada\nVencida\n";
                     }
@@ -122,7 +127,7 @@ window.addEventListener("load",empezar,false);
             "Ordenar socios por edad\nNombre:Marcos Edad:20\nNombre:Lucia Edad:23\nNombre:Ana Edad:31\nNombre:David Edad:37\n"+
             "Nombre:Diana Edad:39\nNombre:Laura Edad:57\nombre:Felipe Edad:68\nNombre:Sergio Edad:71\n"+
             "======================================================================================================\n"+
-            "Socios activos\nMarcos\nLucia\nDavid\nFelipe\nSergio";
+            "Socios activos eliminando los NO activos con removeIf\nMarcos\nLucia\nDavid\nFelipe\nSergio";
         });    
           
         
@@ -217,13 +222,17 @@ window.addEventListener("load",empezar,false);
                     }
                 });
 
-               if(!familiaEncontrada){
-                    const panelError=document.getElementById("panelError");
+               const panelError=document.getElementById("panelError");
+               if(!familiaEncontrada){                    
                     panelError.style.display="flex";
                     panelError.style.flexDirection="column";
                     panelError.style.alignItems="center";
                     panelError.innerHTML=`<p><strong>ATENCIÓN!!</strong> No se han encontrado elementos para la familia <strong>${categoria}</strong></p>`;                    
+                    panelError.classList.add("alert");
+                    panelError.classList.add("alert-primary");
                     document.getElementById("preCategoria").textContent="GET http://localhost:8080/api/elementos/11 net::ERR_ABORTED 404 (Not Found)";
+               }else{
+                    panelError.style.display="none";
                }
                 
                 
@@ -331,4 +340,59 @@ window.addEventListener("load",empezar,false);
         let contendorElementosStream=document.getElementById("contendorElementosStream");
      
           
+    }
+
+    async function ejecutarJUnit(){
+        const tests = document.querySelectorAll(".test");
+        const botonJUnit = document.getElementById("runJUnit");
+        botonJUnit.disabled = true;
+
+        try{
+            await Promise.all(
+                [...tests].map((test, index) => {
+                    return new Promise((resolve) => {
+            //tests.forEach((test, index) => {
+                setTimeout(() => {
+                    const spanTiempo=document.createElement("span");
+                    spanTiempo.classList.add("time");
+                    spanTiempo.textContent=Math.random().toFixed(3).toString();
+                    test.appendChild(spanTiempo);
+
+                    if(index==3){
+                        test.classList.add("failed");
+                        const spanFailed=document.createElement("span");
+                        spanFailed.classList.add("icon");
+                        spanFailed.textContent="✗";
+                        test.appendChild(spanFailed);
+                    }else{
+                        test.classList.add("passed");
+                        const spanPassed=document.createElement("span");
+                        spanPassed.classList.add("icon");
+                        spanPassed.textContent="✓";
+                        test.appendChild(spanPassed);
+                    }
+                resolve();
+                }, index * 700);
+            });
+                })
+            );
+        }finally{
+            console.log("Entra en finally");
+            const resultado=document.getElementById("resultado");
+            const spanExito=document.createElement("span");
+            spanExito.textContent="3 tests successful";
+            spanExito.classList.add("aciertos");
+            resultado.appendChild(spanExito);
+            const spanFallo=document.createElement("span");
+            spanFallo.textContent="1 test failed org.opentest4j.AssertionFailedError: expected: <IDE Eclipse> but was: <IDE Eclipse  >";
+            spanFallo.classList.add("fallo");
+            resultado.appendChild(spanFallo);
+
+            const cabeceraJUnit=document.getElementById("cabeceraUnit");
+            const spanFinalizado=document.createElement("span");
+            spanFinalizado.textContent="Tests finished";
+            spanFinalizado.classList.add("resultadoJUnit");
+            cabeceraJUnit.appendChild(spanFinalizado);
+        }
+        
     }
